@@ -146,6 +146,7 @@ clientLanguages: "html,css,javascript"
    - `FIGMA_CONVERSION_GUIDE.md`: 프로젝트 전체 가이드 및 완성된 컴포넌트 정리
    - `CLAUDE.md`: Figma MCP Server 설정 및 사용법 가이드
    - `MCP_UNDERSTANDING.md`: MCP 프로토콜의 본질과 작동 원리 이해
+   - `FIGMA_TO_ECHARTS.md`: Figma 차트 디자인을 ECharts로 변환하는 가이드
 
 2. **MCP 이해도 확립**:
    - MCP는 서로 다른 앱 간의 **맥락(Context)을 전달하는 표준 프로토콜**
@@ -156,11 +157,20 @@ clientLanguages: "html,css,javascript"
    - Figma MCP Server 연결 방법 숙지
    - HTML/CSS 변환 워크플로우 확립
    - 디자인 토큰 활용 전략 수립
+   - **ECharts 변환 기능 확인**: Figma 차트 디자인을 ECharts 옵션으로 성공적으로 변환
+
+### 최근 작업 내용
+1. **Figma to ECharts 변환 실습** (node-id: 200-513):
+   - "계정" 차트 컴포넌트를 ECharts 옵션으로 변환
+   - 44개 막대 그래프 데이터 매핑
+   - 색상, 스타일, 레이아웃 정확히 반영
+   - 범례와 데이터 값(금일: 7,927,921 / 전일: 7,320,915) 포함
 
 ### 다음 단계
 1. **Figma Desktop 앱에서 MCP 서버 활성화**
 2. **새로운 컴포넌트 선택 및 변환 시작**
 3. **기존 가이드(FIGMA_CONVERSION_GUIDE.md)의 컴포넌트 목록 확장**
+4. **더 복잡한 차트 타입 변환 시도** (파이 차트, 라인 차트 등)
 
 ### 핵심 원칙 재확인
 - **픽셀 퍼펙트**: Figma 디자인과 100% 일치
