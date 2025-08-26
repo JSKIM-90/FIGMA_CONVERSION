@@ -138,3 +138,33 @@ clientLanguages: "html,css,javascript"
 - [Figma 프로젝트 파일](https://www.figma.com/design/v6RuBuhzhpX4LrHSAG86sV/NewStyle_Light)
 - [Figma Dev Mode 공식 문서](https://help.figma.com/hc/en-us/articles/32132100833559)
 - [MCP 프로토콜 문서](https://modelcontextprotocol.io)
+
+## 📌 프로젝트 진행 컨텍스트
+
+### 현재 상황 (2025-08-26)
+1. **문서 정리 완료**:
+   - `FIGMA_CONVERSION_GUIDE.md`: 프로젝트 전체 가이드 및 완성된 컴포넌트 정리
+   - `CLAUDE.md`: Figma MCP Server 설정 및 사용법 가이드
+   - `MCP_UNDERSTANDING.md`: MCP 프로토콜의 본질과 작동 원리 이해
+
+2. **MCP 이해도 확립**:
+   - MCP는 서로 다른 앱 간의 **맥락(Context)을 전달하는 표준 프로토콜**
+   - Figma의 디자인 데이터를 표준화된 JSON으로 변환하여 Claude가 이해하고 코드 생성
+   - 단순 데이터 전송이 아닌 **의미와 의도를 보존**하는 통신
+
+3. **작업 준비 완료**:
+   - Figma MCP Server 연결 방법 숙지
+   - HTML/CSS 변환 워크플로우 확립
+   - 디자인 토큰 활용 전략 수립
+
+### 다음 단계
+1. **Figma Desktop 앱에서 MCP 서버 활성화**
+2. **새로운 컴포넌트 선택 및 변환 시작**
+3. **기존 가이드(FIGMA_CONVERSION_GUIDE.md)의 컴포넌트 목록 확장**
+
+### 핵심 원칙 재확인
+- **픽셀 퍼펙트**: Figma 디자인과 100% 일치
+- **시맨틱 HTML**: 의미있는 태그와 클래스명 사용
+- **현대적 CSS**: Flexbox/Grid 우선, absolute 최소화
+- **디자인 토큰**: CSS 변수로 일관성 유지
+- **맥락 보존**: MCP를 통해 디자인 의도 정확히 전달
