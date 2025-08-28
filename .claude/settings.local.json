@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma-dev-mode-mcp-server__get_code"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
