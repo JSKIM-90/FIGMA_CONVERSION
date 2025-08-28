@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--
+    Figma to HTML/CSS Conversion using Tabulator.js
+    
+    Original Figma Design:
+    https://www.figma.com/design/v6RuBuhzhpX4LrHSAG86sV/NewStyle_Light?node-id=203-1595
+    
+    Component: Event Monitoring Table (이벤트 모니터링 테이블)
+    Converted Date: 2025-08-28
+    Library: Tabulator.js v5.5.2
+    
+    Features:
+    - Event severity badges with double-layer design
+    - Sortable columns
+    - Resizable columns
+    - Pagination
+    - Pixel-perfect Figma design reproduction
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Monitoring Table - Figma to Tabulator</title>
+    
+    <!-- Tabulator CSS -->
+    <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator.min.css" rel="stylesheet">
+    
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        #table-container {
+            width: fit-content;
+            max-width: 100%;
+            height: fit-content;
+            max-height: calc(100vh - 40px);
+            margin: 0 auto;
+            background: #f5f5f5;
+            border-radius: 8px;
+            display: inline-block;
+            overflow: auto;
+        }
+        
+        /* Tabulator 커스텀 스타일 */
+        .tabulator {
+            border: none;
+            background-color: transparent;
+            font-family: 'Pretendard', sans-serif;
+            width: auto;
+        }
+        
+        /* 헤더 스타일 */
+        .tabulator-header {
+            background-color: #f5f5f5 !important;
+            border-bottom: none !important;
+            font-weight: 500;
+            padding: 0 4px;
+            height: 30px !important;
+        }
+        
+        /* 정렬 화살표 스타일 */
+        .tabulator-arrow {
+            border-color: #999 transparent !important;
+            opacity: 0.5;
+        }
+        
+        .tabulator-col.tabulator-sortable:hover .tabulator-arrow {
+            opacity: 1;
+        }
+        
+        .tabulator-col[aria-sort="asc"] .tabulator-arrow,
+        .tabulator-col[aria-sort="desc"] .tabulator-arrow {
+            opacity: 1;
+            border-color: #333 transparent !important;
+        }
+        
+        /* 리사이즈 핸들 시각적으로만 숨기기 (기능은 유지) */
+        .tabulator-col-resize-handle {
+            opacity: 0 !important;
+            width: 5px !important;
+        }
+        
+        /* 호버 시 커서 변경 */
+        .tabulator-col-resize-handle:hover {
+            cursor: col-resize !important;
+        }
+        
+        .tabulator-cols {
+            border-bottom: 1px solid #d0d0d0 !important;
+            margin-bottom: 4px;
+        }
+        
+        .tabulator-col {
+            background-color: transparent !important;
+            border-right: 1px solid #e0e0e0 !important;
+            border-bottom: none !important;
+            border-top: none !important;
+        }
+        
+        .tabulator-col:first-child {
+            border-left: none !important;
+        }
+        
+        .tabulator-col:last-child {
+            border-right: none !important;
+        }
+        
+        .tabulator-col-content {
+            padding: 4px 12px !important;
+            line-height: 22px !important;
+        }
+        
+        .tabulator-col-title {
+            font-size: 12px !important;
+            color: #000000 !important;
+            font-weight: 500 !important;
+        }
+        
+        /* 행 스타일 */
+        .tabulator-table {
+            background-color: transparent !important;
+            border-spacing: 0 !important;
+        }
+        
+        .tabulator-row {
+            background-color: white !important;
+            height: 36px !important;
+            border-radius: 18px !important;
+            margin: 2px 0 4px 0 !important;
+            border: none !important;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .tabulator-row:hover {
+            background-color: #fafafa !important;
+        }
+        
+        .tabulator-row.tabulator-selected {
+            background-color: #e8f5e9 !important;
+        }
+        
+        .tabulator-cell {
+            border-right: 1px solid #e0e0e0 !important;
+            padding: 0 12px !important;
+            font-size: 12px !important;
+            color: #000000 !important;
+            background-color: transparent !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            height: 36px !important;
+            line-height: 36px !important;
+        }
+        
+        /* 등급 컬럼은 ellipsis 비활성화 */
+        .tabulator-cell:first-child {
+            text-overflow: clip !important;  /* ... 표시 안 함 */
+            border-top-left-radius: 18px !important;
+            border-bottom-left-radius: 18px !important;
+        }
+        
+        /* 마지막 컬럼 스타일 */
+        .tabulator-cell:last-child {
+            border-right: none !important;
+            border-top-right-radius: 18px !important;
+            border-bottom-right-radius: 18px !important;
+        }
+        
+        /* 마지막에서 두 번째 컬럼의 테두리도 제거 (메시지 컬럼 앞) */
+        .tabulator-cell:nth-last-child(2) {
+            border-right: none !important;
+        }
+        
+        /* 이벤트 상태 뱃지 스타일 */
+        .event-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 12px;
+            text-align: center;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+            position: relative;
+            min-width: 81px;
+            height: 24px;
+        }
+        
+        .event-badge.critical {
+            background-color: rgba(235, 197, 206, 0.6);
+            color: black;
+        }
+        
+        .event-badge.critical::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            right: 6px;
+            bottom: 3px;
+            background-color: rgba(243, 47, 80, 0.6);
+            border: 1px solid #f43050;
+            border-radius: 15px;
+            z-index: 0;
+        }
+        
+        .event-badge.critical span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .event-badge.warning {
+            background-color: rgba(176, 220, 243, 0.6);
+            color: black;
+        }
+        
+        .event-badge.warning::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            right: 6px;
+            bottom: 3px;
+            background-color: rgba(43, 189, 255, 0.6);
+            border: 1px solid #00b0ff;
+            border-radius: 15px;
+            z-index: 0;
+        }
+        
+        .event-badge.warning span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .event-badge.minor {
+            background-color: rgba(239, 226, 174, 0.6);
+            color: black;
+        }
+        
+        .event-badge.minor::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            right: 6px;
+            bottom: 3px;
+            background-color: rgba(253, 208, 31, 0.6);
+            border: 1px solid #f5c300;
+            border-radius: 15px;
+            z-index: 0;
+        }
+        
+        .event-badge.minor span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .event-badge.major {
+            background-color: rgba(246, 209, 173, 0.6);
+            color: black;
+        }
+        
+        .event-badge.major::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            right: 6px;
+            bottom: 3px;
+            background-color: rgba(252, 127, 1, 0.6);
+            border: 1px solid #fc7f01;
+            border-radius: 15px;
+            z-index: 0;
+        }
+        
+        .event-badge.major span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .event-badge.normal {
+            background-color: rgba(198, 232, 217, 0.6);
+            color: black;
+        }
+        
+        .event-badge.normal::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            right: 6px;
+            bottom: 3px;
+            background-color: rgba(50, 210, 140, 0.6);
+            border: 1px solid #32d28c;
+            border-radius: 15px;
+            z-index: 0;
+        }
+        
+        .event-badge.normal span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* 페이지네이션 스타일 */
+        .tabulator-footer {
+            background-color: transparent !important;
+            border-top: none !important;
+            padding: 12px 0 !important;
+            margin-top: 8px;
+            width: auto !important;
+        }
+        
+        .tabulator-paginator {
+            font-size: 12px !important;
+            color: #666 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 20px !important;
+        }
+        
+        .tabulator-page-size {
+            padding: 4px 8px !important;
+            border: 1px solid #d0d0d0 !important;
+            border-radius: 4px !important;
+            background: white !important;
+        }
+        
+        .tabulator-pages {
+            display: flex !important;
+            gap: 4px !important;
+        }
+        
+        .tabulator-page {
+            background-color: white !important;
+            border: 1px solid #d0d0d0 !important;
+            color: #333 !important;
+            padding: 4px 8px !important;
+            margin: 0 !important;
+            border-radius: 4px !important;
+            min-width: 32px !important;
+            text-align: center !important;
+        }
+        
+        .tabulator-page.active {
+            background-color: #f43050 !important;
+            color: white !important;
+            border-color: #f43050 !important;
+        }
+        
+        .tabulator-page:hover:not(.active):not(:disabled) {
+            background-color: #f5f5f5 !important;
+            cursor: pointer !important;
+        }
+        
+        .tabulator-page:disabled {
+            opacity: 0.5 !important;
+            cursor: not-allowed !important;
+        }
+        
+        .tabulator-footer .tabulator-counter {
+            padding: 0 8px !important;
+            color: #666 !important;
+            font-size: 12px !important;
+        }
+        
+        /* 테이블 본체 스타일 */
+        .tabulator-tableholder {
+            background-color: #f5f5f5 !important;
+            overflow: visible;
+            padding: 0 4px 4px 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="table-container"></div>
+    
+    <!-- Tabulator JS -->
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+    
+    <script>
+        // Figma 디자인과 일치하는 데이터 구조
+        const tabledata = [
+            {
+                id: 1,
+                severity: "Critical",
+                businessName: "기간계운영 DB#1",
+                hostName: "host01",
+                messageGroup: "AP",
+                application: "ControlM",
+                object: "Windows",
+                occurTime: "2024-10-21 15:00:00",
+                message: "p_chmat 프로세스 다운[계정 : root]"
+            },
+            {
+                id: 2,
+                severity: "Warning",
+                businessName: "기간계운영 WAS#2",
+                hostName: "host02",
+                messageGroup: "SVR",
+                application: "ControlM",
+                object: "Windows",
+                occurTime: "2024-10-21 15:00:00",
+                message: "LOCK_WAIT_SESSION 임계치 초과(1/1)"
+            },
+            {
+                id: 3,
+                severity: "Minor",
+                businessName: "기간계운영 DB#2",
+                hostName: "host03",
+                messageGroup: "SVR",
+                application: "ControlM",
+                object: "Windows",
+                occurTime: "2024-10-21 15:00:00",
+                message: "ACTIVE_SESSION 임계치 초과(235/150)"
+            },
+            {
+                id: 4,
+                severity: "Major",
+                businessName: "FEB운영 #4",
+                hostName: "host04",
+                messageGroup: "AP",
+                application: "ControlM",
+                object: "Windows",
+                occurTime: "2024-10-21 15:00:00",
+                message: "Memory 84.03% 사용중"
+            },
+            {
+                id: 5,
+                severity: "Normal",
+                businessName: "기간계운영 DB#2",
+                hostName: "host05",
+                messageGroup: "AP",
+                application: "ControlM",
+                object: "Windows",
+                occurTime: "2024-10-21 15:00:00",
+                message: "Memory 84.03% 사용중"
+            }
+        ];
+        
+        // Tabulator 인스턴스 생성
+        const table = new Tabulator("#table-container", {
+            data: tabledata,
+            height: "auto",
+            layout: "fitDataTable",  // 테이블 너비를 데이터에 맞춤
+            responsiveLayout: "hide",
+            resizableColumns: true,  // 리사이즈 활성화
+            movableColumns: false,
+            selectable: 1,
+            columnDefaults: {
+                tooltip: true,
+            },
+            columns: [
+                {
+                    title: "등급",
+                    field: "severity",
+                    width: 110,  // 뱃지가 잘리지 않도록 조정
+                    minWidth: 100,  // 최소 너비 설정
+                    hozAlign: "center",
+                    headerHozAlign: "center",
+                    formatter: function(cell) {
+                        const value = cell.getValue();
+                        const className = value.toLowerCase();
+                        return `<span class="event-badge ${className}"><span>${value}</span></span>`;
+                    }
+                },
+                {
+                    title: "업무명",
+                    field: "businessName",
+                    width: 200,  // 더 넓게
+                    hozAlign: "left",
+                    headerHozAlign: "center"
+                },
+                {
+                    title: "호스트명",
+                    field: "hostName",
+                    width: 150,
+                    hozAlign: "center",
+                    headerHozAlign: "center"
+                },
+                {
+                    title: "메시지그룹",
+                    field: "messageGroup",
+                    width: 130,
+                    hozAlign: "center",
+                    headerHozAlign: "center"
+                },
+                {
+                    title: "어플리케이션",
+                    field: "application",
+                    width: 140,
+                    hozAlign: "center",
+                    headerHozAlign: "center"
+                },
+                {
+                    title: "오브젝트",
+                    field: "object",
+                    width: 120,
+                    hozAlign: "center",
+                    headerHozAlign: "center"
+                },
+                {
+                    title: "발생시간",
+                    field: "occurTime",
+                    width: 150,
+                    hozAlign: "center",
+                    headerHozAlign: "center",
+                    resizable: false,
+                    sorter: "string"
+                },
+                {
+                    title: "메시지",
+                    field: "message",
+                    widthGrow: 2,  // 남은 공간을 차지하도록
+                    hozAlign: "left",
+                    headerHozAlign: "center",
+                    formatter: "textarea"
+                }
+            ],
+            initialSort: [
+                {column: "occurTime", dir: "desc"}
+            ],
+            pagination: "local",
+            paginationSize: 10,
+            paginationSizeSelector: [10, 20, 50, 100],
+            paginationCounter: "rows",
+            locale: true,
+            langs: {
+                "ko": {
+                    "pagination": {
+                        "first": "처음",
+                        "first_title": "첫 페이지",
+                        "last": "마지막",
+                        "last_title": "마지막 페이지",
+                        "prev": "이전",
+                        "prev_title": "이전 페이지",
+                        "next": "다음",
+                        "next_title": "다음 페이지",
+                        "all": "전체",
+                        "counter": {
+                            "showing": "표시",
+                            "of": "/",
+                            "rows": "행",
+                            "pages": "페이지"
+                        }
+                    }
+                }
+            },
+            locale: "ko"
+        });
+        
+        // 샘플: 필터링 기능 추가
+        // 특정 severity로 필터링
+        function filterBySeverity(severity) {
+            if (severity === "all") {
+                table.clearFilter();
+            } else {
+                table.setFilter("severity", "=", severity);
+            }
+        }
+        
+        // 샘플: 데이터 추가 기능
+        function addNewEvent() {
+            table.addRow({
+                id: table.getRows().length + 1,
+                severity: "Warning",
+                businessName: "신규 시스템",
+                hostName: "host06",
+                messageGroup: "AP",
+                application: "ControlM",
+                object: "Linux",
+                occurTime: new Date().toISOString().slice(0, 19).replace('T', ' '),
+                message: "새로운 이벤트가 발생했습니다."
+            });
+        }
+        
+        // 샘플: 선택된 행 정보 가져오기
+        table.on("rowClick", function(e, row) {
+            console.log("선택된 행 데이터:", row.getData());
+        });
+    </script>
+</body>
+</html>
