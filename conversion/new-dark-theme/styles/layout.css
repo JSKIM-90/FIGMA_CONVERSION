@@ -1,0 +1,109 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* Main Container - Figma: new-dark-main (29:2030) */
+#new-dark-main {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Background Layer - Figma: bg (29:2031) */
+#bg {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 1940px;
+    height: 1100px;
+    z-index: 0;
+}
+
+/* Background Image - Figma: img (29:2032) */
+#bg::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 1920px;
+    height: 1080px;
+    background-image: url('../assets/images/bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Header - Figma: header (29:2449) */
+#header {
+    position: absolute;
+    left: 29px;
+    top: -1px;
+    width: 1860px;
+    height: 75px;
+    z-index: 10;
+    background: rgba(217, 244, 96, 0.1);  /* 연한 형광 노란색 */
+    outline: 2px solid #d9f460;
+}
+
+/* Content01 - Figma: content01 (29:2191) */
+#content01 {
+    position: absolute;
+    left: 30px;
+    top: 66px;
+    width: 1860px;
+    height: 430px;
+    z-index: 5;
+    background: rgba(33, 150, 243, 0.1);  /* 연한 파란색 */
+    outline: 2px solid #2196f3;
+}
+
+/* Content02 - Figma: content02 (29:2046) */
+#content02 {
+    position: absolute;
+    left: 29px;
+    top: 475px;
+    width: 1861px;
+    height: 269px;
+    z-index: 5;
+    background: rgba(76, 175, 80, 0.1);  /* 연한 초록색 */
+    outline: 2px solid #4caf50;
+}
+
+/* Browser Event - Figma: browser-event (29:2033) */
+#browser-event {
+    position: absolute;
+    left: 29px;
+    top: 770px;
+    width: 1861px;
+    height: 303px;
+    z-index: 5;
+    background: rgba(244, 48, 80, 0.1);  /* 연한 빨간색 */
+    outline: 2px solid #f43050;
+}
+
+/* Visual Helper - Remove in production */
+#header::before,
+#content01::before, 
+#content02::before,
+#browser-event::before {
+    content: attr(id);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
