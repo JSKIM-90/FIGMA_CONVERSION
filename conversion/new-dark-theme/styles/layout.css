@@ -57,6 +57,10 @@ body {
     height: 75px;
     z-index: 10;
     /* Header는 투명 - 내부 SVG가 배경 역할 */
+    
+    /* 경계 표시 - 디자이너 확인용 */
+    background: rgba(0, 255, 0, 0.03);  /* 아주 연한 녹색 */
+    outline: 2px dashed rgba(0, 255, 0, 0.5);  /* 녹색 점선 */
 }
 
 /* Content01 - Figma: content01 (29:2191) */
