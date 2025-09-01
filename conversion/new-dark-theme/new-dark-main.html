@@ -1,255 +1,282 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RENOBIT ver.3.0 - Dark Theme Dashboard</title>
-    
+
     <!-- Layout Style Only -->
-    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/layout.css" />
     <!-- Component Styles -->
-    <link rel="stylesheet" href="components/header/header.css">
-    <link rel="stylesheet" href="components/content01/content01.css">
-    <link rel="stylesheet" href="components/content01/section01.css">
-    
+    <link rel="stylesheet" href="components/header/header.css" />
+    <link rel="stylesheet" href="components/content01/content01.css" />
+    <link rel="stylesheet" href="components/content01/section01.css" />
+
     <!-- Font -->
-    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@500&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- ECharts -->
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-</head>
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
+  </head>
+  <body>
     <!-- Main Container (1920x1080) -->
     <div id="new-dark-main">
-        
-        <!-- Background Layer -->
-        <div id="bg"></div>
-        
-        <!-- Header -->
-        <div id="header">
-            <div class="header-container" data-name="header" data-node-id="29:2449">
-                
-                <!-- 1. Background (top-bg) -->
-                <div class="top-bg" data-name="top-bg">
-                    <img src="assets/icons/header-bg.svg" alt="">
-                </div>
-                
-                <!-- 2. Brand Identity (bi) -->
-                <div class="bi" data-name="bi">
-                    <img src="assets/icons/renobit-logo.svg" alt="RENOBIT">
-                </div>
-                
-                <!-- 3. Global Navigation (gnb) -->
-                <div class="gnb" data-name="gnb">
-                    <!-- Active Menu -->
-                    <button class="btn-menu active" data-name="btn-menu">
-                        <span class="icon">
-                            <img src="assets/icons/menu-icon-active.svg" alt="">
-                        </span>
-                        <span class="menu-text">종합현황</span>
-                    </button>
-                    
-                    <!-- Inactive Menus -->
-                    <button class="btn-menu" data-name="btn-menu">
-                        <span class="icon">
-                            <img src="assets/icons/menu-icon-inactive.svg" alt="">
-                        </span>
-                        <span class="menu-text">인프라현황</span>
-                    </button>
-                    
-                    <button class="btn-menu" data-name="btn-menu">
-                        <span class="icon">
-                            <img src="assets/icons/menu-icon-inactive.svg" alt="">
-                        </span>
-                        <span class="menu-text">어플리케이션관리</span>
-                    </button>
-                    
-                    <button class="btn-menu" data-name="btn-menu">
-                        <span class="icon">
-                            <img src="assets/icons/menu-icon-inactive.svg" alt="">
-                        </span>
-                        <span class="menu-text">인프라운영현황</span>
-                    </button>
-                </div>
-                
-                <!-- 4. Top Buttons (top-btn) -->
-                <div class="top-btn" data-name="top-btn">
-                    <!-- Time Display -->
-                    <div class="time" data-name="time">
-                        <span class="date">250826</span>
-                        <span class="clock">09:00:00</span>
-                    </div>
-                    
-                    <!-- Logout Button -->
-                    <button class="btn-logout" data-name="btn-logout">
-                        <span class="icon">
-                            <img src="assets/icons/logout-icon.svg" alt="Logout">
-                        </span>
-                    </button>
-                </div>
-                
+      <!-- Background Layer -->
+      <div id="bg"></div>
+
+      <!-- Header -->
+      <div id="header">
+        <div class="header-container" data-name="header" data-node-id="29:2449">
+          <!-- 1. Background (top-bg) -->
+          <div class="top-bg" data-name="top-bg">
+            <img src="assets/icons/header-bg.svg" alt="" />
+          </div>
+
+          <!-- 2. Brand Identity (bi) -->
+          <div class="bi" data-name="bi">
+            <img src="assets/icons/renobit-logo.svg" alt="RENOBIT" />
+          </div>
+
+          <!-- 3. Global Navigation (gnb) -->
+          <div class="gnb" data-name="gnb">
+            <!-- Active Menu -->
+            <button class="btn-menu active" data-name="btn-menu">
+              <span class="icon">
+                <img src="assets/icons/menu-icon-active.svg" alt="" />
+              </span>
+              <span class="menu-text">종합현황</span>
+            </button>
+
+            <!-- Inactive Menus -->
+            <button class="btn-menu" data-name="btn-menu">
+              <span class="icon">
+                <img src="assets/icons/menu-icon-inactive.svg" alt="" />
+              </span>
+              <span class="menu-text">인프라현황</span>
+            </button>
+
+            <button class="btn-menu" data-name="btn-menu">
+              <span class="icon">
+                <img src="assets/icons/menu-icon-inactive.svg" alt="" />
+              </span>
+              <span class="menu-text">어플리케이션관리</span>
+            </button>
+
+            <button class="btn-menu" data-name="btn-menu">
+              <span class="icon">
+                <img src="assets/icons/menu-icon-inactive.svg" alt="" />
+              </span>
+              <span class="menu-text">인프라운영현황</span>
+            </button>
+          </div>
+
+          <!-- 4. Top Buttons (top-btn) -->
+          <div class="top-btn" data-name="top-btn">
+            <!-- Time Display -->
+            <div class="time" data-name="time">
+              <span class="date">250826</span>
+              <span class="clock">09:00:00</span>
             </div>
+
+            <!-- Logout Button -->
+            <button class="btn-logout" data-name="btn-logout">
+              <span class="icon">
+                <img src="assets/icons/logout-icon.svg" alt="Logout" />
+              </span>
+            </button>
+          </div>
         </div>
-        
-        <!-- Content01: 거래현황, 업무시스템현황, 계정 -->
-        <div id="content01">
-            <!-- Container: section01(거래현황) + section02(계정) -->
-            <div class="container" data-name="container" data-node-id="29:2192">
-                
-                <!-- Section01: 거래현황 -->
-                <div class="section01" data-name="section01" data-node-id="29:2193">
-                    <div class="section01-inner">
-                        <!-- 타이틀 -->
-                        <div class="section01-title">
-                            <div class="bullet"></div>
-                            <div class="text">거래 현황</div>
-                        </div>
-                        
-                        <!-- 메인 블록 -->
-                        <div class="section01-block">
-                            <!-- 데이터 -->
-                            <div class="section01-data">
-                                <div class="section01-data-item">
-                                    <div class="label">금일 누적</div>
-                                    <div class="value">7,927,900</div>
-                                </div>
-                                <div class="section01-data-item">
-                                    <div class="label">전일 누적</div>
-                                    <div class="value">10,636,190</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 차트 -->
-                            <div class="section01-chart">
-                                <div id="section01-pie-chart"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- 구분선 -->
-                        <div class="section01-divider"></div>
-                        
-                        <!-- 범례 -->
-                        <div class="section01-legend">
-                            <div class="section01-legend-item">
-                                <div class="section01-legend-label">
-                                    <div class="section01-legend-color color-card"></div>
-                                    <div class="section01-legend-text">카드승인</div>
-                                </div>
-                                <div class="section01-legend-value">6,294,043</div>
-                            </div>
-                            
-                            <div class="section01-legend-item">
-                                <div class="section01-legend-label">
-                                    <div class="section01-legend-color color-inquiry"></div>
-                                    <div class="section01-legend-text">조회</div>
-                                </div>
-                                <div class="section01-legend-value">1,141,785</div>
-                            </div>
-                            
-                            <div class="section01-legend-item">
-                                <div class="section01-legend-label">
-                                    <div class="section01-legend-color color-cash"></div>
-                                    <div class="section01-legend-text">현금서비스</div>
-                                </div>
-                                <div class="section01-legend-value">9,185</div>
-                            </div>
-                            
-                            <div class="section01-legend-item">
-                                <div class="section01-legend-label">
-                                    <div class="section01-legend-color color-other"></div>
-                                    <div class="section01-legend-text">기타</div>
-                                </div>
-                                <div class="section01-legend-value">478,528</div>
-                            </div>
-                            
-                            <div class="section01-legend-item">
-                                <div class="section01-legend-label">
-                                    <div class="section01-legend-color color-report"></div>
-                                    <div class="section01-legend-text">카드신고</div>
-                                </div>
-                                <div class="section01-legend-value">4,380</div>
-                            </div>
-                        </div>
-                    </div>
+      </div>
+
+      <!-- Content01: 거래현황, 업무시스템현황, 계정 -->
+      <div id="content01">
+        <!-- Container: section01(거래현황) + section02(계정) -->
+        <div class="container" data-name="container" data-node-id="29:2192">
+          <!-- Section01: 거래현황 -->
+          <div class="section01" data-name="section01" data-node-id="29:2193">
+            <div class="section01-inner">
+              <!-- 타이틀 -->
+              <div class="section01-title">
+                <img
+                  class="bullet"
+                  src="assets/icons/bullet-title.svg"
+                  alt=""
+                />
+                <div class="text">거래 현황</div>
+              </div>
+
+              <!-- 메인 블록 -->
+              <div class="section01-block">
+                <!-- 데이터 -->
+                <div class="section01-data">
+                  <div class="section01-data-item">
+                    <div class="label">금일 누적</div>
+                    <div class="value">7,927,900</div>
+                  </div>
+                  <div class="section01-data-item">
+                    <div class="label">전일 누적</div>
+                    <div class="value">10,636,190</div>
+                  </div>
                 </div>
-                
-                <!-- Section02: 계정 -->
-                <div class="section02" data-name="section02" data-node-id="29:2226">
-                    <!-- 계정 컨텐츠는 나중에 추가 -->
+
+                <!-- 차트 -->
+                <div class="section01-chart">
+                  <div id="section01-pie-chart"></div>
                 </div>
-                
+              </div>
+
+              <!-- 구분선 -->
+              <div class="section01-divider"></div>
+
+              <!-- 범례 -->
+              <div class="section01-legend">
+                <div class="section01-legend-item">
+                  <div class="section01-legend-label">
+                    <img
+                      class="section01-legend-icon"
+                      src="assets/icons/legend/legend1.svg"
+                      alt=""
+                    />
+                    <div class="section01-legend-text">카드승인</div>
+                  </div>
+                  <div class="section01-legend-value">6,294,043</div>
+                </div>
+
+                <div class="section01-legend-item">
+                  <div class="section01-legend-label">
+                    <img
+                      class="section01-legend-icon"
+                      src="assets/icons/legend/legend2.svg"
+                      alt=""
+                    />
+                    <div class="section01-legend-text">조회</div>
+                  </div>
+                  <div class="section01-legend-value">1,141,785</div>
+                </div>
+
+                <div class="section01-legend-item">
+                  <div class="section01-legend-label">
+                    <img
+                      class="section01-legend-icon"
+                      src="assets/icons/legend/legend3.svg"
+                      alt=""
+                    />
+                    <div class="section01-legend-text">현금서비스</div>
+                  </div>
+                  <div class="section01-legend-value">9,185</div>
+                </div>
+
+                <div class="section01-legend-item">
+                  <div class="section01-legend-label">
+                    <img
+                      class="section01-legend-icon"
+                      src="assets/icons/legend/legend4.svg"
+                      alt=""
+                    />
+                    <div class="section01-legend-text">기타</div>
+                  </div>
+                  <div class="section01-legend-value">478,528</div>
+                </div>
+
+                <div class="section01-legend-item">
+                  <div class="section01-legend-label">
+                    <img
+                      class="section01-legend-icon"
+                      src="assets/icons/legend/legend5.svg"
+                      alt=""
+                    />
+                    <div class="section01-legend-text">카드신고</div>
+                  </div>
+                  <div class="section01-legend-value">4,380</div>
+                </div>
+              </div>
             </div>
-            
-            <!-- Main Component: 업무시스템현황 (중앙 오버레이) -->
-            <div class="main-component" data-name="main-component" data-node-id="29:2428">
-                <!-- 내용은 나중에 추가 -->
-            </div>
+          </div>
+
+          <!-- Section02: 계정 -->
+          <div class="section02" data-name="section02" data-node-id="29:2226">
+            <!-- 계정 컨텐츠는 나중에 추가 -->
+          </div>
         </div>
-        
-        <!-- Content02: 콜상담센터, 승인현황, 서비스TOP5 -->
-        <div id="content02">
-            <!-- Content02 components will be loaded here -->
+
+        <!-- Main Component: 업무시스템현황 (중앙 오버레이) -->
+        <div
+          class="main-component"
+          data-name="main-component"
+          data-node-id="29:2428"
+        >
+          <!-- 내용은 나중에 추가 -->
         </div>
-        
-        <!-- Browser Event: 이벤트현황 -->
-        <div id="browser-event">
-            <!-- Event table will be loaded here -->
-        </div>
-        
+      </div>
+
+      <!-- Content02: 콜상담센터, 승인현황, 서비스TOP5 -->
+      <div id="content02">
+        <!-- Content02 components will be loaded here -->
+      </div>
+
+      <!-- Browser Event: 이벤트현황 -->
+      <div id="browser-event">
+        <!-- Event table will be loaded here -->
+      </div>
     </div>
-    
+
     <script>
-        // Section01 차트 초기화
-        document.addEventListener('DOMContentLoaded', function() {
-            const chartDom = document.getElementById('section01-pie-chart');
-            if (chartDom) {
-                const myChart = echarts.init(chartDom);
-                
-                // 차트 데이터 - Figma 색상과 동일
-                const data = [
-                    { value: 6294043, name: '카드승인', itemStyle: { color: '#FACC15' } },
-                    { value: 1141785, name: '조회', itemStyle: { color: '#14B8A6' } },
-                    { value: 9185, name: '현금서비스', itemStyle: { color: '#3B82F6' } },
-                    { value: 478528, name: '기타', itemStyle: { color: 'rgba(255, 255, 255, 0.5)' } },
-                    { value: 4380, name: '카드신고', itemStyle: { color: '#CA3437' } }
-                ];
-                
-                // 차트 옵션
-                const option = {
-                    series: [{
-                        type: 'pie',
-                        radius: ['40%', '70%'],
-                        center: ['50%', '50%'],
-                        startAngle: 45,
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        },
-                        data: data,
-                        emphasis: {
-                            scale: false
-                        },
-                        itemStyle: {
-                            borderWidth: 2,
-                            borderColor: '#232972'
-                        }
-                    }],
-                    tooltip: {
-                        show: false
-                    }
-                };
-                
-                myChart.setOption(option);
-                
-                // 리사이즈 대응
-                window.addEventListener('resize', function() {
-                    myChart.resize();
-                });
-            }
-        });
+      // Section01 차트 초기화
+      document.addEventListener("DOMContentLoaded", function () {
+        const chartDom = document.getElementById("section01-pie-chart");
+        if (chartDom) {
+          const myChart = echarts.init(chartDom);
+
+          // 차트 데이터 - 모든 데이터 동일하게
+          const data = [
+            { value: 200, name: "카드승인", itemStyle: { color: "#FACC15" } },
+            { value: 100, name: "조회", itemStyle: { color: "#14B8A6" } },
+            { value: 100, name: "현금서비스", itemStyle: { color: "#3B82F6" } },
+            {
+              value: 100,
+              name: "기타",
+              itemStyle: { color: "gray" },
+            },
+            { value: 100, name: "카드신고", itemStyle: { color: "#CA3437" } },
+          ];
+
+          // 차트 옵션 - Figma SVG 모양 재현
+          const option = {
+            series: [
+              {
+                type: "pie",
+                radius: ["40%", "70%"],
+                padAngle: -50,
+                itemStyle: {
+                  borderRadius: 100,
+                },
+                label: {
+                  show: false,
+                  position: "center",
+                },
+                data,
+              },
+            ],
+            tooltip: {
+              show: false,
+            },
+          };
+
+          myChart.setOption(option);
+
+          // 리사이즈 대응
+          window.addEventListener("resize", function () {
+            myChart.resize();
+          });
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
