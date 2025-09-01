@@ -2,11 +2,157 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=conversion/new-dark-theme/new-dark-main.html">
-    <title>RENOBIT Dashboard - Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENOBIT v3.0 Dashboard - Figma to HTML Conversion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+        }
+        
+        .logo {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #7b4bff 0%, #4b36ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #a6b3de;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: rgba(123, 75, 255, 0.2);
+            border: 1px solid rgba(123, 75, 255, 0.5);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #c8bcff;
+            margin-bottom: 40px;
+        }
+        
+        .enter-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #7b4bff 0%, #4b36ff 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 48px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(123, 75, 255, 0.3);
+        }
+        
+        .enter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(123, 75, 255, 0.5);
+        }
+        
+        .tech-stack {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-title {
+            font-size: 14px;
+            color: #707eb4;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .tech-items {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-size: 14px;
+            color: #c8bcff;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #707eb4;
+        }
+        
+        .footer a {
+            color: #a6b3de;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #c8bcff;
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to RENOBIT Dashboard...</p>
-    <p>If you are not redirected, <a href="conversion/new-dark-theme/new-dark-main.html">click here</a>.</p>
+    <div class="container">
+        <h1 class="logo">RENOBIT</h1>
+        <p class="subtitle">
+            Figma Design System을 HTML/CSS로 변환한<br>
+            실시간 모니터링 대시보드
+        </p>
+        
+        <div class="version-badge">v3.0 Dark Theme</div>
+        
+        <a href="conversion/new-dark-theme/new-dark-main.html" class="enter-btn">
+            대시보드 진입
+        </a>
+        
+        <div class="tech-stack">
+            <h3 class="tech-title">Tech Stack</h3>
+            <div class="tech-items">
+                <span class="tech-item">HTML5</span>
+                <span class="tech-item">CSS3</span>
+                <span class="tech-item">Vanilla JavaScript</span>
+                <span class="tech-item">Figma MCP</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                Converted from 
+                <a href="https://www.figma.com/design/VNqtXrH6ydqcDgYBsVFLbg/RENOBIT-ver.3.0-Design-System-Guide" target="_blank">
+                    Figma Design
+                </a>
+                with Claude Code
+            </p>
+        </div>
+    </div>
 </body>
 </html>
