@@ -1,0 +1,190 @@
+/* Main Component (업무시스템현황) Styles */
+.main-component {
+  position: absolute;
+  left: 493px;
+  top: 66px;
+  width: 734px;
+  height: 430px;
+  box-sizing: border-box;
+}
+
+/* Background Image */
+.main-component-bg {
+  position: absolute;
+  left: 79px;
+  top: 75px;
+  width: 638px;
+  height: 355px;
+  z-index: 0;
+}
+
+.main-component-bg img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Title */
+.main-component-title-wrapper {
+  position: absolute;
+  left: 0;
+  top: 42px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.main-component-title-bullet {
+  width: 10px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.main-component-title-text {
+  color: #FFFFFF;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* System Components Container */
+.system-components {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 734px;
+  height: 430px;
+}
+
+/* Individual System Component */
+.system-component {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.system-component-label {
+  color: #707EB4;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.system-component-image {
+  width: 86.46px;
+  height: 117.3px;
+}
+
+.system-component-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Special Labels (MCA, EAI) */
+.system-label-bg {
+  position: absolute;
+  width: 80px;
+  height: 36px;
+  background: #373D56;
+  border-radius: 130px;
+}
+
+.system-component-special {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.system-component-special .system-component-label {
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+/* Specific positions from Figma */
+/* 콜센터 */
+.system-call-center {
+  left: 162px;
+  top: 45px;
+  width: 86.46px;
+}
+
+/* 카드발급 */
+.system-card-issue {
+  left: 295px;
+  top: 0;
+  width: 86.46px;
+}
+
+/* 인터넷포탈 */
+.system-internet-portal {
+  left: 397px;
+  top: 66px;
+  width: 86.46px;
+}
+
+/* 계정계 */
+.system-account {
+  left: 526px;
+  top: 111px;
+  width: 86.46px;
+}
+
+/* 승인계 */
+.system-approval {
+  left: 641px;
+  top: 180px;
+  width: 86.46px;
+}
+
+/* 정보계 */
+.system-info {
+  left: 565px;
+  top: 275px;
+  width: 86.46px;
+}
+
+/* MCA Label Background */
+.system-mca-bg {
+  left: 255px;
+  top: 146px;
+}
+
+/* MCA */
+.system-mca {
+  left: 252px;
+  top: 157px;
+  width: 86.46px;
+  z-index: 1;
+}
+
+/* EAI Label Background */
+.system-eai-bg {
+  left: 362px;
+  top: 207px;
+}
+
+/* EAI */
+.system-eai {
+  left: 359px;
+  top: 218px;
+  width: 86.46px;
+  z-index: 1;
+}
+
+/* 은행 */
+.system-bank {
+  left: 15px;
+  top: 160px;
+  width: 86.46px;
+}

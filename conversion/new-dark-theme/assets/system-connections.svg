@@ -1,0 +1,32 @@
+<svg width="545" height="301" viewBox="0 0 545 301" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Connection lines between system components -->
+  <!-- Call Center to MCA -->
+  <line x1="40" y1="165" x2="205" y2="206" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  
+  <!-- Card Issue to MCA -->
+  <line x1="148" y1="165" x2="205" y2="206" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  
+  <!-- Internet Portal to EAI -->
+  <line x1="266" y1="165" x2="313" y2="206" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  
+  <!-- Account to Info -->
+  <line x1="384" y1="88" x2="438" y2="129" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  
+  <!-- Approval to Info -->
+  <line x1="492" y1="88" x2="438" y2="129" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  
+  <!-- Info to Bank -->
+  <line x1="438" y1="165" x2="421" y2="206" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  
+  <!-- MCA to EAI -->
+  <line x1="245" y1="224" x2="273" y2="224" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  
+  <!-- EAI to Bank -->
+  <line x1="353" y1="224" x2="381" y2="224" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  
+  <!-- Account to EAI -->
+  <line x1="384" y1="88" x2="313" y2="206" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  
+  <!-- Approval to Bank -->
+  <line x1="492" y1="88" x2="421" y2="206" stroke="#3A4570" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+</svg>
