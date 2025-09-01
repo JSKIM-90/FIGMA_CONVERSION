@@ -1,0 +1,121 @@
+/* Left Group - Event Status */
+.browser-event-left {
+  width: 202px;
+  height: 218px;
+  background: #041215;
+  border-radius: 18px;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-content: center;
+}
+
+/* Event Status Container */
+.browser-event-status {
+  width: 86px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Event Status Button */
+.browser-event-status-btn {
+  width: 100%;
+  height: 24px;
+  background: #373D56;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 15px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Status Icons */
+.browser-event-status-icon {
+  width: 9px;
+  height: 9px;
+}
+
+
+.browser-event-status-divider {
+  width: 0.01px;
+  height: 12px;
+  background: #D3DBF9;
+  flex-shrink: 0;
+}
+
+.browser-event-status-text {
+  width: 24px;
+  color: #A6B3DE;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1;
+}
+
+/* ALL button special styling */
+.browser-event-status-btn.active .browser-event-status-text {
+  color: #D3DBF9;
+}
+
+/* Event Counts Container */
+.browser-event-counts {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #D3DBF9;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: right;
+  line-height: 1;
+}
+
+.browser-event-count {
+  margin-bottom: 13px;
+}
+
+.browser-event-count:last-child {
+  margin-bottom: 0;
+}
+
+/* Event Chart */
+.browser-event-chart {
+  width: 156px;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.browser-event-chart-bar {
+  height: 6px;
+  border-radius: 3px;
+}
+
+.browser-event-chart-bar.critical {
+  width: 24px;
+  background: #F32F50;
+}
+
+.browser-event-chart-bar.major {
+  width: 32px;
+  background: #FC7F01;
+}
+
+.browser-event-chart-bar.minor {
+  width: 57px;
+  background: #FDD01F;
+}
+
+.browser-event-chart-bar.warning {
+  width: 43px;
+  background: #2BBDFF;
+}

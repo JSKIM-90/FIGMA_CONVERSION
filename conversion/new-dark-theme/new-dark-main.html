@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="components/content02/section01.css" />
     <link rel="stylesheet" href="components/content02/section02.css" />
     <link rel="stylesheet" href="components/content02/section03.css" />
+    <link rel="stylesheet" href="components/browser-event/browser-event.css" />
+    <link rel="stylesheet" href="components/browser-event/event-left.css" />
+    <link rel="stylesheet" href="components/browser-event/event-right.css" />
 
     <!-- Font -->
     <link
@@ -661,8 +664,192 @@
       </div>
 
       <!-- Browser Event: 이벤트현황 -->
-      <div id="browser-event">
-        <!-- Event table will be loaded here -->
+      <div id="browser-event" data-name="browser-event" data-node-id="29:2033">
+        <!-- Background Box -->
+        <div class="browser-event-box">
+          <div class="browser-event-box-bg"></div>
+          <div class="browser-event-box-content"></div>
+          
+          <!-- Top Buttons -->
+          <div class="browser-event-buttons">
+            <img class="browser-event-btn-bg" src="assets/browser-event/btn-bg.svg" alt="">
+            <button class="browser-event-btn-auto">
+              <img class="browser-event-btn-auto-icon" src="assets/browser-event/radio-checked.svg" alt="">
+              <span class="browser-event-btn-auto-text">Auto</span>
+            </button>
+            <button class="browser-event-btn-close">
+              <img class="browser-event-btn-close-icon" src="assets/browser-event/close-icon.svg" alt="">
+            </button>
+          </div>
+        </div>
+        
+        <!-- Title -->
+        <div class="browser-event-title">
+          <img class="browser-event-title-bullet" src="assets/icons/bullet-title.svg" alt="">
+          <div class="browser-event-title-text">이벤트현황</div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="browser-event-content">
+          <!-- Left Group: Event Status -->
+          <div class="browser-event-left">
+            <!-- Status Buttons Column -->
+            <div class="browser-event-status">
+              <button class="browser-event-status-btn active">
+                <div class="browser-event-status-text">ALL</div>
+              </button>
+              <button class="browser-event-status-btn">
+                <img class="browser-event-status-icon" src="assets/browser-event/status-cr.svg" alt="">
+                <div class="browser-event-status-divider"></div>
+                <div class="browser-event-status-text">CR</div>
+              </button>
+              <button class="browser-event-status-btn">
+                <img class="browser-event-status-icon" src="assets/browser-event/status-ma.svg" alt="">
+                <div class="browser-event-status-divider"></div>
+                <div class="browser-event-status-text">MA</div>
+              </button>
+              <button class="browser-event-status-btn">
+                <img class="browser-event-status-icon" src="assets/browser-event/status-mi.svg" alt="">
+                <div class="browser-event-status-divider"></div>
+                <div class="browser-event-status-text">MI</div>
+              </button>
+              <button class="browser-event-status-btn">
+                <img class="browser-event-status-icon" src="assets/browser-event/status-wa.svg" alt="">
+                <div class="browser-event-status-divider"></div>
+                <div class="browser-event-status-text">WA</div>
+              </button>
+              <button class="browser-event-status-btn">
+                <img class="browser-event-status-icon" src="assets/browser-event/status-no.svg" alt="">
+                <div class="browser-event-status-divider"></div>
+                <div class="browser-event-status-text">NO</div>
+              </button>
+            </div>
+            
+            <!-- Counts Column -->
+            <div class="browser-event-counts">
+              <span class="browser-event-count">1,061</span>
+              <span class="browser-event-count">1</span>
+              <span class="browser-event-count">2</span>
+              <span class="browser-event-count">4</span>
+              <span class="browser-event-count">4</span>
+              <span class="browser-event-count">1,050</span>
+            </div>
+            
+            <!-- Chart -->
+            <div class="browser-event-chart">
+              <div class="browser-event-chart-bar critical"></div>
+              <div class="browser-event-chart-bar major"></div>
+              <div class="browser-event-chart-bar minor"></div>
+              <div class="browser-event-chart-bar warning"></div>
+            </div>
+          </div>
+          
+          <!-- Right Group: Event Table -->
+          <div class="browser-event-right">
+            <!-- Header -->
+            <div class="browser-event-header">
+              <div class="browser-event-header-item">등급</div>
+              <div class="browser-event-header-item">업무명</div>
+              <div class="browser-event-header-item">호스트명</div>
+              <div class="browser-event-header-item">메시지그룹</div>
+              <div class="browser-event-header-item">어플리케이션</div>
+              <div class="browser-event-header-item">오브젝트</div>
+              <div class="browser-event-header-item">발생시간</div>
+              <div class="browser-event-header-item">메시지</div>
+              <div class="browser-event-header-divider"></div>
+              <div class="browser-event-header-divider"></div>
+              <div class="browser-event-header-divider"></div>
+              <div class="browser-event-header-divider"></div>
+              <div class="browser-event-header-divider"></div>
+              <div class="browser-event-header-divider"></div>
+              <div class="browser-event-header-divider"></div>
+              <div class="browser-event-header-divider"></div>
+            </div>
+            
+            <!-- Grid -->
+            <div class="browser-event-grid">
+              <!-- Row 1: Critical -->
+              <div class="browser-event-row">
+                <div class="browser-event-badge critical">
+                  <div class="browser-event-badge-bg"></div>
+                  <div class="browser-event-badge-inner"></div>
+                  <div class="browser-event-badge-text">Critical</div>
+                </div>
+                <div class="browser-event-cell business">기간계운영 DB#1</div>
+                <div class="browser-event-cell host">host01</div>
+                <div class="browser-event-cell msg-group">AP</div>
+                <div class="browser-event-cell app">ControlM</div>
+                <div class="browser-event-cell object">Windows</div>
+                <div class="browser-event-cell time">2024-10-21 15:00:00</div>
+                <div class="browser-event-cell message">p_chmat 프로세스 다운[계정 : root]</div>
+              </div>
+              
+              <!-- Row 2: Warning -->
+              <div class="browser-event-row">
+                <div class="browser-event-badge warning">
+                  <div class="browser-event-badge-bg"></div>
+                  <div class="browser-event-badge-inner"></div>
+                  <div class="browser-event-badge-text">Warning</div>
+                </div>
+                <div class="browser-event-cell business">기간계운영 WAS#2</div>
+                <div class="browser-event-cell host">host02</div>
+                <div class="browser-event-cell msg-group">SVR</div>
+                <div class="browser-event-cell app">ControlM</div>
+                <div class="browser-event-cell object">Windows</div>
+                <div class="browser-event-cell time">2024-10-21 15:00:00</div>
+                <div class="browser-event-cell message">LOCK_WAIT_SESSION 임계치 초과(1/1)</div>
+              </div>
+              
+              <!-- Row 3: Minor -->
+              <div class="browser-event-row">
+                <div class="browser-event-badge minor">
+                  <div class="browser-event-badge-bg"></div>
+                  <div class="browser-event-badge-inner"></div>
+                  <div class="browser-event-badge-text">Minor</div>
+                </div>
+                <div class="browser-event-cell business">기간계운영 DB#2</div>
+                <div class="browser-event-cell host">host03</div>
+                <div class="browser-event-cell msg-group">SVR</div>
+                <div class="browser-event-cell app">ControlM</div>
+                <div class="browser-event-cell object">Windows</div>
+                <div class="browser-event-cell time">2024-10-21 15:00:00</div>
+                <div class="browser-event-cell message">ACTIVE_SESSION 임계치 초과(235/150)</div>
+              </div>
+              
+              <!-- Row 4: Major -->
+              <div class="browser-event-row">
+                <div class="browser-event-badge major">
+                  <div class="browser-event-badge-bg"></div>
+                  <div class="browser-event-badge-inner"></div>
+                  <div class="browser-event-badge-text">Major</div>
+                </div>
+                <div class="browser-event-cell business">FEB운영 #4</div>
+                <div class="browser-event-cell host">host04</div>
+                <div class="browser-event-cell msg-group">AP</div>
+                <div class="browser-event-cell app">ControlM</div>
+                <div class="browser-event-cell object">Windows</div>
+                <div class="browser-event-cell time">2024-10-21 15:00:00</div>
+                <div class="browser-event-cell message">Memory 84.03% 사용중</div>
+              </div>
+              
+              <!-- Row 5: Normal -->
+              <div class="browser-event-row">
+                <div class="browser-event-badge normal">
+                  <div class="browser-event-badge-bg"></div>
+                  <div class="browser-event-badge-inner"></div>
+                  <div class="browser-event-badge-text">Normal</div>
+                </div>
+                <div class="browser-event-cell business">기간계운영 DB#2</div>
+                <div class="browser-event-cell host">host05</div>
+                <div class="browser-event-cell msg-group">AP</div>
+                <div class="browser-event-cell app">ControlM</div>
+                <div class="browser-event-cell object">Windows</div>
+                <div class="browser-event-cell time">2024-10-21 15:00:00</div>
+                <div class="browser-event-cell message">Memory 84.03% 사용중</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

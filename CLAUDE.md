@@ -305,19 +305,36 @@ Figma_Conversion/
 1. **Figma 분석**
    - `get_code`로 구조 파악
    - `get_image`로 시각적 확인
+   - **`get_metadata`로 정확한 치수 확인** (중요!)
    - 필요한 모든 SVG/이미지 다운로드
 
 2. **단계별 구현**
    - 레이아웃 골격 먼저
+   - **컨테이너 크기는 명시적으로 설정** (자동 계산 의존 X)
    - 컴포넌트 하나씩 추가
    - 각 단계마다 커밋
 
 3. **검증**
    - Figma 이미지와 픽셀 단위 비교
    - 색상, 크기, 위치 정확성 확인
+   - **사용자가 제공한 구체적 수치 우선 적용**
 
 ### 학습된 주요 사항
-1. **차트 구현 전략 변경**
+
+1. **Figma 치수 정확성** (2025-09-01 추가)
+   - get_code의 Tailwind 클래스에만 의존하지 말 것
+   - get_metadata로 각 요소의 정확한 px 값 확인 필수
+   - 예: event-status 컨테이너 169px (버튼 24px × 6 + gap 5px × 5)
+   - ~~자동 계산 의존 대신 명시적 크기 설정~~ → **Flexbox 레이아웃 주의사항** 참조
+   - 사용자가 Figma에서 가져온 수치는 최우선 반영
+   
+   **Flexbox 레이아웃 주의사항**:
+   - flex-wrap과 align-content 사용 시 명시적 높이가 오히려 레이아웃을 방해할 수 있음
+   - 자연스러운 흐름이 더 정확한 경우가 많음
+   - event-counts처럼 `justify-content: center`만으로 충분한 경우도 있음
+   - Figma의 높이값은 "결과적 높이"일 수 있으니, 강제하기 전에 테스트 필요
+
+2. **차트 구현 전략 변경**
    - ECharts → 정적 SVG/HTML로 변경
    - 퍼블리싱 정확도 우선, 나중에 동적 라이브러리 교체 가능
    - Figma SVG 직접 사용으로 100% 디자인 일치
@@ -346,10 +363,18 @@ Figma_Conversion/
 - ✅ Section01 (거래현황) - 정적 SVG 파이차트
 - ✅ Section02 (트랜젝션 현황) - 정적 막대 차트
 - ✅ Main Component (업무시스템현황) - 3D 아이소메트릭 구현
-- ⏳ Content02 컴포넌트들
-- ⏳ Browser Event (이벤트현황)
+- ✅ Content02 컴포넌트들 (콜센터 ARS, 승인현황, 서비스 TOP5)
+- ✅ Browser Event (이벤트현황) - Flexbox 레이아웃 최적화 완료
 
-### 최근 작업 내역 (2025-01-01)
+### 최근 작업 내역 (2025-09-01)
+1. **Browser Event 레이아웃 디버깅**
+   - 버튼 오버플로우 문제 해결 (gap 20px → 5px)
+   - ALL 버튼 구조 단순화 (구분선 제거)
+   - event-status 높이: 명시적 설정 후 제거 (자연스러운 흐름)
+   - event-counts: justify-content: center만으로 해결
+   - **핵심 교훈**: Flexbox에서는 명시적 높이보다 자연스러운 흐름이 때로 더 정확
+
+### 이전 작업 내역 (2025-01-01)
 1. **Section01 개선**
    - ECharts 제거 → Figma SVG 직접 사용
    - 차트 크기 121x113px로 정확히 조정

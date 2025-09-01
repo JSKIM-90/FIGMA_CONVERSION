@@ -1,0 +1,162 @@
+/* Browser Event Container */
+#browser-event {
+  position: absolute;
+  left: 29px;
+  top: 770px;
+  width: 1861px;
+  height: 303px;
+  padding: 16px 30px;
+  box-sizing: border-box;
+}
+
+/* Hover effect for debugging */
+#browser-event:hover {
+  outline: 2px dashed rgba(255, 255, 0, 0.3);
+  outline-offset: -2px;
+}
+
+#browser-event:hover::before {
+  content: 'browser-event (29:2033)';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 11px;
+  color: rgba(255, 255, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2px 6px;
+  border-radius: 3px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Box Event Background */
+.browser-event-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1860px;
+  height: 310px;
+}
+
+.browser-event-box-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1860px;
+  height: 310px;
+  background: linear-gradient(90deg, #39288E 41.398%, #7159D0 62.124%);
+  border-radius: 30px 30px 0 0;
+}
+
+.browser-event-box-content {
+  position: absolute;
+  left: 0;
+  top: 45px;
+  width: 1860px;
+  height: 265px;
+  background: #28293D;
+  border-radius: 30px 30px 0 0;
+}
+
+/* Top Buttons */
+.browser-event-buttons {
+  position: absolute;
+  left: 822px;
+  top: 0;
+  width: 211.22px;
+  height: 38px;
+  z-index: 2;
+}
+
+.browser-event-btn-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Auto Button */
+.browser-event-btn-auto {
+  position: absolute;
+  left: 47px;
+  top: 0;
+  width: 76px;
+  height: 32px;
+  background: #502EE9;
+  border: none;
+  border-radius: 16px;
+  padding: 7px 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.browser-event-btn-auto-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.browser-event-btn-auto-text {
+  color: #FFFFFF;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Close Button */
+.browser-event-btn-close {
+  position: absolute;
+  left: 138px;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: #373D56;
+  border: none;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.browser-event-btn-close-icon {
+  width: 10px;
+  height: 6px;
+}
+
+/* Title */
+.browser-event-title {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 27px;
+  z-index: 1;
+}
+
+.browser-event-title-bullet {
+  width: 10px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.browser-event-title-text {
+  color: #FFFFFF;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Main Content */
+.browser-event-content {
+  position: relative;
+  display: flex;
+  gap: 19px;
+  width: 1801px;
+  z-index: 1;
+}
