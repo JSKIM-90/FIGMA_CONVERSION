@@ -59,7 +59,6 @@ body {
     /* Header는 투명 - 내부 SVG가 배경 역할 */
     
     /* 경계 표시 - 디자이너 확인용 */
-    background: rgba(0, 255, 0, 0.03);  /* 아주 연한 녹색 */
     outline: 2px dashed rgba(0, 255, 0, 0.5);  /* 녹색 점선 */
 }
 
@@ -71,7 +70,6 @@ body {
     width: 1860px;
     height: 430px;
     z-index: 5;
-    background: rgba(33, 150, 243, 0.05);  /* 아주 연한 파란색 */
     outline: 1px dashed rgba(33, 150, 243, 0.3);
 }
 
@@ -83,7 +81,6 @@ body {
     width: 1861px;
     height: 269px;
     z-index: 5;
-    background: rgba(76, 175, 80, 0.05);  /* 아주 연한 초록색 */
     outline: 1px dashed rgba(76, 175, 80, 0.3);
 }
 
@@ -95,7 +92,6 @@ body {
     width: 1861px;
     height: 303px;
     z-index: 5;
-    background: rgba(244, 48, 80, 0.05);  /* 아주 연한 빨간색 */
     outline: 1px dashed rgba(244, 48, 80, 0.3);
 }
 
