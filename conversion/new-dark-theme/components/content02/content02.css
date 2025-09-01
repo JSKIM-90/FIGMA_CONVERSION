@@ -1,0 +1,32 @@
+/* Content02 Container */
+#content02 {
+  position: absolute;
+  left: 29px;
+  top: 475px;
+  width: 1861px;
+  height: 269px;
+  display: flex;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+/* Hover effect for debugging */
+#content02:hover {
+  outline: 2px dashed rgba(255, 255, 0, 0.3);
+  outline-offset: -2px;
+}
+
+/* 시각적 레이블 - 개발용 (hover 시에만 표시) */
+#content02:hover::before {
+  content: 'content02 (29:2046)';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 11px;
+  color: rgba(255, 255, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2px 6px;
+  border-radius: 3px;
+  z-index: 10;
+  pointer-events: none;
+}

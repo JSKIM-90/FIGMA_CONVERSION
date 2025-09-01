@@ -1,0 +1,203 @@
+/* Section02: 승인 현황 */
+.content02-section02 {
+  position: relative;
+  width: 813px;
+  height: 269px;
+  background: #232972;
+  border: 2px solid rgba(75, 92, 148, 0.5);
+  border-radius: 30px;
+  padding: 25px 26px;
+  box-sizing: border-box;
+}
+
+/* Hover effect for section02 */
+.content02-section02:hover {
+  outline: 1px dashed rgba(100, 100, 200, 0.5);
+  outline-offset: -4px;
+}
+
+.content02-section02:hover::before {
+  content: 'section02 - 승인 현황';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 11px;
+  color: rgba(100, 100, 200, 0.8);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 6px;
+  border-radius: 3px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Title */
+.content02-section02-title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 11px;
+}
+
+.content02-section02-title-bullet {
+  width: 10px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.content02-section02-title-text {
+  color: #FFFFFF;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Groups Container */
+.content02-section02-groups {
+  display: flex;
+  gap: 24px;
+}
+
+/* Each Group */
+.content02-section02-group {
+  width: 368px;
+}
+
+/* Group Title */
+.content02-section02-group-title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.content02-section02-group-bullet {
+  width: 6px;
+  height: 6px;
+  background: #9ECF50;
+  border-radius: 50%;
+}
+
+.content02-section02-group-text {
+  color: #A6B3DE;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Table Header */
+.content02-section02-header {
+  display: flex;
+  gap: 26px;
+  margin-left: 116px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.content02-section02-header-item {
+  color: #707EB4;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.content02-section02-header-divider {
+  width: 1px;
+  height: 10px;
+  background: #4B5C94;
+}
+
+/* Table Grid */
+.content02-section02-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Table Row */
+.content02-section02-row {
+  width: 368px;
+  height: 34px;
+  background: rgba(14, 17, 48, 0.5);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Cell Styles */
+.content02-section02-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.content02-section02-cell-label {
+  width: 91px;
+  padding-left: 20px;
+  color: #A6B3DE;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.content02-section02-cell-divider {
+  width: 1px;
+  height: 20px;
+  background: #4B5C94;
+}
+
+.content02-section02-cell-value {
+  width: 77px;
+  color: #FFFFFF;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.content02-section02-cell-current {
+  width: 79px;
+  background: rgba(75, 92, 148, 0.3);
+  border-radius: 0 20px 20px 0;
+}
+
+.content02-section02-cell-percent {
+  width: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.content02-section02-percent-value {
+  color: #FFFFFF;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Arrow Icons */
+.content02-section02-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.content02-section02-arrow-up {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 11px solid #CA3437;
+}
+
+.content02-section02-arrow-down {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 11px solid #14B8A6;
+}

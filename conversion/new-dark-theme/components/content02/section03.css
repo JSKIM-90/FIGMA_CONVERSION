@@ -1,0 +1,153 @@
+/* Section03: 서비스 TOP5현황 */
+.content02-section03 {
+  position: relative;
+  width: 568px;
+  height: 269px;
+  background: #232972;
+  border: 2px solid rgba(75, 92, 148, 0.5);
+  border-radius: 30px;
+  padding: 21px 30px;
+  box-sizing: border-box;
+}
+
+/* Hover effect for section03 */
+.content02-section03:hover {
+  outline: 1px dashed rgba(200, 100, 100, 0.5);
+  outline-offset: -4px;
+}
+
+.content02-section03:hover::before {
+  content: 'section03 - 서비스 TOP5현황';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 11px;
+  color: rgba(200, 100, 100, 0.8);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 6px;
+  border-radius: 3px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Title */
+.content02-section03-title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 19px;
+}
+
+.content02-section03-title-bullet {
+  width: 10px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.content02-section03-title-text {
+  color: #FFFFFF;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* List Container */
+.content02-section03-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* List Item */
+.content02-section03-item {
+  width: 508px;
+  height: 34px;
+  background: rgba(14, 17, 48, 0.5);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 34px 0 32px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Rank Number */
+.content02-section03-rank {
+  width: 11px;
+  color: #707EB4;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-right: 35px;
+}
+
+/* Service Name */
+.content02-section03-name {
+  color: #A6B3DE;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+}
+
+/* Progress Bar Container */
+.content02-section03-progress-container {
+  position: absolute;
+  right: 70px;
+  top: 3px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+/* Progress Bar */
+.content02-section03-progress {
+  height: 28px;
+  background: linear-gradient(90deg, #7B4BFF 0%, #4B36FF 100%);
+  border-radius: 20px;
+}
+
+/* Progress widths for each rank */
+.content02-section03-item:nth-child(1) .content02-section03-progress {
+  width: 188px;
+}
+
+.content02-section03-item:nth-child(2) .content02-section03-progress {
+  width: 118px;
+}
+
+.content02-section03-item:nth-child(3) .content02-section03-progress {
+  width: 111px;
+}
+
+.content02-section03-item:nth-child(4) .content02-section03-progress {
+  width: 63px;
+}
+
+.content02-section03-item:nth-child(5) .content02-section03-progress {
+  width: 37px;
+}
+
+/* Value */
+.content02-section03-value {
+  position: absolute;
+  right: 87px;
+  color: #FFFFFF;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  z-index: 1;
+}
+
+/* Unit */
+.content02-section03-unit {
+  position: absolute;
+  right: 34px;
+  color: #707EB4;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
