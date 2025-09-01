@@ -1,0 +1,155 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #323232;
+}
+
+/* Dashboard Container - Exactly 1920x1080 as per Figma */
+.dashboard-container {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+}
+
+/* ===========================================
+   MAIN LAYOUT BLOCKS - Exact Figma positioning
+   =========================================== */
+
+/* Header - Exact positioning from Figma */
+.header {
+    position: absolute;
+    left: 29px;
+    top: -1px;
+    width: 1860px;
+    height: 75px;
+    z-index: 100;
+}
+
+/* Content01 - Exact positioning from Figma */
+.content01 {
+    position: absolute;
+    left: 30px;
+    top: 66px;
+    width: 1860px;
+    height: 430px;
+}
+
+/* Content02 - Exact positioning from Figma */
+.content02 {
+    position: absolute;
+    left: 29px;
+    top: 475px;
+    width: 1861px;
+    height: 269px;
+}
+
+/* Browser Event - Exact positioning from Figma */
+.browser-event {
+    position: absolute;
+    left: 29px;
+    top: 770px;
+    width: 1861px;
+    height: 303px;
+}
+
+/* ============================================
+   DEBUG: Hover effects for development
+   Remove these in production
+   ============================================ */
+
+/* Main Layout Blocks - Thick borders */
+/* Header hover effect */
+.header:hover {
+    outline: 2px solid rgba(80, 46, 233, 0.3);
+    outline-offset: -2px;
+}
+
+.header:hover::before {
+    content: "HEADER (25:864)";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(80, 46, 233, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3px 8px;
+    border-radius: 3px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Content01 main block */
+.content01:hover {
+    outline: 2px solid rgba(100, 200, 100, 0.3);
+    outline-offset: -2px;
+}
+
+.content01:hover::after {
+    content: "CONTENT01 (25:606)";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(100, 200, 100, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3px 8px;
+    border-radius: 3px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Content02 main block */
+.content02:hover {
+    outline: 2px solid rgba(100, 150, 200, 0.3);
+    outline-offset: -2px;
+}
+
+.content02:hover::after {
+    content: "CONTENT02 (25:461)";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(100, 150, 200, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3px 8px;
+    border-radius: 3px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Browser Event main block */
+.browser-event:hover {
+    outline: 2px solid rgba(50, 100, 200, 0.3);
+    outline-offset: -2px;
+}
+
+.browser-event:hover::after {
+    content: "BROWSER-EVENT (25:448)";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(50, 100, 200, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3px 8px;
+    border-radius: 3px;
+    z-index: 1000;
+    pointer-events: none;
+}
