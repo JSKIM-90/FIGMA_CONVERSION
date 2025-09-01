@@ -44,26 +44,27 @@
 .section01-block {
   display: flex;
   align-items: center;
-  gap: 40px;
-  height: 110px;
+  gap: 96px;
+  height: auto;
 }
 
 /* 데이터 리스트 */
 .section01-data {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   flex-shrink: 0;
+  width: 110px;
 }
 
 .section01-data-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .section01-data-item .label {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: #707eb4;
   line-height: 1;
@@ -71,7 +72,7 @@
 
 .section01-data-item .value {
   font-family: "Tomorrow", sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   color: #ffffff;
   line-height: 1;
@@ -79,11 +80,10 @@
 
 /* 차트 컨테이너 */
 .section01-chart {
-  width: 160px;
-  height: 160px;
+  width: 121px;
+  height: 113px;
   position: relative;
   flex-shrink: 0;
-  margin-top: -30px;
 }
 
 #section01-pie-chart {

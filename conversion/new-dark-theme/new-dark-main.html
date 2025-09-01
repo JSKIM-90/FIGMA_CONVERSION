@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="components/header/header.css" />
     <link rel="stylesheet" href="components/content01/content01.css" />
     <link rel="stylesheet" href="components/content01/section01.css" />
+    <link rel="stylesheet" href="components/content01/section02.css" />
 
     <!-- Font -->
     <link
@@ -22,8 +23,6 @@
       rel="stylesheet"
     />
 
-    <!-- ECharts -->
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
   </head>
   <body>
     <!-- Main Container (1920x1080) -->
@@ -128,7 +127,7 @@
 
                 <!-- 차트 -->
                 <div class="section01-chart">
-                  <div id="section01-pie-chart"></div>
+                  <img src="assets/charts/section01-pie.svg" alt="거래현황 차트" style="width: 100%; height: 100%;">
                 </div>
               </div>
 
@@ -200,9 +199,99 @@
             </div>
           </div>
 
-          <!-- Section02: 계정 -->
+          <!-- Section02: 트랜젝션 현황 -->
           <div class="section02" data-name="section02" data-node-id="29:2226">
-            <!-- 계정 컨텐츠는 나중에 추가 -->
+            <div class="section02-inner">
+              <!-- 메인 타이틀 -->
+              <div class="section02-title">
+                <img class="bullet" src="assets/icons/bullet-title.svg" alt="">
+                <div class="text">트랜젝션 현황</div>
+              </div>
+              
+              <!-- Group01: 계정 -->
+              <div class="section02-group" data-name="group01">
+                <!-- 서브타이틀 -->
+                <div class="section02-subtitle">
+                  <img class="bullet" src="assets/icons/bullet-subtitle.svg" alt="">
+                  <div class="text">계정</div>
+                </div>
+                
+                <!-- 차트 박스 -->
+                <div class="section02-chart-box">
+                  <!-- 차트 영역 -->
+                  <div class="section02-chart">
+                    <!-- 배경 막대들 -->
+                    <div class="section02-chart-bg" id="account-chart-bg"></div>
+                    <!-- 데이터 막대들 -->
+                    <div class="section02-chart-bars" id="account-chart-bars"></div>
+                    <!-- 차트 라인 -->
+                    <div class="section02-chart-line">
+                      <img src="assets/charts/chart-line1.svg" alt="" style="width: 100%; height: 100%;">
+                    </div>
+                  </div>
+                  
+                  <!-- 범례 -->
+                  <div class="section02-legend">
+                    <div class="section02-legend-item">
+                      <div class="section02-legend-label">
+                        <img class="section02-legend-icon" src="assets/icons/legend/legend-green1.svg" alt="">
+                        <div class="section02-legend-text">금일</div>
+                      </div>
+                      <div class="section02-legend-value">7,927,921</div>
+                    </div>
+                    <div class="section02-legend-item">
+                      <div class="section02-legend-label">
+                        <img class="section02-legend-icon" src="assets/icons/legend/legend-green2.svg" alt="">
+                        <div class="section02-legend-text">전일</div>
+                      </div>
+                      <div class="section02-legend-value">7,320,915</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Group02: 승인 -->
+              <div class="section02-group" data-name="group02">
+                <!-- 서브타이틀 -->
+                <div class="section02-subtitle">
+                  <img class="bullet" src="assets/icons/bullet-subtitle.svg" alt="">
+                  <div class="text">승인</div>
+                </div>
+                
+                <!-- 차트 박스 -->
+                <div class="section02-chart-box">
+                  <!-- 차트 영역 -->
+                  <div class="section02-chart">
+                    <!-- 배경 막대들 -->
+                    <div class="section02-chart-bg" id="approval-chart-bg"></div>
+                    <!-- 데이터 막대들 -->
+                    <div class="section02-chart-bars" id="approval-chart-bars"></div>
+                    <!-- 차트 라인 -->
+                    <div class="section02-chart-line">
+                      <img src="assets/charts/chart-line2.svg" alt="" style="width: 100%; height: 100%;">
+                    </div>
+                  </div>
+                  
+                  <!-- 범례 -->
+                  <div class="section02-legend">
+                    <div class="section02-legend-item">
+                      <div class="section02-legend-label">
+                        <img class="section02-legend-icon" src="assets/icons/legend/legend-orange1.svg" alt="">
+                        <div class="section02-legend-text">금일</div>
+                      </div>
+                      <div class="section02-legend-value">7,927,921</div>
+                    </div>
+                    <div class="section02-legend-item">
+                      <div class="section02-legend-label">
+                        <img class="section02-legend-icon" src="assets/icons/legend/legend-orange2.svg" alt="">
+                        <div class="section02-legend-text">전일</div>
+                      </div>
+                      <div class="section02-legend-value">7,320,915</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -228,55 +317,53 @@
     </div>
 
     <script>
-      // Section01 차트 초기화
-      document.addEventListener("DOMContentLoaded", function () {
-        const chartDom = document.getElementById("section01-pie-chart");
-        if (chartDom) {
-          const myChart = echarts.init(chartDom);
-
-          // 차트 데이터 - 모든 데이터 동일하게
-          const data = [
-            { value: 200, name: "카드승인", itemStyle: { color: "#FACC15" } },
-            { value: 100, name: "조회", itemStyle: { color: "#14B8A6" } },
-            { value: 100, name: "현금서비스", itemStyle: { color: "#3B82F6" } },
-            {
-              value: 100,
-              name: "기타",
-              itemStyle: { color: "gray" },
-            },
-            { value: 100, name: "카드신고", itemStyle: { color: "#CA3437" } },
-          ];
-
-          // 차트 옵션 - Figma SVG 모양 재현
-          const option = {
-            series: [
-              {
-                type: "pie",
-                radius: ["40%", "70%"],
-                padAngle: -50,
-                itemStyle: {
-                  borderRadius: 100,
-                },
-                label: {
-                  show: false,
-                  position: "center",
-                },
-                data,
-              },
-            ],
-            tooltip: {
-              show: false,
-            },
-          };
-
-          myChart.setOption(option);
-
-          // 리사이즈 대응
-          window.addEventListener("resize", function () {
-            myChart.resize();
-          });
+      // Section02 차트 초기화
+      function initSection02Charts() {
+        // 계정 차트 데이터 (43개 막대)
+        const accountData = [57, 71, 44, 51, 51, 57, 80, 64, 57, 68, 44, 57, 39, 44, 51, 60, 51, 57, 51, 71, 44, 51, 57, 57, 64, 68, 51, 57, 51, 57, 60, 67, 60, 51, 51, 60, 64, 71, 64, 60, 57, 64, 67];
+        
+        // 승인 차트 데이터 (43개 막대)
+        const approvalData = [57, 71, 44, 51, 51, 57, 80, 64, 57, 68, 44, 57, 39, 44, 51, 60, 51, 57, 51, 71, 44, 51, 57, 57, 64, 68, 51, 57, 51, 57, 60, 67, 60, 51, 51, 60, 64, 71, 64, 60, 57, 64, 67];
+        
+        // 계정 차트 생성
+        const accountBgContainer = document.getElementById('account-chart-bg');
+        const accountBarsContainer = document.getElementById('account-chart-bars');
+        
+        // 승인 차트 생성
+        const approvalBgContainer = document.getElementById('approval-chart-bg');
+        const approvalBarsContainer = document.getElementById('approval-chart-bars');
+        
+        // 배경 막대 생성 (43개)
+        for (let i = 0; i < 43; i++) {
+          // 계정 차트 배경
+          const bgBar1 = document.createElement('div');
+          bgBar1.className = 'bar-bg';
+          accountBgContainer.appendChild(bgBar1);
+          
+          // 승인 차트 배경
+          const bgBar2 = document.createElement('div');
+          bgBar2.className = 'bar-bg';
+          approvalBgContainer.appendChild(bgBar2);
         }
-      });
+        
+        // 데이터 막대 생성
+        accountData.forEach(height => {
+          const bar = document.createElement('div');
+          bar.className = 'bar-data account';
+          bar.style.height = height + 'px';
+          accountBarsContainer.appendChild(bar);
+        });
+        
+        approvalData.forEach(height => {
+          const bar = document.createElement('div');
+          bar.className = 'bar-data approval';
+          bar.style.height = height + 'px';
+          approvalBarsContainer.appendChild(bar);
+        });
+      }
+      
+      // Section02 차트 초기화 실행
+      initSection02Charts();
     </script>
   </body>
 </html>
