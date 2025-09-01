@@ -1,0 +1,188 @@
+/* Section02 - 트랜젝션 현황 스타일 */
+
+/* Section02 컨테이너 */
+.section02 {
+  width: 568px;
+  height: 454px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Section02 내부 컨테이너 */
+.section02-inner {
+  width: 100%;
+  height: 100%;
+  background: #232972;
+  border-radius: 30px;
+  border: 2px solid rgba(75, 92, 148, 0.5);
+  padding: 21px 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 메인 타이틀 영역 */
+.section02-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section02-title .bullet {
+  width: 10px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.section02-title .text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* 그룹 컨테이너 (계정, 승인) */
+.section02-group {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 518px;
+}
+
+/* 서브타이틀 영역 */
+.section02-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section02-subtitle .bullet {
+  width: 6px;
+  height: 7px;
+  flex-shrink: 0;
+}
+
+.section02-subtitle .text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #707eb4;
+  line-height: 1;
+}
+
+/* 차트 박스 */
+.section02-chart-box {
+  width: 100%;
+  height: 119px;
+  background: #0e1130;
+  border-radius: 20px;
+  padding: 19px 21px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* 차트 영역 */
+.section02-chart {
+  position: relative;
+  width: 383px;
+  height: 80px;
+  padding: 14px 1px;
+  box-sizing: border-box;
+}
+
+/* 막대 차트 배경 */
+.section02-chart-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+/* 막대 차트 데이터 */
+.section02-chart-bars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+/* 개별 막대 스타일 */
+.bar-bg {
+  width: 5px;
+  height: 80px;
+  background: rgba(217, 217, 217, 0.2);
+  border-radius: 2.5px;
+}
+
+.bar-data {
+  width: 5px;
+  border-radius: 2.5px;
+}
+
+/* 계정 차트 색상 */
+.bar-data.account {
+  background: #9ecf50;
+}
+
+/* 승인 차트 색상 */
+.bar-data.approval {
+  background: #f9b650;
+}
+
+/* 차트 라인 */
+.section02-chart-line {
+  position: relative;
+  width: 100%;
+  height: 39px;
+  margin-top: 10px;
+}
+
+/* 범례 리스트 */
+.section02-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 73px;
+}
+
+.section02-legend-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section02-legend-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 12px;
+}
+
+.section02-legend-icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.section02-legend-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5c94;
+  line-height: 1;
+}
+
+.section02-legend-value {
+  font-family: "Tomorrow", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1;
+  width: 90px;
+}
