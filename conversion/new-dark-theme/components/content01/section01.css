@@ -16,7 +16,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
   box-sizing: border-box;
 }
 
@@ -28,10 +28,8 @@
 }
 
 .section01-title .bullet {
-  width: 8px;
-  height: 9px;
-  background: #502ee9;
-  border-radius: 2px;
+  width: 10px;
+  height: 11px;
   flex-shrink: 0;
 }
 
@@ -46,8 +44,8 @@
 .section01-block {
   display: flex;
   align-items: center;
-  gap: 60px;
-  height: 90px;
+  gap: 40px;
+  height: 110px;
 }
 
 /* 데이터 리스트 */
@@ -81,10 +79,11 @@
 
 /* 차트 컨테이너 */
 .section01-chart {
-  width: 100px;
-  height: 90px;
+  width: 160px;
+  height: 160px;
   position: relative;
   flex-shrink: 0;
+  margin-top: -30px;
 }
 
 #section01-pie-chart {
@@ -109,8 +108,9 @@
 .section01-legend {
   display: grid;
   grid-template-columns: 172px 146px;
-  gap: 24px 36px;
+  gap: 18px 36px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .section01-legend-item {
@@ -132,10 +132,9 @@
   gap: 6px;
 }
 
-.section01-legend-color {
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
+.section01-legend-icon {
+  width: 12px;
+  height: 12px;
   flex-shrink: 0;
 }
 
