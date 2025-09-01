@@ -1,0 +1,194 @@
+/* Header Component Styles */
+
+/* Reset for header component */
+.header-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Container */
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 1. Background - Figma: top-bg */
+.top-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.top-bg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* 2. Brand Identity - Figma: bi (inset: 35.1% 89.78% 30.43% 4.03%) */
+.bi {
+    position: absolute;
+    top: 35.1%;
+    right: 89.78%;
+    bottom: 30.43%;
+    left: 4.03%;
+    z-index: 2;
+}
+
+.bi img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 3. Global Navigation - Figma: gnb (inset: 12% 26.29% 40% 28.98%) */
+.gnb {
+    position: absolute;
+    top: 12%;
+    right: 26.29%;
+    bottom: 40%;
+    left: 28.98%;
+    z-index: 2;
+    
+    /* Flexbox layout */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 64px;
+    
+    /* Style */
+    background: #373D56;
+    border-radius: 18px;
+}
+
+/* Menu Buttons */
+.btn-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 17px;
+    border-radius: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Active menu style */
+.btn-menu.active {
+    background: #502EE9;
+}
+
+/* Menu icon */
+.btn-menu .icon {
+    position: relative;
+    width: 4px;
+    height: 4px;
+    flex-shrink: 0;
+}
+
+.btn-menu .icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Menu text */
+.btn-menu .menu-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    color: #A6B3DE;
+    white-space: nowrap;
+}
+
+.btn-menu.active .menu-text {
+    color: #FFFFFF;
+}
+
+/* 4. Top Buttons - Figma: top-btn (inset: 13.33% 1.02% 44% 83.55%) */
+.top-btn {
+    position: absolute;
+    top: 13.33%;
+    right: 1.02%;
+    bottom: 44%;
+    left: 83.55%;
+    z-index: 2;
+    
+    /* Flexbox layout */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 73px;
+}
+
+/* Time Display */
+.time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.time .date {
+    font-weight: 400;
+    color: #FFFFFF;
+    width: 91px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+}
+
+.time .clock {
+    font-weight: 600;
+    color: #CACACA;
+    width: 91px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+}
+
+/* Logout Button */
+.btn-logout {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background: #373D56;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: #502EE9;
+}
+
+.btn-logout .icon {
+    position: absolute;
+    width: 16.872px;
+    height: 12.69px;
+    left: 8px;
+    top: 10px;
+}
+
+.btn-logout .icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

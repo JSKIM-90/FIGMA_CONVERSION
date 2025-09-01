@@ -11,6 +11,10 @@ html, body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
+body {
+    margin: 0;  /* 브라우저 기본 8px margin 제거 */
+}
+
 /* Main Container - Figma: new-dark-main (29:2030) */
 #new-dark-main {
     position: relative;
@@ -52,8 +56,7 @@ html, body {
     width: 1860px;
     height: 75px;
     z-index: 10;
-    background: rgba(217, 244, 96, 0.1);  /* 연한 형광 노란색 */
-    outline: 2px solid #d9f460;
+    /* Header는 투명 - 내부 SVG가 배경 역할 */
 }
 
 /* Content01 - Figma: content01 (29:2191) */
@@ -64,8 +67,8 @@ html, body {
     width: 1860px;
     height: 430px;
     z-index: 5;
-    background: rgba(33, 150, 243, 0.1);  /* 연한 파란색 */
-    outline: 2px solid #2196f3;
+    background: rgba(33, 150, 243, 0.05);  /* 아주 연한 파란색 */
+    outline: 1px dashed rgba(33, 150, 243, 0.3);
 }
 
 /* Content02 - Figma: content02 (29:2046) */
@@ -76,8 +79,8 @@ html, body {
     width: 1861px;
     height: 269px;
     z-index: 5;
-    background: rgba(76, 175, 80, 0.1);  /* 연한 초록색 */
-    outline: 2px solid #4caf50;
+    background: rgba(76, 175, 80, 0.05);  /* 아주 연한 초록색 */
+    outline: 1px dashed rgba(76, 175, 80, 0.3);
 }
 
 /* Browser Event - Figma: browser-event (29:2033) */
@@ -88,8 +91,8 @@ html, body {
     width: 1861px;
     height: 303px;
     z-index: 5;
-    background: rgba(244, 48, 80, 0.1);  /* 연한 빨간색 */
-    outline: 2px solid #f43050;
+    background: rgba(244, 48, 80, 0.05);  /* 아주 연한 빨간색 */
+    outline: 1px dashed rgba(244, 48, 80, 0.3);
 }
 
 /* Visual Helper - Remove in production */
