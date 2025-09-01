@@ -198,6 +198,22 @@ clientLanguages: "html,css,javascript"
    - **배경색**: new-light-main에 #E8EDFF 직접 적용
    - **핵심 교훈**: Figma의 hidden="true" 속성이나 오버사이즈 프레임은 디자인 도구용이며, 실제 구현에서는 제외
 
+2. **Header 컴포넌트 구현 완료** (node-id: 25:864):
+   - **구조**: new-dark-theme과 동일한 방식 적용
+     - HTML 마크업은 new-light-main.html에 직접 작성
+     - CSS는 components/header/header.css로 분리
+     - SVG 에셋은 assets/icons/ 폴더에 저장
+   - **디자인 토큰**:
+     - Primary: #502EE9 (활성 메뉴)
+     - Grayscale1: #373D56 (GNB 배경)
+     - Grayscale4: #A6B3DE (비활성 메뉴 텍스트)
+   - **구현 방식**: 
+     - Figma inset 값을 percentage로 정확히 변환
+     - JavaScript 없이 정적 HTML/CSS만 사용
+   - **학습 포인트**: 
+     - 컨텍스트 유지의 중요성
+     - 기존 프로젝트 구조 준수 필요성
+
 ### 이전 작업 내용 (2025-09-01 오전)
 1. **헤더 컴포넌트 구현 완료** (node-id: 29:2449):
    - **구조**: top-bg(배경), bi(로고), gnb(메뉴), top-btn(시간/로그아웃)
