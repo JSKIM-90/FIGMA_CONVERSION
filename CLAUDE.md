@@ -315,25 +315,46 @@ Figma_Conversion/
    - 색상, 크기, 위치 정확성 확인
 
 ### 학습된 주요 사항
-1. **ECharts 차트 구현**
-   - Figma SVG 모양 참고하여 정확히 재현
-   - padAngle 음수값으로 조각 겹침 효과
-   - borderRadius로 둥근 끝처리
-   - 데이터 비율보다 시각적 균형 우선
+1. **차트 구현 전략 변경**
+   - ECharts → 정적 SVG/HTML로 변경
+   - 퍼블리싱 정확도 우선, 나중에 동적 라이브러리 교체 가능
+   - Figma SVG 직접 사용으로 100% 디자인 일치
+   - 막대 차트는 개별 div 요소로 정적 구현
 
 2. **아이콘 처리**
    - CSS 도형 대신 Figma SVG 사용
    - 타이틀 bullet: 육각형 SVG
    - 레전드: 원형 SVG
+   - 모든 아이콘은 Figma에서 다운로드
 
 3. **레이아웃 정확성**
    - box-sizing: border-box 활용
    - 패딩 포함한 전체 크기 계산
    - flexbox gap vs margin 차이 이해
+   - Figma 정확한 수치 사용 (121x113px 차트 등)
+
+4. **정적 구현의 장점**
+   - 라이브러리 의존성 제거
+   - 빠른 로딩 속도
+   - Figma 디자인과 픽셀 단위 일치
+   - 나중에 필요시 동적 교체 용이
 
 ### 현재 진행 상황
-- ✅ Section01 (거래현황) 완료
-- ⏳ Section02 (트랜젝션 현황) 대기
+- ✅ Header 구현 완료
+- ✅ Section01 (거래현황) - 정적 SVG 파이차트
+- ✅ Section02 (트랜젝션 현황) - 정적 막대 차트
 - ⏳ Main Component (업무시스템현황)
 - ⏳ Content02 컴포넌트들
 - ⏳ Browser Event (이벤트현황)
+
+### 최근 작업 내역 (2025-01-01)
+1. **Section01 개선**
+   - ECharts 제거 → Figma SVG 직접 사용
+   - 차트 크기 121x113px로 정확히 조정
+   - 데이터 영역 폰트 및 간격 Figma 수치 적용
+
+2. **Section02 구현**
+   - 트랜젝션 현황 (계정/승인)
+   - 43개 막대 차트 정적 구현
+   - 초록색(#9ecf50) 계정, 주황색(#f9b650) 승인
+   - 모든 SVG 아이콘 Figma에서 다운로드
