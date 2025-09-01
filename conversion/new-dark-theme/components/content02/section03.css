@@ -3,9 +3,14 @@
   position: relative;
   width: 568px;
   height: 269px;
-  background: #232972;
-  border: 2px solid rgba(75, 92, 148, 0.5);
   border-radius: 30px;
+  border: 2px solid var(--grayscale-color-grayscale-405, rgba(75, 92, 148, 0.5));
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    #232972;
   padding: 21px 30px;
   box-sizing: border-box;
 }
@@ -17,7 +22,7 @@
 }
 
 .content02-section03:hover::before {
-  content: 'section03 - 서비스 TOP5현황';
+  content: "section03 - 서비스 TOP5현황";
   position: absolute;
   top: 5px;
   left: 5px;
@@ -45,8 +50,8 @@
 }
 
 .content02-section03-title-text {
-  color: #FFFFFF;
-  font-family: 'Pretendard', sans-serif;
+  color: #ffffff;
+  font-family: "Pretendard", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1;
@@ -64,7 +69,7 @@
 .content02-section03-item {
   width: 508px;
   height: 34px;
-  background: rgba(14, 17, 48, 0.5);
+  background: #3d2f7e;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -73,24 +78,39 @@
   position: relative;
 }
 
+/* First item special background */
+.content02-section03-item:first-child {
+  background: #4c38a7;
+}
+
 /* Rank Number */
 .content02-section03-rank {
   width: 11px;
-  color: #707EB4;
-  font-family: 'Tomorrow', sans-serif;
+  color: #999999;
+  font-family: "Pretendard", sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
   margin-right: 35px;
 }
 
+/* First rank in different color */
+.content02-section03-item:first-child .content02-section03-rank {
+  color: #cabeff;
+}
+
 /* Service Name */
 .content02-section03-name {
-  color: #A6B3DE;
-  font-family: 'Pretendard', sans-serif;
+  color: #c8bcff;
+  font-family: "Pretendard", sans-serif;
   font-size: 14px;
   font-weight: 500;
   flex: 1;
+}
+
+/* First item name in white */
+.content02-section03-item:first-child .content02-section03-name {
+  color: #ffffff;
 }
 
 /* Progress Bar Container */
@@ -106,8 +126,30 @@
 /* Progress Bar */
 .content02-section03-progress {
   height: 28px;
-  background: linear-gradient(90deg, #7B4BFF 0%, #4B36FF 100%);
+  background: #271966;
   border-radius: 20px;
+  position: relative;
+}
+
+/* Progress bar gradient overlay */
+.content02-section03-progress::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(36, 0, 197, 0.2) 0%, rgba(36, 0, 197, 0.1) 100%);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* First item progress bar */
+.content02-section03-item:first-child .content02-section03-progress {
+  background: #231469;
+  border: 1px solid #4f33cc;
+}
+
+/* First item progress bar gradient */
+.content02-section03-item:first-child .content02-section03-progress::before {
+  background: linear-gradient(90deg, rgba(131, 104, 255, 0.3) 0%, rgba(131, 104, 255, 0.2) 100%);
 }
 
 /* Progress widths for each rank */
@@ -135,19 +177,31 @@
 .content02-section03-value {
   position: absolute;
   right: 87px;
-  color: #FFFFFF;
-  font-family: 'Tomorrow', sans-serif;
-  font-size: 17px;
-  font-weight: 500;
+  color: #c8bcff;
+  font-family: "Tomorrow", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   z-index: 1;
+}
+
+/* First item value styling */
+.content02-section03-item:first-child .content02-section03-value {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 /* Unit */
 .content02-section03-unit {
   position: absolute;
   right: 34px;
-  color: #707EB4;
-  font-family: 'Pretendard', sans-serif;
-  font-size: 16px;
+  color: #999999;
+  font-family: "Pretendard", sans-serif;
+  font-size: 15px;
   font-weight: 500;
+}
+
+/* First item unit styling */
+.content02-section03-item:first-child .content02-section03-unit {
+  color: #cabeff;
 }

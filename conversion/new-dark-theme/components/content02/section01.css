@@ -3,9 +3,14 @@
   position: relative;
   width: 419px;
   height: 269px;
-  background: #232972;
-  border: 2px solid rgba(75, 92, 148, 0.5);
   border-radius: 30px;
+  border: 2px solid var(--grayscale-color-grayscale-405, rgba(75, 92, 148, 0.5));
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    #232972;
   padding: 26px 24px;
   box-sizing: border-box;
   display: flex;
@@ -20,7 +25,7 @@
 }
 
 .content02-section01:hover::before {
-  content: 'section01 - 콜 센터 ARS 현황';
+  content: "section01 - 콜 센터 ARS 현황";
   position: absolute;
   top: 5px;
   left: 5px;
@@ -47,8 +52,8 @@
 }
 
 .content02-section01-title-text {
-  color: #FFFFFF;
-  font-family: 'Pretendard', sans-serif;
+  color: #ffffff;
+  font-family: "Pretendard", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1;
@@ -87,10 +92,10 @@
 .content02-section01-y-labels {
   width: 32px;
   height: 93px;
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 11px;
   font-weight: 500;
-  color: #4B5C94;
+  color: #4b5c94;
   text-align: right;
   display: flex;
   flex-direction: column;
@@ -144,8 +149,8 @@
 }
 
 .content02-section01-stat-label {
-  color: #A6B3DE;
-  font-family: 'Pretendard', sans-serif;
+  color: #a6b3de;
+  font-family: "Pretendard", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
@@ -158,8 +163,8 @@
 }
 
 .content02-section01-stat-value {
-  color: #FFFFFF;
-  font-family: 'Tomorrow', sans-serif;
+  color: #ffffff;
+  font-family: "Tomorrow", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1;
@@ -167,8 +172,8 @@
 }
 
 .content02-section01-stat-unit {
-  color: #707EB4;
-  font-family: 'Pretendard', sans-serif;
+  color: #707eb4;
+  font-family: "Pretendard", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
@@ -177,5 +182,5 @@
 .content02-section01-divider {
   width: 1px;
   height: 44px;
-  background: url('../assets/content02/divider.svg') no-repeat center;
+  background: url("../assets/content02/divider.svg") no-repeat center;
 }

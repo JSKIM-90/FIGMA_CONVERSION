@@ -3,9 +3,14 @@
   position: relative;
   width: 813px;
   height: 269px;
-  background: #232972;
-  border: 2px solid rgba(75, 92, 148, 0.5);
   border-radius: 30px;
+  border: 2px solid var(--grayscale-color-grayscale-405, rgba(75, 92, 148, 0.5));
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    #232972;
   padding: 25px 26px;
   box-sizing: border-box;
 }
@@ -17,7 +22,7 @@
 }
 
 .content02-section02:hover::before {
-  content: 'section02 - 승인 현황';
+  content: "section02 - 승인 현황";
   position: absolute;
   top: 5px;
   left: 5px;
@@ -45,8 +50,8 @@
 }
 
 .content02-section02-title-text {
-  color: #FFFFFF;
-  font-family: 'Pretendard', sans-serif;
+  color: #ffffff;
+  font-family: "Pretendard", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1;
@@ -74,15 +79,14 @@
 
 .content02-section02-group-bullet {
   width: 6px;
-  height: 6px;
-  background: #9ECF50;
-  border-radius: 50%;
+  height: 7px;
+  flex-shrink: 0;
 }
 
 .content02-section02-group-text {
-  color: #A6B3DE;
-  font-family: 'Pretendard', sans-serif;
-  font-size: 14px;
+  color: #707eb4;
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1;
 }
@@ -97,9 +101,9 @@
 }
 
 .content02-section02-header-item {
-  color: #707EB4;
-  font-family: 'Pretendard', sans-serif;
-  font-size: 14px;
+  color: #a6b3de;
+  font-family: "Pretendard", sans-serif;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1;
 }
@@ -107,7 +111,7 @@
 .content02-section02-header-divider {
   width: 1px;
   height: 10px;
-  background: #4B5C94;
+  background: #4b5c94;
 }
 
 /* Table Grid */
@@ -121,11 +125,36 @@
 .content02-section02-row {
   width: 368px;
   height: 34px;
-  background: rgba(14, 17, 48, 0.5);
+  background: #3d2f7e;
   border-radius: 20px;
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
+}
+
+/* Gradient overlay for cells */
+.content02-section02-row::before {
+  content: '';
+  position: absolute;
+  left: 91px;
+  top: 0;
+  width: 77px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(36, 0, 196, 0.2) 0%, rgba(5, 171, 207, 0.1) 100%);
+  pointer-events: none;
+}
+
+.content02-section02-row::after {
+  content: '';
+  position: absolute;
+  left: 170px;
+  top: 0;
+  width: 156px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(36, 0, 196, 0.2) 0%, rgba(5, 171, 207, 0.1) 100%);
+  pointer-events: none;
+  border-radius: 0 20px 20px 0;
 }
 
 /* Cell Styles */
@@ -139,8 +168,8 @@
 .content02-section02-cell-label {
   width: 91px;
   padding-left: 20px;
-  color: #A6B3DE;
-  font-family: 'Pretendard', sans-serif;
+  color: #c8bcff;
+  font-family: "Pretendard", sans-serif;
   font-size: 14px;
   font-weight: 500;
   box-sizing: border-box;
@@ -150,22 +179,25 @@
 .content02-section02-cell-divider {
   width: 1px;
   height: 20px;
-  background: #4B5C94;
+  background: #4b5c94;
 }
 
 .content02-section02-cell-value {
   width: 77px;
-  color: #FFFFFF;
-  font-family: 'Tomorrow', sans-serif;
-  font-size: 16px;
+  color: #c8bcff;
+  font-family: "Tomorrow", sans-serif;
+  font-size: 15px;
   font-weight: 500;
   text-align: center;
 }
 
+/* First row values in white */
+.content02-section02-row:first-child .content02-section02-cell-value {
+  color: #ffffff;
+}
+
 .content02-section02-cell-current {
   width: 79px;
-  background: rgba(75, 92, 148, 0.3);
-  border-radius: 0 20px 20px 0;
 }
 
 .content02-section02-cell-percent {
@@ -177,27 +209,37 @@
 }
 
 .content02-section02-percent-value {
-  color: #FFFFFF;
-  font-family: 'Tomorrow', sans-serif;
-  font-size: 16px;
+  color: #c8bcff;
+  font-family: "Tomorrow", sans-serif;
+  font-size: 15px;
   font-weight: 500;
+}
+
+/* First row percent value in white */
+.content02-section02-row:first-child .content02-section02-percent-value {
+  color: #ffffff;
 }
 
 /* Arrow Icons */
 .content02-section02-arrow {
   width: 0;
   height: 0;
-  border-style: solid;
 }
 
 .content02-section02-arrow-up {
+  width: 0;
+  height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 11px solid #CA3437;
+  border-bottom: 11px solid #ca3437;
+  border-top: 0;
 }
 
 .content02-section02-arrow-down {
+  width: 0;
+  height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 11px solid #14B8A6;
+  border-top: 11px solid #14b8a6;
+  border-bottom: 0;
 }
