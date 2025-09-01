@@ -3,7 +3,8 @@
     "allow": [
       "mcp__figma-dev-mode-mcp-server__get_code",
       "mcp__figma-dev-mode-mcp-server__get_image",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "mcp__figma-dev-mode-mcp-server__get_metadata"
     ],
     "deny": [],
     "ask": []
