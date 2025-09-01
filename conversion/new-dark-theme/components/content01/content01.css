@@ -15,8 +15,10 @@
     top: 11px;
     width: 1860px;
     height: 374px;
-    
-    /* 경계 표시 - 디자이너 확인용 */
+}
+
+/* Container hover 시 경계 표시 */
+#content01 .container:hover {
     outline: 2px dashed rgba(255, 255, 0, 0.5);  /* 노란색 점선 */
 }
 
@@ -33,19 +35,18 @@
     width: 727.46px;
     height: 429.76px;
     
-    /* 경계 표시 - 디자이너 확인용 */
-    outline: 2px dashed rgba(255, 0, 255, 0.5);  /* 보라색 점선 */
-    
     /* main-component가 container 위에 오도록 */
     z-index: 1;
+}
+
+/* Main Component hover 시 경계 표시 */
+#content01 .main-component:hover {
+    outline: 2px dashed rgba(255, 0, 255, 0.5);  /* 보라색 점선 */
 }
 
 /* Content01 자체 경계 강조 (layout.css 오버라이드) */
 #content01 {
     position: relative;  /* 자식 요소들의 기준점 */
-    
-    /* 기존 파란색 outline 유지하면서 추가 표시 */
-    box-shadow: inset 0 0 0 3px rgba(33, 150, 243, 0.2);  /* 내부 그림자로 경계 강조 */
 }
 
 /* Section01 - 거래현황 (29:2193) */
@@ -59,8 +60,9 @@
     top: 28px;
     width: 419px;
     height: 346px;
-    
-    /* 경계 표시 - 디자이너 확인용 */
+}
+
+#content01 .section01:hover {
     outline: 1px dashed rgba(100, 200, 100, 0.5);  /* 연한 초록색 점선 */
 }
 
@@ -75,13 +77,14 @@
     top: 0;
     width: 568px;
     height: 374px;
-    
-    /* 경계 표시 - 디자이너 확인용 */
+}
+
+#content01 .section02:hover {
     outline: 1px dashed rgba(100, 100, 200, 0.5);  /* 연한 파란색 점선 */
 }
 
-/* 시각적 레이블 - 개발용 */
-#content01 .container::before {
+/* 시각적 레이블 - 개발용 (hover 시에만 표시) */
+#content01 .container:hover::before {
     content: 'container (29:2192)';
     position: absolute;
     top: 5px;
@@ -94,7 +97,7 @@
     z-index: 10;
 }
 
-#content01 .main-component::before {
+#content01 .main-component:hover::before {
     content: 'main-component (29:2428)';
     position: absolute;
     top: 5px;
@@ -107,7 +110,7 @@
     z-index: 10;
 }
 
-#content01 .section01::before {
+#content01 .section01:hover::before {
     content: 'section01 - 거래현황';
     position: absolute;
     top: 5px;
@@ -120,7 +123,7 @@
     z-index: 10;
 }
 
-#content01 .section02::before {
+#content01 .section02:hover::before {
     content: 'section02 - 계정';
     position: absolute;
     top: 5px;
