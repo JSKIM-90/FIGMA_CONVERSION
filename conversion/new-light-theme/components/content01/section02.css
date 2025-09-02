@@ -1,0 +1,422 @@
+/* ===========================================
+   Section02: 트랜젝션 현황 Component Styles
+   Node ID: 25:641
+   Size: 568 x 374px
+   Position relative to container: x:1292, y:0
+   =========================================== */
+
+/* Section02 Container */
+.content01 .section02 {
+    /* background: rgba(255, 255, 255, 0.3); */
+    /* border: 2px solid #D3DBF9; */
+    /* border-radius: 30px; */
+    /* padding: 21px 25px; */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+/* Main Title */
+.content01 .section02 .title-h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.content01 .section02 .title-h1 .bullet {
+    width: 10px;
+    height: 11px;
+}
+
+.content01 .section02 .title-h1 .bullet img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.content01 .section02 .title-h1 .title-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: #0E1130;
+}
+
+/* Group Containers */
+.content01 .section02 .group01,
+.content01 .section02 .group02 {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    width: 518px;
+}
+
+/* Subtitle */
+.content01 .section02 .title-2epth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.content01 .section02 .bullet-2 {
+    width: 6px;
+    height: 7px;
+}
+
+.content01 .section02 .bullet-2 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.content01 .section02 .subtitle-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    color: #555770;
+}
+
+/* Chart Container */
+.content01 .section02 .chart-bar,
+.content01 .section02 .content-chart {
+    background: white;
+    border-radius: 20px;
+    padding: 19px 21px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    height: 119px;
+    box-sizing: border-box;
+}
+
+/* Chart Area */
+.content01 .section02 .chart {
+    position: relative;
+    width: 383px;
+    height: 80px;
+    padding: 14px 1px;
+    box-sizing: border-box;
+}
+
+/* Background Bars Container */
+.content01 .section02 .bg-bars,
+.content01 .section02 .bg-chart {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    height: 80px;
+}
+
+/* Individual Background Bars - Using ::before to generate 43 bars */
+.content01 .section02 .bg-bars::before,
+.content01 .section02 .bg-chart::before {
+    content: '';
+    display: flex;
+    gap: 4px;
+    height: 80px;
+}
+
+/* Generate background bars using multiple box-shadows */
+.content01 .section02 .bg-bars::after,
+.content01 .section02 .bg-chart::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 80px;
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 2.5px;
+    box-shadow: 
+        9px 0 rgba(217, 217, 217, 0.5),
+        18px 0 rgba(217, 217, 217, 0.5),
+        27px 0 rgba(217, 217, 217, 0.5),
+        36px 0 rgba(217, 217, 217, 0.5),
+        45px 0 rgba(217, 217, 217, 0.5),
+        54px 0 rgba(217, 217, 217, 0.5),
+        63px 0 rgba(217, 217, 217, 0.5),
+        72px 0 rgba(217, 217, 217, 0.5),
+        81px 0 rgba(217, 217, 217, 0.5),
+        90px 0 rgba(217, 217, 217, 0.5),
+        99px 0 rgba(217, 217, 217, 0.5),
+        108px 0 rgba(217, 217, 217, 0.5),
+        117px 0 rgba(217, 217, 217, 0.5),
+        126px 0 rgba(217, 217, 217, 0.5),
+        135px 0 rgba(217, 217, 217, 0.5),
+        144px 0 rgba(217, 217, 217, 0.5),
+        153px 0 rgba(217, 217, 217, 0.5),
+        162px 0 rgba(217, 217, 217, 0.5),
+        171px 0 rgba(217, 217, 217, 0.5),
+        180px 0 rgba(217, 217, 217, 0.5),
+        189px 0 rgba(217, 217, 217, 0.5),
+        198px 0 rgba(217, 217, 217, 0.5),
+        207px 0 rgba(217, 217, 217, 0.5),
+        216px 0 rgba(217, 217, 217, 0.5),
+        225px 0 rgba(217, 217, 217, 0.5),
+        234px 0 rgba(217, 217, 217, 0.5),
+        243px 0 rgba(217, 217, 217, 0.5),
+        252px 0 rgba(217, 217, 217, 0.5),
+        261px 0 rgba(217, 217, 217, 0.5),
+        270px 0 rgba(217, 217, 217, 0.5),
+        279px 0 rgba(217, 217, 217, 0.5),
+        288px 0 rgba(217, 217, 217, 0.5),
+        297px 0 rgba(217, 217, 217, 0.5),
+        306px 0 rgba(217, 217, 217, 0.5),
+        315px 0 rgba(217, 217, 217, 0.5),
+        324px 0 rgba(217, 217, 217, 0.5),
+        333px 0 rgba(217, 217, 217, 0.5),
+        342px 0 rgba(217, 217, 217, 0.5),
+        351px 0 rgba(217, 217, 217, 0.5),
+        360px 0 rgba(217, 217, 217, 0.5),
+        369px 0 rgba(217, 217, 217, 0.5),
+        378px 0 rgba(217, 217, 217, 0.5);
+}
+
+/* Actual Data Bars */
+.content01 .section02 .bars {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 80px;
+}
+
+/* Green bars for 계정 */
+.content01 .section02 .bars.green::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    height: 57px;
+    background: #9ECF50;
+    border-radius: 2.5px;
+    box-shadow: 
+        9px 0 0 -0px #9ECF50,
+        9px 14px 0 -0px #9ECF50,
+        18px 0 0 -0px #9ECF50,
+        18px 36px 0 -0px #9ECF50,
+        27px 0 0 -0px #9ECF50,
+        27px 29px 0 -0px #9ECF50,
+        36px 0 0 -0px #9ECF50,
+        36px 23px 0 -0px #9ECF50,
+        45px 0 0 -0px #9ECF50,
+        45px 23px 0 -0px #9ECF50,
+        54px 0 0 -0px #9ECF50,
+        63px 0 0 -0px #9ECF50,
+        72px 0 0 -0px #9ECF50,
+        72px 16px 0 -0px #9ECF50,
+        81px 0 0 -0px #9ECF50,
+        90px 0 0 -0px #9ECF50,
+        90px 12px 0 -0px #9ECF50,
+        99px 0 0 -0px #9ECF50,
+        99px 36px 0 -0px #9ECF50,
+        108px 0 0 -0px #9ECF50,
+        117px 0 0 -0px #9ECF50,
+        117px 41px 0 -0px #9ECF50,
+        126px 0 0 -0px #9ECF50,
+        126px 36px 0 -0px #9ECF50,
+        135px 0 0 -0px #9ECF50,
+        135px 29px 0 -0px #9ECF50,
+        144px 0 0 -0px #9ECF50,
+        144px 20px 0 -0px #9ECF50,
+        153px 0 0 -0px #9ECF50,
+        153px 29px 0 -0px #9ECF50,
+        162px 0 0 -0px #9ECF50,
+        171px 0 0 -0px #9ECF50,
+        171px 29px 0 -0px #9ECF50,
+        180px 0 0 -0px #9ECF50,
+        180px 9px 0 -0px #9ECF50,
+        189px 0 0 -0px #9ECF50,
+        189px 36px 0 -0px #9ECF50,
+        198px 0 0 -0px #9ECF50,
+        198px 29px 0 -0px #9ECF50,
+        207px 0 0 -0px #9ECF50,
+        216px 0 0 -0px #9ECF50,
+        225px 0 0 -0px #9ECF50,
+        225px 16px 0 -0px #9ECF50,
+        234px 0 0 -0px #9ECF50,
+        234px 12px 0 -0px #9ECF50,
+        243px 0 0 -0px #9ECF50,
+        243px 29px 0 -0px #9ECF50,
+        252px 0 0 -0px #9ECF50,
+        261px 0 0 -0px #9ECF50,
+        261px 29px 0 -0px #9ECF50,
+        270px 0 0 -0px #9ECF50,
+        279px 0 0 -0px #9ECF50,
+        279px 20px 0 -0px #9ECF50,
+        288px 0 0 -0px #9ECF50,
+        288px 13px 0 -0px #9ECF50,
+        297px 0 0 -0px #9ECF50,
+        297px 20px 0 -0px #9ECF50,
+        306px 0 0 -0px #9ECF50,
+        306px 29px 0 -0px #9ECF50,
+        315px 0 0 -0px #9ECF50,
+        315px 29px 0 -0px #9ECF50,
+        324px 0 0 -0px #9ECF50,
+        324px 20px 0 -0px #9ECF50,
+        333px 0 0 -0px #9ECF50,
+        333px 16px 0 -0px #9ECF50,
+        342px 0 0 -0px #9ECF50,
+        342px 9px 0 -0px #9ECF50,
+        351px 0 0 -0px #9ECF50,
+        351px 16px 0 -0px #9ECF50,
+        360px 0 0 -0px #9ECF50,
+        360px 20px 0 -0px #9ECF50,
+        369px 0 0 -0px #9ECF50,
+        378px 0 0 -0px #9ECF50,
+        378px 16px 0 -0px #9ECF50,
+        387px 0 0 -0px #9ECF50,
+        387px 13px 0 -0px #9ECF50;
+}
+
+/* Orange bars for 승인 */
+.content01 .section02 .bars.orange::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    height: 57px;
+    background: #F9B650;
+    border-radius: 2.5px;
+    box-shadow: 
+        9px 0 0 -0px #F9B650,
+        9px 14px 0 -0px #F9B650,
+        18px 0 0 -0px #F9B650,
+        18px 36px 0 -0px #F9B650,
+        27px 0 0 -0px #F9B650,
+        27px 29px 0 -0px #F9B650,
+        36px 0 0 -0px #F9B650,
+        36px 23px 0 -0px #F9B650,
+        45px 0 0 -0px #F9B650,
+        45px 23px 0 -0px #F9B650,
+        54px 0 0 -0px #F9B650,
+        63px 0 0 -0px #F9B650,
+        72px 0 0 -0px #F9B650,
+        72px 16px 0 -0px #F9B650,
+        81px 0 0 -0px #F9B650,
+        90px 0 0 -0px #F9B650,
+        90px 12px 0 -0px #F9B650,
+        99px 0 0 -0px #F9B650,
+        99px 36px 0 -0px #F9B650,
+        108px 0 0 -0px #F9B650,
+        117px 0 0 -0px #F9B650,
+        117px 41px 0 -0px #F9B650,
+        126px 0 0 -0px #F9B650,
+        126px 36px 0 -0px #F9B650,
+        135px 0 0 -0px #F9B650,
+        135px 29px 0 -0px #F9B650,
+        144px 0 0 -0px #F9B650,
+        144px 20px 0 -0px #F9B650,
+        153px 0 0 -0px #F9B650,
+        153px 29px 0 -0px #F9B650,
+        162px 0 0 -0px #F9B650,
+        171px 0 0 -0px #F9B650,
+        171px 29px 0 -0px #F9B650,
+        180px 0 0 -0px #F9B650,
+        180px 9px 0 -0px #F9B650,
+        189px 0 0 -0px #F9B650,
+        189px 36px 0 -0px #F9B650,
+        198px 0 0 -0px #F9B650,
+        198px 29px 0 -0px #F9B650,
+        207px 0 0 -0px #F9B650,
+        216px 0 0 -0px #F9B650,
+        225px 0 0 -0px #F9B650,
+        225px 16px 0 -0px #F9B650,
+        234px 0 0 -0px #F9B650,
+        234px 12px 0 -0px #F9B650,
+        243px 0 0 -0px #F9B650,
+        243px 29px 0 -0px #F9B650,
+        252px 0 0 -0px #F9B650,
+        261px 0 0 -0px #F9B650,
+        261px 29px 0 -0px #F9B650,
+        270px 0 0 -0px #F9B650,
+        279px 0 0 -0px #F9B650,
+        279px 20px 0 -0px #F9B650,
+        288px 0 0 -0px #F9B650,
+        288px 13px 0 -0px #F9B650,
+        297px 0 0 -0px #F9B650,
+        297px 20px 0 -0px #F9B650,
+        306px 0 0 -0px #F9B650,
+        306px 29px 0 -0px #F9B650,
+        315px 0 0 -0px #F9B650,
+        315px 29px 0 -0px #F9B650,
+        324px 0 0 -0px #F9B650,
+        324px 20px 0 -0px #F9B650,
+        333px 0 0 -0px #F9B650,
+        333px 16px 0 -0px #F9B650,
+        342px 0 0 -0px #F9B650,
+        342px 9px 0 -0px #F9B650,
+        351px 0 0 -0px #F9B650,
+        351px 16px 0 -0px #F9B650,
+        360px 0 0 -0px #F9B650,
+        360px 20px 0 -0px #F9B650,
+        369px 0 0 -0px #F9B650,
+        378px 0 0 -0px #F9B650,
+        378px 16px 0 -0px #F9B650,
+        387px 0 0 -0px #F9B650,
+        387px 13px 0 -0px #F9B650;
+}
+
+/* Line Graph Overlay */
+.content01 .section02 .line {
+    position: relative;
+    width: 379.5px;
+    height: 38.686px;
+    margin-top: auto;
+}
+
+.content01 .section02 .line img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Legend List */
+.content01 .section02 .legend-list,
+.content01 .section02 .group-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 73px;
+}
+
+.content01 .section02 .legend-list .list-item,
+.content01 .section02 .group-list .list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.content01 .section02 .bu-legend,
+.content01 .section02 .bu_legend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 12px;
+}
+
+.content01 .section02 .legend-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.content01 .section02 .legend-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #4E4E4E;
+    line-height: 1;
+}
+
+.content01 .section02 .legend-value {
+    font-family: 'Tomorrow', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #18152D;
+    line-height: 1;
+}

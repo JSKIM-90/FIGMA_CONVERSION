@@ -1,0 +1,167 @@
+/* ===========================================
+   Main Component: 업무시스템현황 (3D Isometric)
+   Node ID: 25:843
+   Size: 727.46 x 429.76px
+   Position relative to content01: x:463, y:0
+   =========================================== */
+
+/* Main Component Container */
+.content01 .main-component {
+    position: relative;
+    width: 727.46px;
+    height: 429.76px;
+}
+
+/* Background Network Diagram */
+.content01 .main-component .bg-network {
+    position: absolute;
+    left: 79px;  /* 572 - 493 = 79px from main-component left */
+    top: 141px;
+    width: 637.322px;
+    height: 354.759px;
+}
+
+.content01 .main-component .bg-network img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Title */
+.content01 .main-component .title-h1 {
+    position: absolute;
+    left: 0;  /* 493 - 493 = 0 */
+    top: 108px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.content01 .main-component .title-h1 .bullet {
+    width: 10px;
+    height: 11px;
+}
+
+.content01 .main-component .title-h1 .bullet img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.content01 .main-component .title-h1 .title-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: #0E1130;
+}
+
+/* Title Component Base Styles */
+.content01 .main-component .title-component {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 86.46px;
+}
+
+.content01 .main-component .component-label {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    color: #4E4E4E;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.content01 .main-component .component-label.large {
+    font-size: 20px;
+    color: #373D56;
+}
+
+.content01 .main-component .component {
+    width: 86.46px;
+    height: 117.3px;
+}
+
+.content01 .main-component .component img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Individual Component Positioning */
+/* 콜센터 */
+.content01 .main-component .callcenter {
+    left: 162px;  /* 655 - 493 = 162px */
+    top: 111px;
+}
+
+/* 카드발급 */
+.content01 .main-component .card-issue {
+    left: 295px;  /* 788 - 493 = 295px */
+    top: 66px;
+}
+
+/* 인터넷포탈 */
+.content01 .main-component .internet-portal {
+    left: 397px;  /* 890 - 493 = 397px */
+    top: 132px;
+}
+
+/* 계정계 */
+.content01 .main-component .account-system {
+    left: 526px;  /* 1019 - 493 = 526px */
+    top: 177px;
+}
+
+/* 승인계 */
+.content01 .main-component .approval-system {
+    left: 641px;  /* 1134 - 493 = 641px */
+    top: 246px;
+}
+
+/* 정보계 */
+.content01 .main-component .info-system {
+    left: 565px;  /* 1058 - 493 = 565px */
+    top: 341px;
+}
+
+/* 은행 */
+.content01 .main-component .bank {
+    left: 15px;  /* 508 - 493 = 15px */
+    top: 226px;
+}
+
+/* MCA */
+.content01 .main-component .mca {
+    left: 252px;  /* 745 - 493 = 252px */
+    top: 223px;
+}
+
+/* EAI */
+.content01 .main-component .eai {
+    left: 359px;  /* 852 - 493 = 359px */
+    top: 284px;
+}
+
+/* White Labels Background */
+.content01 .main-component .label {
+    position: absolute;
+    background: white;
+    height: 36px;
+    width: 80px;
+    border-radius: 130px;
+}
+
+.content01 .main-component .mca-label {
+    left: 255px;  /* 748 - 493 = 255px */
+    top: 212px;
+}
+
+.content01 .main-component .eai-label {
+    left: 362px;  /* 855 - 493 = 362px */
+    top: 273px;
+}

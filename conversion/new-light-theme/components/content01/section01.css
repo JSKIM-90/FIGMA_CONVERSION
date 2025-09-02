@@ -1,0 +1,197 @@
+/* ===========================================
+   Section01: 거래 현황 Component Styles
+   Node ID: 25:608
+   Size: 419 x 346px
+   Position relative to container: x:0, y:28
+   =========================================== */
+
+/* Section01 Container */
+.content01 .section01 {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 26px 33px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for debugging */
+.content01 .section01:hover {
+    outline: 2px solid #502EE9;
+    outline-offset: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Title Section */
+.content01 .section01 .title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.content01 .section01 .title .bullet {
+    width: 10px;
+    height: 11px;
+    flex-shrink: 0;
+}
+
+.content01 .section01 .title .bullet img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.content01 .section01 .title-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: #0E1130;
+}
+
+/* Block: Data + Chart */
+.content01 .section01 .block {
+    display: flex;
+    align-items: center;
+    gap: 96px;
+}
+
+/* Group List */
+.content01 .section01 .group-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 110px;
+}
+
+.content01 .section01 .group-list .list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.content01 .section01 .group-list .label {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #4E4E4E;
+    line-height: 1;
+}
+
+.content01 .section01 .group-list .value {
+    font-family: 'Tomorrow', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #373D56;
+    line-height: 1;
+}
+
+/* Pie Chart */
+.content01 .section01 .chart-pie {
+    width: 121.179px;
+    height: 113.083px;
+    position: relative;
+}
+
+.content01 .section01 .chart-pie img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Divider */
+.content01 .section01 .divider {
+    width: 346px;
+    height: 1px;
+    position: relative;
+}
+
+.content01 .section01 .divider img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Legend List - Flexbox with proper widths */
+.content01 .section01 .legend-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 36px;
+    row-gap: 26px; /* Actual vertical spacing from Figma */
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 347px;
+}
+
+.content01 .section01 .legend-list .list-item {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 12px;
+    overflow: hidden;
+}
+
+/* list01 - 172px width with gap between legend and value */
+.content01 .section01 .legend-list .list-item[data-name="list01"] {
+    width: 172px;
+    gap: 22px;
+}
+
+/* list02 - 139px width */
+.content01 .section01 .legend-list .list-item[data-name="list02"] {
+    width: 139px;
+}
+
+/* list03 - 172px width with space-between */
+.content01 .section01 .legend-list .list-item[data-name="list03"] {
+    width: 172px;
+    justify-content: space-between;
+}
+
+/* list04 - 139px width with small gap */
+.content01 .section01 .legend-list .list-item[data-name="list04"] {
+    width: 139px;
+    gap: 4px; /* gap-1 in Tailwind */
+}
+
+/* list05 - 172px width with space-between */
+.content01 .section01 .legend-list .list-item[data-name="list05"] {
+    width: 172px;
+    justify-content: space-between;
+}
+
+.content01 .section01 .bu-legend,
+.content01 .section01 .bu_legend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 73px;
+    height: 12px;
+}
+
+.content01 .section01 .legend-icon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.content01 .section01 .legend-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #4B5C94;
+    line-height: 12px; /* Fixed height to match container */
+    white-space: nowrap;
+}
+
+.content01 .section01 .legend-value {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #373D56;
+    line-height: 12px; /* Fixed height to match container */
+    text-align: right;
+}

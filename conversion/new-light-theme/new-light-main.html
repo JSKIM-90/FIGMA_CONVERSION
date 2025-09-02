@@ -8,6 +8,10 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/content01/content01.css">
+    <link rel="stylesheet" href="components/content01/section01.css">
+    <link rel="stylesheet" href="components/content01/section02.css">
+    <link rel="stylesheet" href="components/main-component/main-component.css">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,7 +87,97 @@
         
         <!-- Content01 (x:30, y:66, width:1860, height:430) -->
         <div class="content01" data-node-id="25:606">
-            <!-- Content01 sections will be added here -->
+            <!-- Container: section01 + section02 wrapper -->
+            <div class="container" data-name="container" data-node-id="25:607">
+                <!-- Section01: 거래 현황 (파이차트) -->
+                <div class="section01" data-name="section01" data-node-id="25:608">
+                    <!-- Title -->
+                    <div class="title" data-name="title" data-node-id="25:609">
+                        <div class="bullet" data-name="bullet">
+                            <img src="assets/icons/bullet-title.svg" alt="" />
+                        </div>
+                        <span class="title-text">거래 현황</span>
+                    </div>
+
+                    <!-- Block: Data + Chart -->
+                    <div class="block" data-name="block" data-node-id="25:610">
+                        <!-- Group List -->
+                        <div class="group-list" data-name="group-list" data-node-id="25:611">
+                            <div class="list" data-name="list" data-node-id="25:612">
+                                <span class="label">금일 누적</span>
+                                <span class="value">7,927,900</span>
+                            </div>
+                            <div class="list" data-name="list" data-node-id="25:615">
+                                <span class="label">전일 누적</span>
+                                <span class="value">10,636,190</span>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="chart-pie" data-name="chart-pie" data-node-id="25:618">
+                            <img src="assets/icons/chart-pie.svg" alt="거래 현황 차트" />
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="divider" data-name="divider" data-node-id="25:624">
+                        <img src="assets/icons/divider.svg" alt="" />
+                    </div>
+
+                    <!-- Legend List -->
+                    <div class="legend-list" data-name="legend-list" data-node-id="25:625">
+                        <div class="list-item" data-name="list01" data-node-id="25:626">
+                            <div class="bu-legend" data-name="bu-legend" data-node-id="25:627">
+                                <img class="legend-icon" src="assets/icons/legend-yellow.svg" alt="" />
+                                <span class="legend-text">카드승인</span>
+                            </div>
+                            <span class="legend-value">6,294,043</span>
+                        </div>
+
+                        <div class="list-item" data-name="list02" data-node-id="25:629">
+                            <div class="bu-legend" data-name="bu-legend" data-node-id="25:630">
+                                <img class="legend-icon" src="assets/icons/legend-green.svg" alt="" />
+                                <span class="legend-text">조회</span>
+                            </div>
+                            <span class="legend-value">1,141,785</span>
+                        </div>
+
+                        <div class="list-item" data-name="list03" data-node-id="25:632">
+                            <div class="bu-legend" data-name="bu-legend" data-node-id="25:633">
+                                <img class="legend-icon" src="assets/icons/legend-blue.svg" alt="" />
+                                <span class="legend-text">현금서비스</span>
+                            </div>
+                            <span class="legend-value">9,185</span>
+                        </div>
+
+                        <div class="list-item" data-name="list04" data-node-id="25:635">
+                            <div class="bu-legend" data-name="bu_legend" data-node-id="25:636">
+                                <img class="legend-icon" src="assets/icons/legend-orange.svg" alt="" />
+                                <span class="legend-text">기타</span>
+                            </div>
+                            <span class="legend-value">478,528</span>
+                        </div>
+
+                        <div class="list-item" data-name="list05" data-node-id="25:638">
+                            <div class="bu-legend" data-name="bu_legend" data-node-id="25:639">
+                                <img class="legend-icon" src="assets/icons/legend-red.svg" alt="" />
+                                <span class="legend-text">카드신고</span>
+                            </div>
+                            <span class="legend-value">4,380</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section02: 트랜잭션 현황 (막대차트) -->
+                <div class="section02" data-name="section02" data-node-id="25:641">
+                    <!-- Section02 content will be added here -->
+                </div>
+            </div>
+
+            <!-- Main Component: 업무시스템현황 (3D 아이소메트릭) -->
+            <div class="main-component" data-name="main-component" data-node-id="25:843">
+                <!-- Main component content will be added here -->
+            </div>
         </div>
         
         <!-- Content02 (x:29, y:475, width:1861, height:269) -->

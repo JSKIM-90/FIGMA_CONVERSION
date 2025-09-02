@@ -1,0 +1,68 @@
+/* ===========================================
+   Content01 Layout Styles
+   Node ID: 25:606
+   Size: 1860 x 430px (429.76px)
+   Position: x:30, y:66
+   =========================================== */
+
+/* Content01 Main Container */
+.content01 {
+    position: relative;
+    width: 1860px;
+    height: 429.76px;
+}
+
+/* Container wrapper for section01 + section02 
+   Node ID: 25:607
+   Size: 1860 x 374px
+   Position relative to content01: x:30, y:77 (actually y:11 from content01 top)
+*/
+.content01 .container {
+    position: absolute;
+    left: 30px;
+    top: 11px; /* 77 - 66 = 11px from content01 top */
+    width: 1860px;
+    height: 374px;
+    display: flex;
+    gap: 0;
+}
+
+/* Section01 positioning within container
+   Node ID: 25:608  
+   Size: 419 x 346px
+   Position: x:0, y:28 (relative to container)
+*/
+.content01 .section01 {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    width: 419px;
+    height: 346px;
+}
+
+/* Section02 positioning within container
+   Node ID: 25:641
+   Size: 568 x 374px  
+   Position: x:1292, y:0 (relative to container)
+*/
+.content01 .section02 {
+    position: absolute;
+    left: 1292px;
+    top: 0;
+    width: 568px;
+    height: 374px;
+}
+
+/* Main Component positioning
+   Node ID: 25:843
+   Size: 727.46 x 429.76px
+   Position relative to content01: x:493, y:66 (actually y:0 from content01 top)
+*/
+.content01 .main-component {
+    position: absolute;
+    left: 463px; /* 493 - 30 = 463px from content01 left */
+    top: 0;
+    width: 727.46px;
+    height: 429.76px;
+    z-index: 10; /* Above other sections */
+}
