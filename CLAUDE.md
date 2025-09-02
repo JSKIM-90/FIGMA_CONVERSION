@@ -496,14 +496,44 @@ Figma에서 종종 나타나는 'bg' 프레임은 **디자인 도구 전용**입
    - 해결: line-height를 Figma HUG px 값으로 명시적 설정
    - 예: font-size 18px, line-height 1 → line-height: 13px (Figma HUG)
 
+6. **CSS 네이밍 전략의 중요성** (2025-09-02 추가)
+   - **BEM vs 중첩 선택자 비교**:
+     - BEM: `.content02-section01__title` (명확, 독립적)
+     - 중첩: `.content02 .section01 .title` (우선순위 복잡)
+   - **dark-theme vs light-theme 구현 차이**:
+     - dark-theme: BEM 스타일로 처음부터 구현 → 간단명료
+     - light-theme: 중첩 선택자로 시작 → 복잡해짐 → BEM으로 리팩토링
+   - **교훈**: 
+     - 재사용성보다 명확성이 더 중요
+     - 클래스명이 길어도 유지보수가 쉬운 것이 장기적으로 유리
+     - "Simple is better than complex"
+
 ### 현재 진행 상황 (2025-09-02)
 - ✅ Header 구현 완료
-- ✅ Section01 (거래현황) - 정적 SVG 파이차트
-- ✅ Section02 (트랜젝션 현황) - 정적 막대 차트
-- ✅ Main Component (업무시스템현황) - 3D 아이소메트릭 구현
 - ✅ Content01 완전 구현 완료
-- ⏸️ Content02 컴포넌트들 (다음 작업 예정)
+  - Section01 (거래현황) - 정적 SVG 파이차트
+  - Section02 (트랜젝션 현황) - 정적 막대 차트
+  - Main Component (업무시스템현황) - 3D 아이소메트릭 구현
+- ✅ Content02 Section01 구현 완료 (콜센터 ARS 현황)
+  - 복잡한 차트 레이아웃 구조 구현
+  - BEM 네이밍으로 리팩토링 완료
+- ⏸️ Content02 Section02, Section03 (다음 작업 예정)
 - ⏸️ Browser Event (다음 작업 예정)
+
+### 최근 작업 내역 (2025-09-02)
+1. **Content02 Section01 구현 및 리팩토링**
+   - Figma 스펙 정확히 반영 (gap: 20px, padding, flex-shrink)
+   - 복잡한 차트 구조 구현 (Y축, grid, area chart, current line)
+   - SVG 에셋 활용 (area-chart, grid-x, axis-x, line-56, divider)
+   - **중첩 선택자 → BEM 리팩토링**:
+     - 287줄 → 262줄로 CSS 간소화
+     - 클래스명 충돌 위험 제거
+     - 디버깅 및 유지보수성 대폭 향상
+
+2. **dark-theme과 light-theme 비교 분석**
+   - positioning 전략은 유사 (absolute 4개, relative 5-6개)
+   - **진짜 차이는 네이밍 전략**
+   - dark-theme의 BEM 접근이 결과적으로 더 효율적
 
 ### 이전 작업 내역 (2025-09-01)
 1. **Browser Event 레이아웃 디버깅**
