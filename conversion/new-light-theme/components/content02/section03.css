@@ -1,0 +1,215 @@
+/* ===========================================
+   Section03: 서비스 TOP5현황 (BEM naming convention)
+   Node ID: 25:568
+   Size: 568 x 269px
+   Position in content02: x:1292, y:0
+   =========================================== */
+
+/* Section03 Container */
+.content02-section03 {
+    width: 568px;
+    height: 269px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #D3DBF9;
+    border-radius: 30px;
+    padding: 21px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* 디버깅용 hover 효과 */
+.content02-section03:hover {
+    outline: 2px dashed #E67E22;
+}
+
+.content02-section03:hover::after {
+    content: "Section03 (25:568)";
+    position: absolute;
+    bottom: -25px;
+    left: 5px;
+    background: #E67E22;
+    color: white;
+    padding: 2px 6px;
+    font-size: 11px;
+    border-radius: 3px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Title */
+.content02-section03__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.content02-section03__title-bullet {
+    width: 10px;
+    height: 11px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.content02-section03__title-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 13px;
+    color: #0E1130;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Group List Container */
+.content02-section03__group-list {
+    width: 508px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+/* List Item (Row) */
+.content02-section03__list-item {
+    width: 508px;
+    height: 34px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Background Box */
+.content02-section03__bg-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 508px;
+    height: 34px;
+    border-radius: 30px;
+}
+
+/* First item has solid white background */
+.content02-section03__list-item--rank-1 .content02-section03__bg-box {
+    background: white;
+}
+
+/* Other items have semi-transparent background */
+.content02-section03__list-item:not(.content02-section03__list-item--rank-1) .content02-section03__bg-box {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Progress Bar */
+.content02-section03__progress-bar {
+    position: absolute;
+    top: 3px;
+    height: 28px;
+    background: #D3DBF9;
+    border-radius: 30px;
+}
+
+/* Different progress bar widths and positions for each rank */
+.content02-section03__list-item--rank-1 .content02-section03__progress-bar {
+    left: 250px;
+    width: 188px;
+}
+
+.content02-section03__list-item--rank-2 .content02-section03__progress-bar {
+    left: 320px;
+    width: 118px;
+}
+
+.content02-section03__list-item--rank-3 .content02-section03__progress-bar {
+    left: 327px;
+    width: 111px;
+}
+
+.content02-section03__list-item--rank-4 .content02-section03__progress-bar {
+    left: 375px;
+    width: 63px;
+}
+
+.content02-section03__list-item--rank-5 .content02-section03__progress-bar {
+    left: 401px;
+    width: 37px;
+}
+
+/* Rank Number */
+.content02-section03__rank {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 11px;
+    color: #4E4E4E;
+    text-align: center;
+}
+
+/* Service Name */
+.content02-section03__service-name {
+    position: absolute;
+    left: 76px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 10px;
+    white-space: nowrap;
+}
+
+/* First item has darker color, others have medium blue */
+.content02-section03__list-item--rank-1 .content02-section03__service-name {
+    color: #373D56;
+}
+
+.content02-section03__list-item:not(.content02-section03__list-item--rank-1) .content02-section03__service-name {
+    color: #4B5C94;
+}
+
+/* Value */
+.content02-section03__value {
+    position: absolute;
+    right: 87px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Tomorrow', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 13px;
+    text-align: right;
+}
+
+/* First item has dark color and medium weight, others have blue color and regular weight */
+.content02-section03__list-item--rank-1 .content02-section03__value {
+    color: #18152D;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.content02-section03__list-item:not(.content02-section03__list-item--rank-1) .content02-section03__value {
+    color: #707EB4;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Unit */
+.content02-section03__unit {
+    position: absolute;
+    right: 34px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 11px;
+    color: #4E4E4E;
+    text-align: right;
+}
