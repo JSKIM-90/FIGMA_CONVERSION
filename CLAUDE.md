@@ -203,6 +203,7 @@ clientLanguages: "html,css,javascript"
      - 계정/승인 각 43개 막대 차트 정적 구현
      - 초록색(#9ECF50) 계정, 주황색(#F9B650) 승인
      - SVG 라인 그래프 오버레이
+     - **line-height 정밀 조정**: title 13px, subtitle 11px (Figma HUG 높이 일치)
      - 모든 아이콘 Figma SVG 직접 사용
    
    - **Main Component (업무시스템현황)** (node-id: 25:843):
@@ -488,6 +489,12 @@ Figma에서 종종 나타나는 'bg' 프레임은 **디자인 도구 전용**입
    - 빠른 로딩 속도
    - Figma 디자인과 픽셀 단위 일치
    - 나중에 필요시 동적 교체 용이
+
+5. **Figma HUG 속성 이해** (2025-09-02 추가)
+   - HUG = 콘텐츠에 맞춰 크기 자동 조절
+   - Figma HUG height ≠ 브라우저 line-height
+   - 해결: line-height를 Figma HUG px 값으로 명시적 설정
+   - 예: font-size 18px, line-height 1 → line-height: 13px (Figma HUG)
 
 ### 현재 진행 상황 (2025-09-02)
 - ✅ Header 구현 완료
