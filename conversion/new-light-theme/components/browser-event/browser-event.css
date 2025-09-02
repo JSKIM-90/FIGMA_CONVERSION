@@ -1,0 +1,548 @@
+/* ===========================================
+   Browser Event Component (BEM naming convention)
+   Node ID: 25:448
+   Size: 1861 x 303px
+   Position: x:29, y:770
+   =========================================== */
+
+/* Browser Event Container */
+.browser-event {
+    width: 1861px;
+    height: 303px;
+    position: relative;
+    padding: 16px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* 디버깅용 hover 효과 */
+.browser-event:hover {
+    outline: 2px solid rgba(50, 100, 200, 0.3);
+    outline-offset: -2px;
+}
+
+.browser-event:hover::after {
+    content: "BROWSER-EVENT (25:448)";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(50, 100, 200, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3px 8px;
+    border-radius: 3px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Box Event (Top background with gradient) */
+.browser-event__box-event {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1860px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 822px;
+    box-sizing: border-box;
+}
+
+/* Background Box */
+.browser-event__bg-box {
+    position: relative;
+    width: 1860px;
+    height: 310px;
+}
+
+/* Gradient Background */
+.browser-event__gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1860px;
+    height: 310px;
+    background: linear-gradient(to right, #39288e 41.398%, #7159d0 62.124%);
+    border-radius: 30px 30px 0 0;
+}
+
+/* Light Background */
+.browser-event__light-bg {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 1860px;
+    height: 265px;
+    background: #D3DBF9;
+    border-radius: 30px 30px 0 0;
+}
+
+/* Button Container */
+.browser-event__btn-container {
+    position: relative;
+    width: 211.22px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+}
+
+/* Vector Background */
+.browser-event__vector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 211.22px;
+    height: 38px;
+}
+
+.browser-event__vector img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Auto Button */
+.browser-event__btn-auto {
+    position: absolute;
+    left: 47px;
+    top: 0;
+    background: #502EE9;
+    border: none;
+    border-radius: 16px;
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.browser-event__btn-auto-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.browser-event__btn-auto-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 0;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Close Button */
+.browser-event__btn-close {
+    position: absolute;
+    left: 138px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: #383838;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.browser-event__btn-close-icon {
+    width: 10px;
+    height: 6px;
+}
+
+/* Title */
+.browser-event__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.browser-event__title-bullet {
+    width: 10px;
+    height: 11px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.browser-event__title-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 13px;
+    color: white;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Main Block */
+.browser-event__block {
+    width: 1801px;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+/* Left Group (Event Status Panel) */
+.browser-event__group-left {
+    width: 202px;
+    height: 218px;
+    background: #A6B3DE;
+    border-radius: 18px;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+/* Event Status Column */
+.browser-event__event-status {
+    width: 86px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+/* Event Status Button */
+.browser-event__status-btn {
+    width: 86px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #A0A0A0;
+    border-radius: 12px;
+    padding: 6px 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+/* Status Icon */
+.browser-event__status-icon {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+}
+
+/* Status Text Container */
+.browser-event__status-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.browser-event__status-divider {
+    width: 0.01px;
+    height: 12px;
+    background: #D3DBF9;
+    flex-shrink: 0;
+}
+
+.browser-event__status-text {
+    width: 24px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 0;
+    color: black;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* ALL button special styling */
+.browser-event__status-btn--all .browser-event__status-divider {
+    background: #D9D9D9;
+}
+
+/* Event Counts Column */
+.browser-event__event-counts {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 13px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    color: black;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* Event Chart */
+.browser-event__event-chart {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.browser-event__chart-bar {
+    height: 6px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.browser-event__chart-bar--critical {
+    width: 24px;
+    background: #F32F50;
+}
+
+.browser-event__chart-bar--major {
+    width: 32px;
+    background: #FC7F01;
+}
+
+.browser-event__chart-bar--minor {
+    width: 57px;
+    background: #FDD01F;
+}
+
+.browser-event__chart-bar--warning {
+    width: 43px;
+    background: #2BBDFF;
+}
+
+/* Right Group (Event Table) */
+.browser-event__group-right {
+    width: 1580px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Table Header */
+.browser-event__header {
+    position: relative;
+    height: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.browser-event__header-cell {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 0;
+    color: black;
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Header cell positions */
+.browser-event__header-cell--grade { left: 43.5px; }
+.browser-event__header-cell--task { left: 194px; }
+.browser-event__header-cell--host { left: 373px; }
+.browser-event__header-cell--message-group { left: 513px; }
+.browser-event__header-cell--application { left: 645.5px; }
+.browser-event__header-cell--object { left: 776px; }
+.browser-event__header-cell--time { left: 909px; }
+.browser-event__header-cell--message { left: 1272px; }
+
+/* Header Dividers */
+.browser-event__header-divider {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.browser-event__header-divider img {
+    width: 10px;
+    height: 1px;
+    transform: rotate(90deg);
+    display: block;
+}
+
+/* Header divider positions */
+.browser-event__header-divider--1 { left: 94px; }
+.browser-event__header-divider--2 { left: 0; }
+.browser-event__header-divider--3 { left: 294px; }
+.browser-event__header-divider--4 { left: 444px; }
+.browser-event__header-divider--5 { left: 575px; }
+.browser-event__header-divider--6 { left: 712px; }
+.browser-event__header-divider--7 { left: 833px; }
+.browser-event__header-divider--8 { left: 982px; }
+
+/* Table Grid */
+.browser-event__grid {
+    width: 1580px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Table Row */
+.browser-event__row {
+    width: 1580px;
+    height: 36px;
+    background: white;
+    border-radius: 18px;
+    padding: 3px 4px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Severity Badge */
+.browser-event__severity-badge {
+    width: 265px;
+    height: 30px;
+    position: relative;
+}
+
+/* Badge Background */
+.browser-event__badge-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 69.43%;
+    bottom: 0;
+    border-radius: 15px;
+}
+
+/* Badge Inner */
+.browser-event__badge-inner {
+    position: absolute;
+    top: 13.33%;
+    bottom: 13.33%;
+    left: 2.26%;
+    right: 71.7%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Badge Text */
+.browser-event__badge-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 0;
+    color: black;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Severity Colors */
+.browser-event__severity-badge--critical .browser-event__badge-bg {
+    background: rgba(235, 197, 206, 0.6);
+}
+.browser-event__severity-badge--critical .browser-event__badge-inner {
+    background: rgba(243, 47, 80, 0.6);
+    border: 1px solid #F43050;
+}
+
+.browser-event__severity-badge--warning .browser-event__badge-bg {
+    background: rgba(176, 220, 243, 0.6);
+}
+.browser-event__severity-badge--warning .browser-event__badge-inner {
+    background: rgba(43, 189, 255, 0.6);
+    border: 1px solid #00B0FF;
+}
+
+.browser-event__severity-badge--minor .browser-event__badge-bg {
+    background: rgba(239, 226, 174, 0.6);
+}
+.browser-event__severity-badge--minor .browser-event__badge-inner {
+    background: rgba(253, 208, 31, 0.6);
+    border: 1px solid #F5C300;
+}
+
+.browser-event__severity-badge--major .browser-event__badge-bg {
+    background: rgba(246, 209, 173, 0.6);
+}
+.browser-event__severity-badge--major .browser-event__badge-inner {
+    background: rgba(252, 127, 1, 0.6);
+    border: 1px solid #FC7F01;
+}
+
+.browser-event__severity-badge--normal .browser-event__badge-bg {
+    background: rgba(198, 232, 217, 0.6);
+}
+.browser-event__severity-badge--normal .browser-event__badge-inner {
+    background: rgba(50, 210, 140, 0.6);
+    border: 1px solid #32D28C;
+}
+
+/* Table Cell */
+.browser-event__cell {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 0;
+    color: black;
+    white-space: nowrap;
+    position: absolute;
+}
+
+/* Cell positions */
+.browser-event__cell--task {
+    left: 152px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.browser-event__cell--host {
+    left: 370.5px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.browser-event__cell--message-group {
+    left: 513px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.browser-event__cell--application {
+    left: 645.5px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.browser-event__cell--object {
+    left: 775.5px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.browser-event__cell--time {
+    left: 908.5px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.browser-event__cell--message {
+    left: 1023px;
+    top: 50%;
+    transform: translateY(-50%);
+}

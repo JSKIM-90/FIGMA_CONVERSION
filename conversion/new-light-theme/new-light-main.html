@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="components/content02/section01-refactor.css">
     <link rel="stylesheet" href="components/content02/section02.css">
     <link rel="stylesheet" href="components/content02/section03.css">
+    <link rel="stylesheet" href="components/browser-event/browser-event.css">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -742,7 +743,251 @@
         
         <!-- Browser Event (x:29, y:770, width:1861, height:303) -->
         <div class="browser-event" data-node-id="25:448">
-            <!-- Browser Event content will be added here -->
+            <!-- Background Elements -->
+            <div class="browser-event__box-event">
+                <div class="browser-event__bg-box">
+                    <!-- Gradient Background -->
+                    <div class="browser-event__gradient-bg"></div>
+                    
+                    <!-- Light Background -->
+                    <div class="browser-event__light-bg"></div>
+                </div>
+                
+                <!-- Button Container -->
+                <div class="browser-event__btn-container">
+                    <!-- Vector Background -->
+                    <div class="browser-event__vector">
+                        <img src="assets/icons/browser-event-vector.svg" alt="Button Background">
+                    </div>
+                    
+                    <!-- Auto Button -->
+                    <button class="browser-event__btn-auto">
+                        <img src="assets/icons/btn-radio.svg" alt="Radio" class="browser-event__btn-auto-icon">
+                        <span class="browser-event__btn-auto-text">Auto</span>
+                    </button>
+                    
+                    <!-- Close Button -->
+                    <button class="browser-event__btn-close">
+                        <img src="assets/icons/btn-close.svg" alt="Close" class="browser-event__btn-close-icon">
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Title -->
+            <div class="browser-event__title">
+                <img src="assets/icons/title-bullet.svg" alt="Bullet" class="browser-event__title-bullet">
+                <span class="browser-event__title-text">Browser Event 현황</span>
+            </div>
+            
+            <!-- Main Block -->
+            <div class="browser-event__block">
+                <!-- Left Group: Event Status Panel -->
+                <div class="browser-event__group-left">
+                    <!-- Event Status Buttons Column -->
+                    <div class="browser-event__event-status">
+                        <!-- ALL Button -->
+                        <button class="browser-event__status-btn browser-event__status-btn--all">
+                            <img src="assets/icons/severity-no.svg" alt="All" class="browser-event__status-icon">
+                            <div class="browser-event__status-text-container">
+                                <div class="browser-event__status-divider"></div>
+                                <span class="browser-event__status-text">ALL</span>
+                            </div>
+                        </button>
+                        
+                        <!-- CR (Critical) Button -->
+                        <button class="browser-event__status-btn">
+                            <img src="assets/icons/severity-cr.svg" alt="Critical" class="browser-event__status-icon">
+                            <div class="browser-event__status-text-container">
+                                <div class="browser-event__status-divider"></div>
+                                <span class="browser-event__status-text">CR</span>
+                            </div>
+                        </button>
+                        
+                        <!-- MA (Major) Button -->
+                        <button class="browser-event__status-btn">
+                            <img src="assets/icons/severity-ma.svg" alt="Major" class="browser-event__status-icon">
+                            <div class="browser-event__status-text-container">
+                                <div class="browser-event__status-divider"></div>
+                                <span class="browser-event__status-text">MA</span>
+                            </div>
+                        </button>
+                        
+                        <!-- MI (Minor) Button -->
+                        <button class="browser-event__status-btn">
+                            <img src="assets/icons/severity-mi.svg" alt="Minor" class="browser-event__status-icon">
+                            <div class="browser-event__status-text-container">
+                                <div class="browser-event__status-divider"></div>
+                                <span class="browser-event__status-text">MI</span>
+                            </div>
+                        </button>
+                        
+                        <!-- WA (Warning) Button -->
+                        <button class="browser-event__status-btn">
+                            <img src="assets/icons/severity-wa.svg" alt="Warning" class="browser-event__status-icon">
+                            <div class="browser-event__status-text-container">
+                                <div class="browser-event__status-divider"></div>
+                                <span class="browser-event__status-text">WA</span>
+                            </div>
+                        </button>
+                        
+                        <!-- NO (Normal) Button -->
+                        <button class="browser-event__status-btn">
+                            <img src="assets/icons/severity-no.svg" alt="Normal" class="browser-event__status-icon">
+                            <div class="browser-event__status-text-container">
+                                <div class="browser-event__status-divider"></div>
+                                <span class="browser-event__status-text">NO</span>
+                            </div>
+                        </button>
+                    </div>
+                    
+                    <!-- Event Counts Column -->
+                    <div class="browser-event__event-counts">
+                        <div class="browser-event__count-value">456</div>
+                        <div class="browser-event__count-value">13</div>
+                        <div class="browser-event__count-value">20</div>
+                        <div class="browser-event__count-value">35</div>
+                        <div class="browser-event__count-value">26</div>
+                        <div class="browser-event__count-value">362</div>
+                    </div>
+                    
+                    <!-- Event Chart -->
+                    <div class="browser-event__event-chart">
+                        <div class="browser-event__chart-bar browser-event__chart-bar--critical"></div>
+                        <div class="browser-event__chart-bar browser-event__chart-bar--major"></div>
+                        <div class="browser-event__chart-bar browser-event__chart-bar--minor"></div>
+                        <div class="browser-event__chart-bar browser-event__chart-bar--warning"></div>
+                    </div>
+                </div>
+                
+                <!-- Right Group: Event Table -->
+                <div class="browser-event__group-right">
+                    <!-- Table Header -->
+                    <div class="browser-event__header">
+                        <span class="browser-event__header-cell browser-event__header-cell--grade">등급</span>
+                        <span class="browser-event__header-cell browser-event__header-cell--task">업무명</span>
+                        <span class="browser-event__header-cell browser-event__header-cell--host">호스트명</span>
+                        <span class="browser-event__header-cell browser-event__header-cell--message-group">메시지그룹</span>
+                        <span class="browser-event__header-cell browser-event__header-cell--application">어플리케이션</span>
+                        <span class="browser-event__header-cell browser-event__header-cell--object">오브젝트</span>
+                        <span class="browser-event__header-cell browser-event__header-cell--time">발생시간</span>
+                        <span class="browser-event__header-cell browser-event__header-cell--message">메시지</span>
+                        
+                        <!-- Header Dividers -->
+                        <div class="browser-event__header-divider browser-event__header-divider--1">
+                            <img src="assets/icons/table-divider.svg" alt="Divider">
+                        </div>
+                        <div class="browser-event__header-divider browser-event__header-divider--2">
+                            <img src="assets/icons/table-divider.svg" alt="Divider">
+                        </div>
+                        <div class="browser-event__header-divider browser-event__header-divider--3">
+                            <img src="assets/icons/table-divider.svg" alt="Divider">
+                        </div>
+                        <div class="browser-event__header-divider browser-event__header-divider--4">
+                            <img src="assets/icons/table-divider.svg" alt="Divider">
+                        </div>
+                        <div class="browser-event__header-divider browser-event__header-divider--5">
+                            <img src="assets/icons/table-divider.svg" alt="Divider">
+                        </div>
+                        <div class="browser-event__header-divider browser-event__header-divider--6">
+                            <img src="assets/icons/table-divider.svg" alt="Divider">
+                        </div>
+                        <div class="browser-event__header-divider browser-event__header-divider--7">
+                            <img src="assets/icons/table-divider.svg" alt="Divider">
+                        </div>
+                        <div class="browser-event__header-divider browser-event__header-divider--8">
+                            <img src="assets/icons/table-divider.svg" alt="Divider">
+                        </div>
+                    </div>
+                    
+                    <!-- Table Grid -->
+                    <div class="browser-event__grid">
+                        <!-- Row 1: Critical -->
+                        <div class="browser-event__row">
+                            <div class="browser-event__severity-badge browser-event__severity-badge--critical">
+                                <div class="browser-event__badge-bg"></div>
+                                <div class="browser-event__badge-inner">
+                                    <span class="browser-event__badge-text">CRITICAL</span>
+                                </div>
+                            </div>
+                            <span class="browser-event__cell browser-event__cell--task">업무2</span>
+                            <span class="browser-event__cell browser-event__cell--host">HOST 1</span>
+                            <span class="browser-event__cell browser-event__cell--message-group">MGROUP 1</span>
+                            <span class="browser-event__cell browser-event__cell--application">APP 1</span>
+                            <span class="browser-event__cell browser-event__cell--object">OBJECT 1</span>
+                            <span class="browser-event__cell browser-event__cell--time">2024-01-01 12:00</span>
+                            <span class="browser-event__cell browser-event__cell--message">Critical error occurred in system process</span>
+                        </div>
+                        
+                        <!-- Row 2: Warning -->
+                        <div class="browser-event__row">
+                            <div class="browser-event__severity-badge browser-event__severity-badge--warning">
+                                <div class="browser-event__badge-bg"></div>
+                                <div class="browser-event__badge-inner">
+                                    <span class="browser-event__badge-text">WARNING</span>
+                                </div>
+                            </div>
+                            <span class="browser-event__cell browser-event__cell--task">업무3</span>
+                            <span class="browser-event__cell browser-event__cell--host">HOST 2</span>
+                            <span class="browser-event__cell browser-event__cell--message-group">MGROUP 2</span>
+                            <span class="browser-event__cell browser-event__cell--application">APP 2</span>
+                            <span class="browser-event__cell browser-event__cell--object">OBJECT 2</span>
+                            <span class="browser-event__cell browser-event__cell--time">2024-01-01 11:45</span>
+                            <span class="browser-event__cell browser-event__cell--message">Warning: High memory usage detected</span>
+                        </div>
+                        
+                        <!-- Row 3: Minor -->
+                        <div class="browser-event__row">
+                            <div class="browser-event__severity-badge browser-event__severity-badge--minor">
+                                <div class="browser-event__badge-bg"></div>
+                                <div class="browser-event__badge-inner">
+                                    <span class="browser-event__badge-text">MINOR</span>
+                                </div>
+                            </div>
+                            <span class="browser-event__cell browser-event__cell--task">업무1</span>
+                            <span class="browser-event__cell browser-event__cell--host">HOST 3</span>
+                            <span class="browser-event__cell browser-event__cell--message-group">MGROUP 3</span>
+                            <span class="browser-event__cell browser-event__cell--application">APP 3</span>
+                            <span class="browser-event__cell browser-event__cell--object">OBJECT 3</span>
+                            <span class="browser-event__cell browser-event__cell--time">2024-01-01 11:30</span>
+                            <span class="browser-event__cell browser-event__cell--message">Minor issue in data processing</span>
+                        </div>
+                        
+                        <!-- Row 4: Major -->
+                        <div class="browser-event__row">
+                            <div class="browser-event__severity-badge browser-event__severity-badge--major">
+                                <div class="browser-event__badge-bg"></div>
+                                <div class="browser-event__badge-inner">
+                                    <span class="browser-event__badge-text">MAJOR</span>
+                                </div>
+                            </div>
+                            <span class="browser-event__cell browser-event__cell--task">업무4</span>
+                            <span class="browser-event__cell browser-event__cell--host">HOST 4</span>
+                            <span class="browser-event__cell browser-event__cell--message-group">MGROUP 4</span>
+                            <span class="browser-event__cell browser-event__cell--application">APP 4</span>
+                            <span class="browser-event__cell browser-event__cell--object">OBJECT 4</span>
+                            <span class="browser-event__cell browser-event__cell--time">2024-01-01 11:15</span>
+                            <span class="browser-event__cell browser-event__cell--message">Major system malfunction</span>
+                        </div>
+                        
+                        <!-- Row 5: Normal -->
+                        <div class="browser-event__row">
+                            <div class="browser-event__severity-badge browser-event__severity-badge--normal">
+                                <div class="browser-event__badge-bg"></div>
+                                <div class="browser-event__badge-inner">
+                                    <span class="browser-event__badge-text">NORMAL</span>
+                                </div>
+                            </div>
+                            <span class="browser-event__cell browser-event__cell--task">업무5</span>
+                            <span class="browser-event__cell browser-event__cell--host">HOST 5</span>
+                            <span class="browser-event__cell browser-event__cell--message-group">MGROUP 5</span>
+                            <span class="browser-event__cell browser-event__cell--application">APP 5</span>
+                            <span class="browser-event__cell browser-event__cell--object">OBJECT 5</span>
+                            <span class="browser-event__cell browser-event__cell--time">2024-01-01 11:00</span>
+                            <span class="browser-event__cell browser-event__cell--message">System running normally</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
