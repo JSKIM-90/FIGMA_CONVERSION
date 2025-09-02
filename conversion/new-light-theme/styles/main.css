@@ -60,6 +60,7 @@ body {
     width: 1861px;
     height: 303px;
     margin-top: 26px; /* Gap from content02 */
+    position: relative; /* Added for hover label positioning */
 }
 
 /* ============================================
@@ -98,8 +99,8 @@ body {
 .content01:hover::after {
     content: "CONTENT01 (25:606)";
     position: absolute;
-    top: 5px;
-    left: 5px;
+    bottom: 5px;  /* Changed from top to bottom */
+    right: 5px;   /* Changed from left to right */
     font-size: 12px;
     font-weight: bold;
     color: rgba(100, 200, 100, 0.9);
@@ -119,8 +120,8 @@ body {
 .content02:hover::after {
     content: "CONTENT02 (25:461)";
     position: absolute;
-    top: 5px;
-    left: 5px;
+    bottom: 5px;  /* Changed from top to bottom */
+    right: 5px;   /* Changed from left to right */
     font-size: 12px;
     font-weight: bold;
     color: rgba(100, 150, 200, 0.9);
@@ -140,8 +141,8 @@ body {
 .browser-event:hover::after {
     content: "BROWSER-EVENT (25:448)";
     position: absolute;
-    top: 5px;
-    left: 5px;
+    bottom: 5px;  /* Changed from top to bottom */
+    right: 5px;   /* Changed from left to right */
     font-size: 12px;
     font-weight: bold;
     color: rgba(50, 100, 200, 0.9);

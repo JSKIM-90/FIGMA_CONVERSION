@@ -1,0 +1,17 @@
+/* ===========================================
+   Content02 Container Styles
+   Node ID: 25:461
+   Size: 1861 x 269px
+   Position: x:29, y:475
+   =========================================== */
+
+/* Content02 Container */
+.content02 {
+    width: 1861px;
+    height: 269px;
+    display: flex;
+    gap: 30px;  /* Gap between sections */
+    position: relative;
+}
+
+/* Hover effect is already defined in main.css */
