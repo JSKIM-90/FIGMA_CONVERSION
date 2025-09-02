@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="components/content01/section02.css">
     <link rel="stylesheet" href="components/main-component/main-component.css">
     <link rel="stylesheet" href="components/content02/content02.css">
-    <link rel="stylesheet" href="components/content02/section01.css">
+    <!-- <link rel="stylesheet" href="components/content02/section01.css"> -->
+    <link rel="stylesheet" href="components/content02/section01-refactor.css">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -412,83 +413,81 @@
         <!-- Content02 (x:29, y:475, width:1861, height:269) -->
         <div class="content02" data-node-id="25:461">
             <!-- Section01: 콜센터 ARS 현황 -->
-            <div class="section01" data-node-id="25:462">
+            <div class="content02-section01" data-node-id="25:462">
                 <!-- Title -->
-                <div class="title-h1" data-node-id="25:463">
-                    <div class="bullet">
-                        <img src="assets/icons/bullet-purple.svg" alt="" />
-                    </div>
-                    <span class="title-text">콜 센터 ARS 현황</span>
+                <div class="content02-section01__title" data-node-id="25:463">
+                    <img class="content02-section01__title-bullet" src="assets/icons/bullet-purple.svg" alt="" />
+                    <div class="content02-section01__title-text">콜 센터 ARS 현황</div>
                 </div>
                 
                 <!-- Chart Area -->
-                <div class="chart-area" data-node-id="25:464">
-                    <div class="chart" data-node-id="25:465">
+                <div class="content02-section01__chart-area" data-node-id="25:464">
+                    <div class="content02-section01__chart" data-node-id="25:465">
                         <!-- Background container with Y-axis, ticks, and grid -->
-                        <div class="bg" data-node-id="25:466">
+                        <div class="content02-section01__chart-bg" data-node-id="25:466">
                             <!-- Y-axis labels -->
-                            <div class="y-labels" data-node-id="25:467">
-                                <span>2,000</span>
-                                <span>1,500</span>
-                                <span>1,000</span>
-                                <span>500</span>
-                                <span>0</span>
+                            <div class="content02-section01__y-labels" data-node-id="25:467">
+                                <div>2,000</div>
+                                <div>1,500</div>
+                                <div>1,000</div>
+                                <div>500</div>
+                                <div>0</div>
                             </div>
                             
                             <!-- Axis ticks -->
-                            <div class="axis-x" data-node-id="25:468">
+                            <div class="content02-section01__axis-x" data-node-id="25:468">
                                 <img src="assets/icons/axis-x.svg" alt="" />
                             </div>
                             
                             <!-- Grid lines -->
-                            <div class="grid-x" data-node-id="25:474">
+                            <div class="content02-section01__grid-x" data-node-id="25:474">
                                 <img src="assets/icons/grid-x.svg" alt="" />
                             </div>
                         </div>
                         
                         <!-- Area chart -->
-                        <div class="area-chart" data-node-id="25:480">
+                        <div class="content02-section01__area-chart" data-node-id="25:480">
                             <img src="assets/icons/area-chart.svg" alt="Area Chart" />
                         </div>
                         
                         <!-- Current position line -->
-                        <div class="current-line" data-node-id="58:1933">
+                        <div class="content02-section01__current-line" data-node-id="58:1933">
                             <img src="assets/icons/line-56.svg" alt="" />
                         </div>
                     </div>
                 </div>
                 
                 <!-- Statistics Group -->
-                <div class="group-list" data-node-id="25:481">
-                    <div class="list" data-node-id="25:482">
-                        <div class="label" data-node-id="25:483">총 인입</div>
-                        <div class="input-text" data-node-id="25:484">
-                            <div class="value" data-node-id="25:485">6,294,043</div>
-                            <div class="unit" data-node-id="25:486">명</div>
+                <div class="content02-section01__stats" data-node-id="25:481">
+                    <div class="content02-section01__stat-item content02-section01__stat-item--total" data-node-id="25:482">
+                        <div class="content02-section01__stat-label" data-node-id="25:483">총 인입</div>
+                        <div class="content02-section01__stat-value-wrapper content02-section01__stat-value-wrapper--default" data-node-id="25:484">
+                            <div class="content02-section01__stat-value" data-node-id="25:485">6,294,043</div>
+                            <div class="content02-section01__stat-unit" data-node-id="25:486">명</div>
                         </div>
                     </div>
                     
-                    <div class="divider" data-node-id="25:487">
+                    <div class="content02-section01__divider" data-node-id="25:487">
                         <img src="assets/icons/divider.svg" alt="" />
                     </div>
                     
-                    <div class="list" data-node-id="25:488">
-                        <div class="label" data-node-id="25:489">응대</div>
-                        <div class="input-text" data-node-id="25:490">
-                            <div class="value" data-node-id="25:491">26,200</div>
-                            <div class="unit" data-node-id="25:492">명</div>
+                    <div class="content02-section01__stat-item content02-section01__stat-item--handled" data-node-id="25:488">
+                        <div class="content02-section01__stat-label" data-node-id="25:489">응대</div>
+                        <div class="content02-section01__stat-value-wrapper content02-section01__stat-value-wrapper--narrow" data-node-id="25:490">
+                            <div class="content02-section01__stat-value" data-node-id="25:491">26,200</div>
+                            <div class="content02-section01__stat-unit" data-node-id="25:492">명</div>
                         </div>
                     </div>
                     
-                    <div class="divider" data-node-id="25:493">
+                    <div class="content02-section01__divider" data-node-id="25:493">
                         <img src="assets/icons/divider.svg" alt="" />
                     </div>
                     
-                    <div class="list" data-node-id="25:494">
-                        <div class="label" data-node-id="25:495">응대율</div>
-                        <div class="input-text" data-node-id="25:496">
-                            <div class="value" data-node-id="25:497">98.6</div>
-                            <div class="unit" data-node-id="25:498">%</div>
+                    <div class="content02-section01__stat-item content02-section01__stat-item--rate" data-node-id="25:494">
+                        <div class="content02-section01__stat-label" data-node-id="25:495">응대율</div>
+                        <div class="content02-section01__stat-value-wrapper content02-section01__stat-value-wrapper--default" data-node-id="25:496">
+                            <div class="content02-section01__stat-value" data-node-id="25:497">98.6</div>
+                            <div class="content02-section01__stat-unit" data-node-id="25:498">%</div>
                         </div>
                     </div>
                 </div>

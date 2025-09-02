@@ -1,0 +1,277 @@
+/* ===========================================
+   Section01: 콜센터 ARS 현황 (Refactored)
+   BEM naming convention 적용
+   Node ID: 25:462
+   Size: 419 x 269px
+   =========================================== */
+
+/* Section01 Container */
+.content02-section01 {
+    width: 419px;
+    height: 269px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #D3DBF9;
+    border-radius: 30px;
+    padding: 26px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* 디버깅용 hover 효과 */
+.content02-section01:hover {
+    outline: 2px dashed #9B59B6;
+}
+
+.content02-section01:hover::after {
+    content: "Section01 (25:462)";
+    position: absolute;
+    bottom: -25px;
+    left: 5px;
+    background: #9B59B6;
+    color: white;
+    padding: 2px 6px;
+    font-size: 11px;
+    border-radius: 3px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Title */
+.content02-section01__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.content02-section01__title-bullet {
+    width: 10px;
+    height: 11px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.content02-section01__title-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 13px;
+    color: #0E1130;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Chart Area */
+.content02-section01__chart-area {
+    width: 369px;
+    height: 119px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 11px 12px;
+    box-sizing: border-box;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Chart */
+.content02-section01__chart {
+    width: 344px;
+    height: 94px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* Chart Background Container */
+.content02-section01__chart-bg {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
+
+/* Y-axis Labels */
+.content02-section01__y-labels {
+    width: 32px;
+    height: 93px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 1;
+    color: #999999;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content02-section01__y-labels div {
+    display: block;
+}
+
+/* Axis X */
+.content02-section01__axis-x {
+    width: 4px;
+    height: 84px;
+    position: relative;
+}
+
+.content02-section01__axis-x img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Grid X */
+.content02-section01__grid-x {
+    width: 292px;
+    height: 84px;
+    position: relative;
+}
+
+.content02-section01__grid-x img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Area Chart */
+.content02-section01__area-chart {
+    position: absolute;
+    left: 52px;
+    top: 15px;
+    width: 292px;
+    height: 74px;
+}
+
+.content02-section01__area-chart img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Current Line */
+.content02-section01__current-line {
+    position: absolute;
+    left: 256px;
+    top: 0;
+    width: 0;
+    height: 89px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content02-section01__current-line img {
+    width: 89px;
+    height: 1px;
+    transform: rotate(90deg);
+    transform-origin: center;
+    display: block;
+}
+
+/* Statistics Group */
+.content02-section01__stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-shrink: 0;
+}
+
+/* Stat Item */
+.content02-section01__stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    flex-shrink: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* Different widths for each stat item */
+.content02-section01__stat-item--total {
+    width: 106px;
+}
+
+.content02-section01__stat-item--handled {
+    width: 78px;
+}
+
+.content02-section01__stat-item--rate {
+    width: 57px;
+}
+
+/* Stat Label */
+.content02-section01__stat-label {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 10px;
+    color: #4B5C94;
+    width: 100%;
+}
+
+/* Stat Value Wrapper */
+.content02-section01__stat-value-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    white-space: nowrap;
+}
+
+/* Different gaps for value wrappers */
+.content02-section01__stat-value-wrapper--default {
+    gap: 6px;
+}
+
+.content02-section01__stat-value-wrapper--narrow {
+    gap: 5px;
+}
+
+/* Stat Value */
+.content02-section01__stat-value {
+    font-family: 'Tomorrow', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 13px;
+    color: #373D56;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* Stat Unit */
+.content02-section01__stat-unit {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 10px;
+    color: #999999;
+    flex-shrink: 0;
+}
+
+/* Divider */
+.content02-section01__divider {
+    width: 0;
+    height: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.content02-section01__divider img {
+    width: 44px;
+    height: 1px;
+    transform: rotate(90deg);
+    display: block;
+}
