@@ -19,12 +19,13 @@
 */
 .content01 .container {
     position: absolute;
-    left: 30px;
+    left: 0;
     top: 11px; /* 77 - 66 = 11px from content01 top */
     width: 1860px;
     height: 374px;
     display: flex;
-    gap: 0;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 /* Section01 positioning within container
@@ -33,30 +34,30 @@
    Position: x:0, y:28 (relative to container)
 */
 .content01 .section01 {
-    position: absolute;
-    left: 0;
-    top: 28px;
     width: 419px;
     height: 346px;
+    margin-top: 28px; /* y:28 from Figma */
+    flex-shrink: 0;
 }
 
 /* Section02 positioning within container
    Node ID: 25:641
    Size: 568 x 374px  
    Position: x:1292, y:0 (relative to container)
+   Gap from section01: 1292 - 419 = 873px
 */
 .content01 .section02 {
-    position: absolute;
-    left: 1292px;
-    top: 0;
     width: 568px;
     height: 374px;
+    flex-shrink: 0;
 }
 
 /* Main Component positioning
    Node ID: 25:843
    Size: 727.46 x 429.76px
-   Position relative to content01: x:493, y:66 (actually y:0 from content01 top)
+   Position: x:493, y:66 (absolute coordinates)
+   Position relative to content01: x:463, y:0
+   Note: This component overlays on top of sections as a 3D isometric diagram
 */
 .content01 .main-component {
     position: absolute;
@@ -64,5 +65,5 @@
     top: 0;
     width: 727.46px;
     height: 429.76px;
-    z-index: 10; /* Above other sections */
+    z-index: 10; /* Above other sections for overlay effect */
 }

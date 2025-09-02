@@ -24,6 +24,21 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
+.content01 .section01:hover::after {
+    content: "SECTION01 (25:608)";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #502EE9;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3px 8px;
+    border-radius: 3px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
 /* Title Section */
 .content01 .section01 .title {
     display: flex;

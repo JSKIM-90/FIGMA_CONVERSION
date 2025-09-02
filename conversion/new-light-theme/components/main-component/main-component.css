@@ -2,21 +2,47 @@
    Main Component: 업무시스템현황 (3D Isometric)
    Node ID: 25:843
    Size: 727.46 x 429.76px
+   Position: x:493, y:66 (absolute)
    Position relative to content01: x:463, y:0
    =========================================== */
 
-/* Main Component Container */
+/* Main Component Container - Absolute positioning for overlay effect */
 .content01 .main-component {
-    position: relative;
+    position: absolute;
+    left: 463px; /* 493 - 30 = 463px from content01 left */
+    top: 0;
     width: 727.46px;
     height: 429.76px;
+    z-index: 10; /* Above sections */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for debugging */
+.content01 .main-component:hover {
+    outline: 2px dashed rgba(128, 0, 128, 0.5);
+    outline-offset: 2px;
+}
+
+.content01 .main-component:hover::before {
+    content: "MAIN-COMPONENT (25:843)";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(128, 0, 128, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3px 8px;
+    border-radius: 3px;
+    z-index: 1000;
+    pointer-events: none;
 }
 
 /* Background Network Diagram */
 .content01 .main-component .bg-network {
     position: absolute;
     left: 79px;  /* 572 - 493 = 79px from main-component left */
-    top: 141px;
+    top: 75px;   /* 141 - 66 = 75px from main-component top */
     width: 637.322px;
     height: 354.759px;
 }
@@ -31,7 +57,7 @@
 .content01 .main-component .title-h1 {
     position: absolute;
     left: 0;  /* 493 - 493 = 0 */
-    top: 108px;
+    top: 42px;   /* 108 - 66 = 42px */
     display: flex;
     align-items: center;
     gap: 12px;
@@ -96,55 +122,55 @@
 /* 콜센터 */
 .content01 .main-component .callcenter {
     left: 162px;  /* 655 - 493 = 162px */
-    top: 111px;
+    top: 45px;    /* 111 - 66 = 45px */
 }
 
 /* 카드발급 */
 .content01 .main-component .card-issue {
     left: 295px;  /* 788 - 493 = 295px */
-    top: 66px;
+    top: 0px;     /* 66 - 66 = 0px */
 }
 
 /* 인터넷포탈 */
 .content01 .main-component .internet-portal {
     left: 397px;  /* 890 - 493 = 397px */
-    top: 132px;
+    top: 66px;    /* 132 - 66 = 66px */
 }
 
 /* 계정계 */
 .content01 .main-component .account-system {
     left: 526px;  /* 1019 - 493 = 526px */
-    top: 177px;
+    top: 111px;   /* 177 - 66 = 111px */
 }
 
 /* 승인계 */
 .content01 .main-component .approval-system {
     left: 641px;  /* 1134 - 493 = 641px */
-    top: 246px;
+    top: 180px;   /* 246 - 66 = 180px */
 }
 
 /* 정보계 */
 .content01 .main-component .info-system {
     left: 565px;  /* 1058 - 493 = 565px */
-    top: 341px;
+    top: 275px;   /* 341 - 66 = 275px */
 }
 
 /* 은행 */
 .content01 .main-component .bank {
     left: 15px;  /* 508 - 493 = 15px */
-    top: 226px;
+    top: 160px;  /* 226 - 66 = 160px */
 }
 
 /* MCA */
 .content01 .main-component .mca {
     left: 252px;  /* 745 - 493 = 252px */
-    top: 223px;
+    top: 157px;   /* 223 - 66 = 157px */
 }
 
 /* EAI */
 .content01 .main-component .eai {
     left: 359px;  /* 852 - 493 = 359px */
-    top: 284px;
+    top: 218px;   /* 284 - 66 = 218px */
 }
 
 /* White Labels Background */
@@ -158,10 +184,10 @@
 
 .content01 .main-component .mca-label {
     left: 255px;  /* 748 - 493 = 255px */
-    top: 212px;
+    top: 146px;   /* 212 - 66 = 146px */
 }
 
 .content01 .main-component .eai-label {
     left: 362px;  /* 855 - 493 = 362px */
-    top: 273px;
+    top: 207px;   /* 273 - 66 = 207px */
 }

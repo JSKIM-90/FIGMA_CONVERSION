@@ -18,51 +18,48 @@ body {
 
 /* Dashboard Container - Exactly 1920x1080 as per Figma */
 .dashboard-container {
-    position: relative;
     width: 1920px;
-    height: 1080px;
+    min-height: 1080px;
     background-color: #E8EDFF; /* Light blue-purple background from Figma */
+    padding: 0 29px;
+    padding-top: 1px; /* To handle header's negative margin */
+    box-sizing: border-box;
 }
 
 /* ===========================================
    MAIN LAYOUT BLOCKS - Exact Figma positioning
    =========================================== */
 
-/* Header - Exact positioning from Figma */
+/* Header - Using margin for positioning */
 .header {
-    position: absolute;
-    left: 29px;
-    top: -1px;
     width: 1860px;
     height: 75px;
+    margin-top: -2px; /* Figma y: -1, adjusted for container padding */
+    position: relative;
     z-index: 100;
 }
 
-/* Content01 - Exact positioning from Figma */
+/* Content01 - Normal flow */
 .content01 {
-    position: absolute;
-    left: 30px;
-    top: 66px;
     width: 1860px;
     height: 430px;
+    margin-left: 1px; /* 30 - 29 = 1px difference from container padding */
+    margin-top: -8px; /* 66 - 74 = -8px to position at y=66 */
+    position: relative; /* For main-component absolute positioning */
 }
 
-/* Content02 - Exact positioning from Figma */
+/* Content02 - Normal flow */
 .content02 {
-    position: absolute;
-    left: 29px;
-    top: 475px;
     width: 1861px;
     height: 269px;
+    margin-top: -21px; /* Gap from content01 */
 }
 
-/* Browser Event - Exact positioning from Figma */
+/* Browser Event - Normal flow */
 .browser-event {
-    position: absolute;
-    left: 29px;
-    top: 770px;
     width: 1861px;
     height: 303px;
+    margin-top: 26px; /* Gap from content02 */
 }
 
 /* ============================================

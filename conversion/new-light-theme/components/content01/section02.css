@@ -7,14 +7,38 @@
 
 /* Section02 Container */
 .content01 .section02 {
-    /* background: rgba(255, 255, 255, 0.3); */
-    /* border: 2px solid #D3DBF9; */
-    /* border-radius: 30px; */
-    /* padding: 21px 25px; */
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #D3DBF9;
+    border-radius: 30px;
+    padding: 21px 25px;  /* Symmetric padding from Figma */
     display: flex;
     flex-direction: column;
     gap: 15px;
     box-sizing: border-box;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for debugging */
+.content01 .section02:hover {
+    outline: 2px solid #F9B650;
+    outline-offset: 2px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.content01 .section02:hover::after {
+    content: "SECTION02 (25:641)";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #F9B650;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3px 8px;
+    border-radius: 3px;
+    z-index: 1000;
+    pointer-events: none;
 }
 
 /* Main Title */
@@ -39,7 +63,7 @@
     font-family: 'Pretendard', sans-serif;
     font-weight: 500;
     font-size: 18px;
-    line-height: 1;
+    line-height: 13px;  /* Figma HUG height */
     color: #0E1130;
 }
 
@@ -74,7 +98,7 @@
     font-family: 'Pretendard', sans-serif;
     font-weight: 500;
     font-size: 16px;
-    line-height: 1;
+    line-height: 11px;  /* Figma HUG height for title-2epth */
     color: #555770;
 }
 
@@ -94,9 +118,8 @@
 /* Chart Area */
 .content01 .section02 .chart {
     position: relative;
-    width: 383px;
+    width: 383px;  /* Figma exact width for 43 bars */
     height: 80px;
-    padding: 14px 1px;
     box-sizing: border-box;
 }
 
@@ -112,70 +135,15 @@
     height: 80px;
 }
 
-/* Individual Background Bars - Using ::before to generate 43 bars */
-.content01 .section02 .bg-bars::before,
-.content01 .section02 .bg-chart::before {
-    content: '';
-    display: flex;
-    gap: 4px;
-    height: 80px;
-}
-
-/* Generate background bars using multiple box-shadows */
-.content01 .section02 .bg-bars::after,
-.content01 .section02 .bg-chart::after {
-    content: '';
-    position: absolute;
+/* Individual Background Bars */
+.content01 .section02 .bar-bg {
     width: 5px;
     height: 80px;
     background: rgba(217, 217, 217, 0.5);
     border-radius: 2.5px;
-    box-shadow: 
-        9px 0 rgba(217, 217, 217, 0.5),
-        18px 0 rgba(217, 217, 217, 0.5),
-        27px 0 rgba(217, 217, 217, 0.5),
-        36px 0 rgba(217, 217, 217, 0.5),
-        45px 0 rgba(217, 217, 217, 0.5),
-        54px 0 rgba(217, 217, 217, 0.5),
-        63px 0 rgba(217, 217, 217, 0.5),
-        72px 0 rgba(217, 217, 217, 0.5),
-        81px 0 rgba(217, 217, 217, 0.5),
-        90px 0 rgba(217, 217, 217, 0.5),
-        99px 0 rgba(217, 217, 217, 0.5),
-        108px 0 rgba(217, 217, 217, 0.5),
-        117px 0 rgba(217, 217, 217, 0.5),
-        126px 0 rgba(217, 217, 217, 0.5),
-        135px 0 rgba(217, 217, 217, 0.5),
-        144px 0 rgba(217, 217, 217, 0.5),
-        153px 0 rgba(217, 217, 217, 0.5),
-        162px 0 rgba(217, 217, 217, 0.5),
-        171px 0 rgba(217, 217, 217, 0.5),
-        180px 0 rgba(217, 217, 217, 0.5),
-        189px 0 rgba(217, 217, 217, 0.5),
-        198px 0 rgba(217, 217, 217, 0.5),
-        207px 0 rgba(217, 217, 217, 0.5),
-        216px 0 rgba(217, 217, 217, 0.5),
-        225px 0 rgba(217, 217, 217, 0.5),
-        234px 0 rgba(217, 217, 217, 0.5),
-        243px 0 rgba(217, 217, 217, 0.5),
-        252px 0 rgba(217, 217, 217, 0.5),
-        261px 0 rgba(217, 217, 217, 0.5),
-        270px 0 rgba(217, 217, 217, 0.5),
-        279px 0 rgba(217, 217, 217, 0.5),
-        288px 0 rgba(217, 217, 217, 0.5),
-        297px 0 rgba(217, 217, 217, 0.5),
-        306px 0 rgba(217, 217, 217, 0.5),
-        315px 0 rgba(217, 217, 217, 0.5),
-        324px 0 rgba(217, 217, 217, 0.5),
-        333px 0 rgba(217, 217, 217, 0.5),
-        342px 0 rgba(217, 217, 217, 0.5),
-        351px 0 rgba(217, 217, 217, 0.5),
-        360px 0 rgba(217, 217, 217, 0.5),
-        369px 0 rgba(217, 217, 217, 0.5),
-        378px 0 rgba(217, 217, 217, 0.5);
 }
 
-/* Actual Data Bars */
+/* Actual Data Bars Container */
 .content01 .section02 .bars {
     position: absolute;
     left: 0;
@@ -186,188 +154,30 @@
     height: 80px;
 }
 
-/* Green bars for 계정 */
-.content01 .section02 .bars.green::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
+/* Individual Data Bars */
+.content01 .section02 .bars .bar {
     width: 5px;
-    height: 57px;
-    background: #9ECF50;
     border-radius: 2.5px;
-    box-shadow: 
-        9px 0 0 -0px #9ECF50,
-        9px 14px 0 -0px #9ECF50,
-        18px 0 0 -0px #9ECF50,
-        18px 36px 0 -0px #9ECF50,
-        27px 0 0 -0px #9ECF50,
-        27px 29px 0 -0px #9ECF50,
-        36px 0 0 -0px #9ECF50,
-        36px 23px 0 -0px #9ECF50,
-        45px 0 0 -0px #9ECF50,
-        45px 23px 0 -0px #9ECF50,
-        54px 0 0 -0px #9ECF50,
-        63px 0 0 -0px #9ECF50,
-        72px 0 0 -0px #9ECF50,
-        72px 16px 0 -0px #9ECF50,
-        81px 0 0 -0px #9ECF50,
-        90px 0 0 -0px #9ECF50,
-        90px 12px 0 -0px #9ECF50,
-        99px 0 0 -0px #9ECF50,
-        99px 36px 0 -0px #9ECF50,
-        108px 0 0 -0px #9ECF50,
-        117px 0 0 -0px #9ECF50,
-        117px 41px 0 -0px #9ECF50,
-        126px 0 0 -0px #9ECF50,
-        126px 36px 0 -0px #9ECF50,
-        135px 0 0 -0px #9ECF50,
-        135px 29px 0 -0px #9ECF50,
-        144px 0 0 -0px #9ECF50,
-        144px 20px 0 -0px #9ECF50,
-        153px 0 0 -0px #9ECF50,
-        153px 29px 0 -0px #9ECF50,
-        162px 0 0 -0px #9ECF50,
-        171px 0 0 -0px #9ECF50,
-        171px 29px 0 -0px #9ECF50,
-        180px 0 0 -0px #9ECF50,
-        180px 9px 0 -0px #9ECF50,
-        189px 0 0 -0px #9ECF50,
-        189px 36px 0 -0px #9ECF50,
-        198px 0 0 -0px #9ECF50,
-        198px 29px 0 -0px #9ECF50,
-        207px 0 0 -0px #9ECF50,
-        216px 0 0 -0px #9ECF50,
-        225px 0 0 -0px #9ECF50,
-        225px 16px 0 -0px #9ECF50,
-        234px 0 0 -0px #9ECF50,
-        234px 12px 0 -0px #9ECF50,
-        243px 0 0 -0px #9ECF50,
-        243px 29px 0 -0px #9ECF50,
-        252px 0 0 -0px #9ECF50,
-        261px 0 0 -0px #9ECF50,
-        261px 29px 0 -0px #9ECF50,
-        270px 0 0 -0px #9ECF50,
-        279px 0 0 -0px #9ECF50,
-        279px 20px 0 -0px #9ECF50,
-        288px 0 0 -0px #9ECF50,
-        288px 13px 0 -0px #9ECF50,
-        297px 0 0 -0px #9ECF50,
-        297px 20px 0 -0px #9ECF50,
-        306px 0 0 -0px #9ECF50,
-        306px 29px 0 -0px #9ECF50,
-        315px 0 0 -0px #9ECF50,
-        315px 29px 0 -0px #9ECF50,
-        324px 0 0 -0px #9ECF50,
-        324px 20px 0 -0px #9ECF50,
-        333px 0 0 -0px #9ECF50,
-        333px 16px 0 -0px #9ECF50,
-        342px 0 0 -0px #9ECF50,
-        342px 9px 0 -0px #9ECF50,
-        351px 0 0 -0px #9ECF50,
-        351px 16px 0 -0px #9ECF50,
-        360px 0 0 -0px #9ECF50,
-        360px 20px 0 -0px #9ECF50,
-        369px 0 0 -0px #9ECF50,
-        378px 0 0 -0px #9ECF50,
-        378px 16px 0 -0px #9ECF50,
-        387px 0 0 -0px #9ECF50,
-        387px 13px 0 -0px #9ECF50;
+}
+
+/* Green bars for 계정 */
+.content01 .section02 .bars.green .bar {
+    background: #9ECF50;
 }
 
 /* Orange bars for 승인 */
-.content01 .section02 .bars.orange::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 5px;
-    height: 57px;
+.content01 .section02 .bars.orange .bar {
     background: #F9B650;
-    border-radius: 2.5px;
-    box-shadow: 
-        9px 0 0 -0px #F9B650,
-        9px 14px 0 -0px #F9B650,
-        18px 0 0 -0px #F9B650,
-        18px 36px 0 -0px #F9B650,
-        27px 0 0 -0px #F9B650,
-        27px 29px 0 -0px #F9B650,
-        36px 0 0 -0px #F9B650,
-        36px 23px 0 -0px #F9B650,
-        45px 0 0 -0px #F9B650,
-        45px 23px 0 -0px #F9B650,
-        54px 0 0 -0px #F9B650,
-        63px 0 0 -0px #F9B650,
-        72px 0 0 -0px #F9B650,
-        72px 16px 0 -0px #F9B650,
-        81px 0 0 -0px #F9B650,
-        90px 0 0 -0px #F9B650,
-        90px 12px 0 -0px #F9B650,
-        99px 0 0 -0px #F9B650,
-        99px 36px 0 -0px #F9B650,
-        108px 0 0 -0px #F9B650,
-        117px 0 0 -0px #F9B650,
-        117px 41px 0 -0px #F9B650,
-        126px 0 0 -0px #F9B650,
-        126px 36px 0 -0px #F9B650,
-        135px 0 0 -0px #F9B650,
-        135px 29px 0 -0px #F9B650,
-        144px 0 0 -0px #F9B650,
-        144px 20px 0 -0px #F9B650,
-        153px 0 0 -0px #F9B650,
-        153px 29px 0 -0px #F9B650,
-        162px 0 0 -0px #F9B650,
-        171px 0 0 -0px #F9B650,
-        171px 29px 0 -0px #F9B650,
-        180px 0 0 -0px #F9B650,
-        180px 9px 0 -0px #F9B650,
-        189px 0 0 -0px #F9B650,
-        189px 36px 0 -0px #F9B650,
-        198px 0 0 -0px #F9B650,
-        198px 29px 0 -0px #F9B650,
-        207px 0 0 -0px #F9B650,
-        216px 0 0 -0px #F9B650,
-        225px 0 0 -0px #F9B650,
-        225px 16px 0 -0px #F9B650,
-        234px 0 0 -0px #F9B650,
-        234px 12px 0 -0px #F9B650,
-        243px 0 0 -0px #F9B650,
-        243px 29px 0 -0px #F9B650,
-        252px 0 0 -0px #F9B650,
-        261px 0 0 -0px #F9B650,
-        261px 29px 0 -0px #F9B650,
-        270px 0 0 -0px #F9B650,
-        279px 0 0 -0px #F9B650,
-        279px 20px 0 -0px #F9B650,
-        288px 0 0 -0px #F9B650,
-        288px 13px 0 -0px #F9B650,
-        297px 0 0 -0px #F9B650,
-        297px 20px 0 -0px #F9B650,
-        306px 0 0 -0px #F9B650,
-        306px 29px 0 -0px #F9B650,
-        315px 0 0 -0px #F9B650,
-        315px 29px 0 -0px #F9B650,
-        324px 0 0 -0px #F9B650,
-        324px 20px 0 -0px #F9B650,
-        333px 0 0 -0px #F9B650,
-        333px 16px 0 -0px #F9B650,
-        342px 0 0 -0px #F9B650,
-        342px 9px 0 -0px #F9B650,
-        351px 0 0 -0px #F9B650,
-        351px 16px 0 -0px #F9B650,
-        360px 0 0 -0px #F9B650,
-        360px 20px 0 -0px #F9B650,
-        369px 0 0 -0px #F9B650,
-        378px 0 0 -0px #F9B650,
-        378px 16px 0 -0px #F9B650,
-        387px 0 0 -0px #F9B650,
-        387px 13px 0 -0px #F9B650;
 }
 
 /* Line Graph Overlay */
 .content01 .section02 .line {
-    position: relative;
-    width: 379.5px;
-    height: 38.686px;
-    margin-top: auto;
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 381px;
+    height: 38.69px;
+    pointer-events: none;
 }
 
 .content01 .section02 .line img {
@@ -376,8 +186,15 @@
     display: block;
 }
 
-/* Legend List */
-.content01 .section02 .legend-list,
+/* Legend List for 계정 */
+.content01 .section02 .legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 73px;
+}
+
+/* Group List for 승인 */
 .content01 .section02 .group-list {
     display: flex;
     flex-direction: column;
