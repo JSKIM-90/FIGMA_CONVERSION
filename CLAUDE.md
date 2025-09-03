@@ -871,23 +871,27 @@ Figma에서 종종 나타나는 'bg' 프레임은 **디자인 도구 전용**입
 
 ### 사용자와 Claude의 명확한 역할 분담
 
-#### 👤 사용자가 해야 할 일 (최소한의 노력)
+#### 👤 사용자가 해야 할 일 (간소화됨)
 ```
-1. Figma에서 요소 선택
-2. 링크 복사 (Ctrl+L) → Claude에게 전달
-   예: "https://www.figma.com/design/.../node-id/25:448"
-3. 또는 간단히: "선택한 요소 구현해줘"
+1. Figma Desktop에서 요소 선택 (필수)
+2. "이 요소 구현해줘" 또는 링크 제공
+3. 결과 확인 및 피드백
 ```
 
-#### 🤖 Claude가 자동으로 할 일 (MCP 도구 활용)
+#### 🤖 Claude가 MCP로 처리하는 일
 ```javascript
-// 사용자가 링크만 제공하면 Claude가 자동으로:
-1. node-id 추출 (25:448)
-2. 4-Tool Set 동시 호출
-3. 정확한 수치 추출 및 적용
+// 사용자가 요소를 선택하면 Claude가:
+1. 선택된 요소의 node-id 감지
+2. 4-Tool Set 동시 호출 (metadata, code, image, tokens)
+3. Figma 데이터 기반 정확한 수치 추출
 4. HTML/CSS 코드 생성
-5. 픽셀 퍼펙트 구현
+5. 필요시 수정 및 개선
 ```
+
+#### ⚠️ 실제 한계
+- Figma Desktop App + Dev Mode 필수
+- 복잡한 컴포넌트는 단계별 작업 필요
+- 사용자 피드백으로 완성도 향상
 
 ### 효과적인 프롬프트 전략
 
@@ -991,7 +995,7 @@ class FigmaConverter {
 
 ## 💡 핵심 원칙 재확인
 
-> **"MCP First, Manual Never"** - 수동 측정 금지. MCP 도구로 자동 추출하라.
+> **"MCP First, Manual Last"** - MCP 도구 우선 사용. 수동 작업은 최후의 수단.
 
 > **"4-Tool Set is Mandatory"** - get_metadata, get_code, get_image, get_variable_defs는 항상 함께.
 
@@ -1091,23 +1095,42 @@ Claude: "get_metadata로 정확한 좌표 확인할게요"
 Claude: [즉시 수정]
 ```
 
-### 🎯 최적화된 작업 분담
+### 🎯 현실적인 작업 분담
 
-#### 사용자의 역할 (3가지만!)
-1. **링크 제공**: Figma URL 복사 → 붙여넣기
-2. **피드백**: "좀 더 어둡게" / "간격 넓혀줘"
-3. **확인**: "좋아, 다음 섹션"
+#### 사용자의 역할 (간소화되었지만 중요)
+1. **Figma 준비**
+   - Figma Desktop App 실행
+   - Dev Mode 활성화
+   - 작업할 요소 선택
+   
+2. **요청 & 피드백**
+   - "선택한 요소 구현해줘"
+   - "색상이 좀 다른데?" → Dev Mode에서 확인
+   - "간격 조정 필요" → 구체적 피드백
 
-#### Claude의 역할 (자동화)
-1. **MCP 4-Tool Set 자동 호출**
-2. **정확한 수치 자동 추출**
-3. **코드 자동 생성**
-4. **즉시 수정 반영**
+3. **검증**
+   - 구현 결과와 Figma 비교
+   - 필요시 추가 정보 제공
 
-#### 🚫 사용자가 하지 않아도 되는 일
-- ❌ 수치 측정 (Claude가 get_metadata로)
-- ❌ 색상 코드 복사 (Claude가 get_variable_defs로)
-- ❌ 간격 계산 (Claude가 자동 계산)
-- ❌ 레이어 순서 파악 (Claude가 get_code로)
+#### Claude의 역할 (MCP 도구로 자동화)
+1. **데이터 추출** (MCP 4-Tool Set)
+   - get_metadata: 정확한 크기와 좌표
+   - get_code: 구조와 스타일
+   - get_image: 시각적 확인
+   - get_variable_defs: 디자인 토큰
 
-**Remember**: 사용자는 링크만, Claude가 나머지 전부!
+2. **코드 생성**
+   - 추출된 데이터 기반 정확한 구현
+   - BEM 네이밍, Flexbox 우선 원칙 적용
+
+3. **반복 개선**
+   - 사용자 피드백 즉시 반영
+   - 점진적 완성도 향상
+
+#### 💡 MCP가 줄여주는 작업
+- ✅ 수동 수치 측정 → MCP가 자동 추출
+- ✅ 색상 코드 복사 → get_variable_defs로 자동화
+- ✅ 간격 육안 측정 → get_metadata로 정확히
+- ✅ 추측 작업 → 데이터 기반 정확한 구현
+
+**Remember**: MCP로 정확도는 높이고, 작업 시간은 줄이고!
