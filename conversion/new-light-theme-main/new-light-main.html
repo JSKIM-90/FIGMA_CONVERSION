@@ -1,994 +1,1663 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1920, height=1080">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RENOBIT v3.0 - Light Theme Dashboard</title>
-    
+
     <!-- Styles -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="components/header/header.css">
-    <link rel="stylesheet" href="components/content01/content01.css">
-    <link rel="stylesheet" href="components/content01/section01.css">
-    <link rel="stylesheet" href="components/content01/section02.css">
-    <link rel="stylesheet" href="components/main-component/main-component.css">
-    <link rel="stylesheet" href="components/content02/content02.css">
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="components/header/header.css" />
+    <link rel="stylesheet" href="components/content01/content01.css" />
+    <link rel="stylesheet" href="components/content01/section01.css" />
+    <link rel="stylesheet" href="components/content01/section02.css" />
+    <link
+      rel="stylesheet"
+      href="components/main-component/main-component.css"
+    />
+    <link rel="stylesheet" href="components/content02/content02.css" />
     <!-- <link rel="stylesheet" href="components/content02/section01.css"> -->
-    <link rel="stylesheet" href="components/content02/section01-refactor.css">
-    <link rel="stylesheet" href="components/content02/section02.css">
-    <link rel="stylesheet" href="components/content02/section03.css">
-    <link rel="stylesheet" href="components/browser-event/browser-event.css">
-    
+    <link rel="stylesheet" href="components/content02/section01-refactor.css" />
+    <link rel="stylesheet" href="components/content02/section02.css" />
+    <link rel="stylesheet" href="components/content02/section03.css" />
+    <link rel="stylesheet" href="components/browser-event/browser-event.css" />
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+  </head>
+  <body>
     <div class="dashboard-container">
-        <!-- Header (x:29, y:-1, width:1860, height:75) -->
-        <header class="header" data-node-id="25:864">
-            <div class="header-container">
-                <!-- 1. Background (top-bg) -->
-                <div class="top-bg" data-name="top-bg">
-                    <img src="assets/icons/header-bg.svg" alt="" />
-                </div>
+      <!-- Header (x:29, y:-1, width:1860, height:75) -->
+      <header class="header" data-node-id="25:864">
+        <div class="header-container">
+          <!-- 1. Background (top-bg) -->
+          <div class="top-bg" data-name="top-bg">
+            <img src="assets/icons/header-bg.svg" alt="" />
+          </div>
 
-                <!-- 2. Brand Identity (bi) -->
-                <div class="bi" data-name="bi">
-                    <img src="assets/icons/renobit-logo.svg" alt="RENOBIT" />
-                </div>
+          <!-- 2. Brand Identity (bi) -->
+          <div class="bi" data-name="bi">
+            <img src="assets/icons/renobit-logo.svg" alt="RENOBIT" />
+          </div>
 
-                <!-- 3. Global Navigation (gnb) -->
-                <div class="gnb" data-name="gnb">
-                    <!-- Active Menu -->
-                    <button class="btn-menu active" data-name="btn-menu">
-                        <span class="icon">
-                            <img src="assets/icons/menu-icon-active.svg" alt="" />
-                        </span>
-                        <span class="menu-text">종합현황</span>
-                    </button>
+          <!-- 3. Global Navigation (gnb) -->
+          <div class="gnb" data-name="gnb">
+            <!-- Active Menu -->
+            <button class="btn-menu active" data-name="btn-menu">
+              <span class="icon">
+                <img src="assets/icons/menu-icon-active.svg" alt="" />
+              </span>
+              <span class="menu-text">종합현황</span>
+            </button>
 
-                    <!-- Inactive Menus -->
-                    <button class="btn-menu" data-name="btn-menu">
-                        <span class="icon">
-                            <img src="assets/icons/menu-icon.svg" alt="" />
-                        </span>
-                        <span class="menu-text">인프라현황</span>
-                    </button>
+            <!-- Inactive Menus -->
+            <button class="btn-menu" data-name="btn-menu">
+              <span class="icon">
+                <img src="assets/icons/menu-icon.svg" alt="" />
+              </span>
+              <span class="menu-text">인프라현황</span>
+            </button>
 
-                    <button class="btn-menu" data-name="btn-menu">
-                        <span class="icon">
-                            <img src="assets/icons/menu-icon.svg" alt="" />
-                        </span>
-                        <span class="menu-text">어플리케이션관리</span>
-                    </button>
+            <button class="btn-menu" data-name="btn-menu">
+              <span class="icon">
+                <img src="assets/icons/menu-icon.svg" alt="" />
+              </span>
+              <span class="menu-text">어플리케이션관리</span>
+            </button>
 
-                    <button class="btn-menu" data-name="btn-menu">
-                        <span class="icon">
-                            <img src="assets/icons/menu-icon.svg" alt="" />
-                        </span>
-                        <span class="menu-text">인프라운영현황</span>
-                    </button>
-                </div>
+            <button class="btn-menu" data-name="btn-menu">
+              <span class="icon">
+                <img src="assets/icons/menu-icon.svg" alt="" />
+              </span>
+              <span class="menu-text">인프라운영현황</span>
+            </button>
+          </div>
 
-                <!-- 4. Top Buttons (top-btn) -->
-                <div class="top-btn" data-name="top-btn">
-                    <!-- Time Display -->
-                    <div class="time" data-name="time">
-                        <span class="date">250826</span>
-                        <span class="clock">09:00:00</span>
-                    </div>
-
-                    <!-- Logout Button -->
-                    <button class="btn-logout" data-name="btn-logout">
-                        <span class="icon">
-                            <img src="assets/icons/logout-icon.svg" alt="Logout" />
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </header>
-        
-        <!-- Content01 (x:30, y:66, width:1860, height:430) -->
-        <div class="content01" data-node-id="25:606">
-            <!-- Container: section01 + section02 wrapper -->
-            <div class="container" data-name="container" data-node-id="25:607">
-                <!-- Section01: 거래 현황 (파이차트) -->
-                <div class="section01" data-name="section01" data-node-id="25:608">
-                    <!-- Title -->
-                    <div class="title" data-name="title" data-node-id="25:609">
-                        <div class="bullet" data-name="bullet">
-                            <img src="assets/icons/bullet-title.svg" alt="" />
-                        </div>
-                        <span class="title-text">거래 현황</span>
-                    </div>
-
-                    <!-- Block: Data + Chart -->
-                    <div class="block" data-name="block" data-node-id="25:610">
-                        <!-- Group List -->
-                        <div class="group-list" data-name="group-list" data-node-id="25:611">
-                            <div class="list" data-name="list" data-node-id="25:612">
-                                <span class="label">금일 누적</span>
-                                <span class="value">7,927,900</span>
-                            </div>
-                            <div class="list" data-name="list" data-node-id="25:615">
-                                <span class="label">전일 누적</span>
-                                <span class="value">10,636,190</span>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="chart-pie" data-name="chart-pie" data-node-id="25:618">
-                            <img src="assets/icons/chart-pie.svg" alt="거래 현황 차트" />
-                        </div>
-                    </div>
-
-                    <!-- Divider -->
-                    <div class="divider" data-name="divider" data-node-id="25:624">
-                        <img src="assets/icons/divider.svg" alt="" />
-                    </div>
-
-                    <!-- Legend List -->
-                    <div class="legend-list" data-name="legend-list" data-node-id="25:625">
-                        <div class="list-item" data-name="list01" data-node-id="25:626">
-                            <div class="bu-legend" data-name="bu-legend" data-node-id="25:627">
-                                <img class="legend-icon" src="assets/icons/legend-yellow.svg" alt="" />
-                                <span class="legend-text">카드승인</span>
-                            </div>
-                            <span class="legend-value">6,294,043</span>
-                        </div>
-
-                        <div class="list-item" data-name="list02" data-node-id="25:629">
-                            <div class="bu-legend" data-name="bu-legend" data-node-id="25:630">
-                                <img class="legend-icon" src="assets/icons/legend-green.svg" alt="" />
-                                <span class="legend-text">조회</span>
-                            </div>
-                            <span class="legend-value">1,141,785</span>
-                        </div>
-
-                        <div class="list-item" data-name="list03" data-node-id="25:632">
-                            <div class="bu-legend" data-name="bu-legend" data-node-id="25:633">
-                                <img class="legend-icon" src="assets/icons/legend-blue.svg" alt="" />
-                                <span class="legend-text">현금서비스</span>
-                            </div>
-                            <span class="legend-value">9,185</span>
-                        </div>
-
-                        <div class="list-item" data-name="list04" data-node-id="25:635">
-                            <div class="bu-legend" data-name="bu_legend" data-node-id="25:636">
-                                <img class="legend-icon" src="assets/icons/legend-orange.svg" alt="" />
-                                <span class="legend-text">기타</span>
-                            </div>
-                            <span class="legend-value">478,528</span>
-                        </div>
-
-                        <div class="list-item" data-name="list05" data-node-id="25:638">
-                            <div class="bu-legend" data-name="bu_legend" data-node-id="25:639">
-                                <img class="legend-icon" src="assets/icons/legend-red.svg" alt="" />
-                                <span class="legend-text">카드신고</span>
-                            </div>
-                            <span class="legend-value">4,380</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Section02: 트랜잭션 현황 (막대차트) -->
-                <div class="section02" data-name="section02" data-node-id="25:641">
-                    <!-- Title -->
-                    <div class="title-h1" data-name="title-h1" data-node-id="25:642">
-                        <div class="bullet" data-name="bullet">
-                            <img src="assets/icons/bullet-title.svg" alt="" />
-                        </div>
-                        <span class="title-text">트랜젝션 현황</span>
-                    </div>
-
-                    <!-- Group01: 계정 차트 -->
-                    <div class="group01" data-name="group01" data-node-id="25:643">
-                        <div class="title-2epth" data-name="title-2epth" data-node-id="25:644">
-                            <div class="bullet-2" data-name="bullet">
-                                <img src="assets/icons/bullet-2depth.svg" alt="" />
-                            </div>
-                            <span class="subtitle-text">계정</span>
-                        </div>
-
-                        <div class="chart-bar" data-name="chart-bar" data-node-id="25:645">
-                            <div class="chart" data-name="chart" data-node-id="25:646">
-                                <!-- Background bars (43개) -->
-                                <div class="bg-bars" data-name="bg" data-node-id="25:647">
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                </div>
-                                <!-- Green bars with varying heights (43개) -->
-                                <div class="bars green" data-name="bar" data-node-id="25:691">
-                                    <div class="bar" style="height: 57px;"></div><div class="bar" style="height: 71px;"></div><div class="bar" style="height: 44px;"></div>
-                                    <div class="bar" style="height: 51px;"></div><div class="bar" style="height: 51px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 80px;"></div><div class="bar" style="height: 64px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 68px;"></div><div class="bar" style="height: 44px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 39px;"></div><div class="bar" style="height: 44px;"></div><div class="bar" style="height: 51px;"></div>
-                                    <div class="bar" style="height: 60px;"></div><div class="bar" style="height: 51px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 51px;"></div><div class="bar" style="height: 71px;"></div><div class="bar" style="height: 44px;"></div>
-                                    <div class="bar" style="height: 51px;"></div><div class="bar" style="height: 57px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 64px;"></div><div class="bar" style="height: 68px;"></div><div class="bar" style="height: 51px;"></div>
-                                    <div class="bar" style="height: 57px;"></div><div class="bar" style="height: 51px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 60px;"></div><div class="bar" style="height: 67px;"></div><div class="bar" style="height: 60px;"></div>
-                                    <div class="bar" style="height: 51px;"></div><div class="bar" style="height: 51px;"></div><div class="bar" style="height: 60px;"></div>
-                                    <div class="bar" style="height: 64px;"></div><div class="bar" style="height: 71px;"></div><div class="bar" style="height: 64px;"></div>
-                                    <div class="bar" style="height: 60px;"></div><div class="bar" style="height: 57px;"></div><div class="bar" style="height: 64px;"></div>
-                                    <div class="bar" style="height: 67px;"></div>
-                                </div>
-                                <!-- Line graph overlay -->
-                                <div class="line" data-name="line" data-node-id="25:735">
-                                    <img src="assets/icons/line-green.svg" alt="" />
-                                </div>
-                            </div>
-
-                            <div class="legend-list" data-name="legend-list" data-node-id="25:736">
-                                <div class="list-item" data-name="list01" data-node-id="25:737">
-                                    <div class="bu-legend" data-name="bu-legend" data-node-id="25:738">
-                                        <img class="legend-icon" src="assets/icons/legend-green-light.svg" alt="" />
-                                        <span class="legend-text">금일</span>
-                                    </div>
-                                    <span class="legend-value">7,927,921</span>
-                                </div>
-                                <div class="list-item" data-name="list02" data-node-id="25:740">
-                                    <div class="bu-legend" data-name="bu-legend" data-node-id="25:741">
-                                        <img class="legend-icon" src="assets/icons/legend-green-dark.svg" alt="" />
-                                        <span class="legend-text">전일</span>
-                                    </div>
-                                    <span class="legend-value">7,320,915</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Group02: 승인 차트 -->
-                    <div class="group02" data-name="group02" data-node-id="25:743">
-                        <div class="title-2epth" data-name="title-2epth" data-node-id="25:744">
-                            <div class="bullet-2" data-name="bullet">
-                                <img src="assets/icons/bullet-2depth.svg" alt="" />
-                            </div>
-                            <span class="subtitle-text">승인</span>
-                        </div>
-
-                        <div class="content-chart" data-name="content-chart" data-node-id="25:745">
-                            <div class="chart" data-name="chart" data-node-id="25:746">
-                                <!-- Background bars (43개) -->
-                                <div class="bg-chart" data-name="bg-chart" data-node-id="25:747">
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                    <div class="bar-bg"></div><div class="bar-bg"></div><div class="bar-bg"></div>
-                                </div>
-                                <!-- Orange bars with varying heights (43개) -->
-                                <div class="bars orange" data-name="bar" data-node-id="25:791">
-                                    <div class="bar" style="height: 57px;"></div><div class="bar" style="height: 71px;"></div><div class="bar" style="height: 44px;"></div>
-                                    <div class="bar" style="height: 51px;"></div><div class="bar" style="height: 51px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 80px;"></div><div class="bar" style="height: 64px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 68px;"></div><div class="bar" style="height: 44px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 39px;"></div><div class="bar" style="height: 44px;"></div><div class="bar" style="height: 51px;"></div>
-                                    <div class="bar" style="height: 60px;"></div><div class="bar" style="height: 51px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 51px;"></div><div class="bar" style="height: 71px;"></div><div class="bar" style="height: 44px;"></div>
-                                    <div class="bar" style="height: 51px;"></div><div class="bar" style="height: 57px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 64px;"></div><div class="bar" style="height: 68px;"></div><div class="bar" style="height: 51px;"></div>
-                                    <div class="bar" style="height: 57px;"></div><div class="bar" style="height: 51px;"></div><div class="bar" style="height: 57px;"></div>
-                                    <div class="bar" style="height: 60px;"></div><div class="bar" style="height: 67px;"></div><div class="bar" style="height: 60px;"></div>
-                                    <div class="bar" style="height: 51px;"></div><div class="bar" style="height: 51px;"></div><div class="bar" style="height: 60px;"></div>
-                                    <div class="bar" style="height: 64px;"></div><div class="bar" style="height: 71px;"></div><div class="bar" style="height: 64px;"></div>
-                                    <div class="bar" style="height: 60px;"></div><div class="bar" style="height: 57px;"></div><div class="bar" style="height: 64px;"></div>
-                                    <div class="bar" style="height: 67px;"></div>
-                                </div>
-                                <!-- Line graph overlay -->
-                                <div class="line" data-name="line" data-node-id="25:835">
-                                    <img src="assets/icons/line-orange.svg" alt="" />
-                                </div>
-                            </div>
-
-                            <div class="group-list" data-name="group-list" data-node-id="25:836">
-                                <div class="list-item" data-name="list01" data-node-id="25:837">
-                                    <div class="bu_legend" data-name="bu_legend" data-node-id="25:838">
-                                        <img class="legend-icon" src="assets/icons/legend-orange-light.svg" alt="" />
-                                        <span class="legend-text">금일</span>
-                                    </div>
-                                    <span class="legend-value">7,927,921</span>
-                                </div>
-                                <div class="list-item" data-name="list02" data-node-id="25:840">
-                                    <div class="bu_legend" data-name="bu_legend" data-node-id="25:841">
-                                        <img class="legend-icon" src="assets/icons/legend-orange-dark.svg" alt="" />
-                                        <span class="legend-text">전일</span>
-                                    </div>
-                                    <span class="legend-value">7,320,915</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <!-- 4. Top Buttons (top-btn) -->
+          <div class="top-btn" data-name="top-btn">
+            <!-- Time Display -->
+            <div class="time" data-name="time">
+              <span class="date">250826</span>
+              <span class="clock">09:00:00</span>
             </div>
 
-            <!-- Main Component: 업무시스템현황 (3D 아이소메트릭) -->
-            <div class="main-component" data-name="main-component" data-node-id="25:843">
-                <!-- Background Network Diagram -->
-                <div class="bg-network" data-name="bg" data-node-id="25:844">
-                    <img src="assets/bg-network.svg" alt="">
-                </div>
-
-                <!-- Title -->
-                <div class="title-h1" data-name="title-h1" data-node-id="25:863">
-                    <div class="bullet" data-name="bullet">
-                        <img src="assets/bullet-purple.svg" alt="">
-                    </div>
-                    <div class="title-text">업무시스템 현황</div>
-                </div>
-
-                <!-- 콜센터 -->
-                <div class="title-component callcenter" data-name="title-component" data-node-id="25:852">
-                    <div class="component-label">콜센터</div>
-                    <div class="component">
-                        <img src="assets/cube-green.svg" alt="">
-                    </div>
-                </div>
-
-                <!-- 카드발급 -->
-                <div class="title-component card-issue" data-name="title-component" data-node-id="25:853">
-                    <div class="component-label">카드발급</div>
-                    <div class="component">
-                        <img src="assets/cube-blue.svg" alt="">
-                    </div>
-                </div>
-
-                <!-- 인터넷포탈 -->
-                <div class="title-component internet-portal" data-name="title-component" data-node-id="25:854">
-                    <div class="component-label">인터넷포탈</div>
-                    <div class="component">
-                        <img src="assets/cube-green.svg" alt="">
-                    </div>
-                </div>
-
-                <!-- 계정계 -->
-                <div class="title-component account-system" data-name="title-component" data-node-id="25:855">
-                    <div class="component-label">계정계</div>
-                    <div class="component">
-                        <img src="assets/cube-red.svg" alt="">
-                    </div>
-                </div>
-
-                <!-- 승인계 -->
-                <div class="title-component approval-system" data-name="title-component" data-node-id="25:856">
-                    <div class="component-label">승인계</div>
-                    <div class="component">
-                        <img src="assets/cube-green.svg" alt="">
-                    </div>
-                </div>
-
-                <!-- 정보계 -->
-                <div class="title-component info-system" data-name="title-component" data-node-id="25:857">
-                    <div class="component-label">정보계</div>
-                    <div class="component">
-                        <img src="assets/cube-yellow.svg" alt="">
-                    </div>
-                </div>
-
-                <!-- MCA Label Background -->
-                <div class="label mca-label" data-name="label" data-node-id="25:858"></div>
-
-                <!-- MCA -->
-                <div class="title-component mca" data-name="title-component" data-node-id="25:860">
-                    <div class="component-label large">MCA</div>
-                    <div class="component">
-                        <img src="assets/cube-green.svg" alt="">
-                    </div>
-                </div>
-
-                <!-- 은행 -->
-                <div class="title-component bank" data-name="title-component" data-node-id="25:861">
-                    <div class="component-label">은행</div>
-                    <div class="component">
-                        <img src="assets/cube-green.svg" alt="">
-                    </div>
-                </div>
-
-                <!-- EAI Label Background -->
-                <div class="label eai-label" data-name="label" data-node-id="25:859"></div>
-
-                <!-- EAI -->
-                <div class="title-component eai" data-name="title-component" data-node-id="25:862">
-                    <div class="component-label large">EAI</div>
-                    <div class="component">
-                        <img src="assets/cube-green.svg" alt="">
-                    </div>
-                </div>
-            </div>
+            <!-- Logout Button -->
+            <button class="btn-logout" data-name="btn-logout">
+              <span class="icon">
+                <img src="assets/icons/logout-icon.svg" alt="Logout" />
+              </span>
+            </button>
+          </div>
         </div>
-        
-        <!-- Content02 (x:29, y:475, width:1861, height:269) -->
-        <div class="content02" data-node-id="25:461">
-            <!-- Section01: 콜센터 ARS 현황 -->
-            <div class="content02-section01" data-node-id="25:462">
-                <!-- Title -->
-                <div class="content02-section01__title" data-node-id="25:463">
-                    <img class="content02-section01__title-bullet" src="assets/icons/bullet-purple.svg" alt="" />
-                    <div class="content02-section01__title-text">콜 센터 ARS 현황</div>
-                </div>
-                
-                <!-- Chart Area -->
-                <div class="content02-section01__chart-area" data-node-id="25:464">
-                    <div class="content02-section01__chart" data-node-id="25:465">
-                        <!-- Background container with Y-axis, ticks, and grid -->
-                        <div class="content02-section01__chart-bg" data-node-id="25:466">
-                            <!-- Y-axis labels -->
-                            <div class="content02-section01__y-labels" data-node-id="25:467">
-                                <div>2,000</div>
-                                <div>1,500</div>
-                                <div>1,000</div>
-                                <div>500</div>
-                                <div>0</div>
-                            </div>
-                            
-                            <!-- Axis ticks -->
-                            <div class="content02-section01__axis-x" data-node-id="25:468">
-                                <img src="assets/icons/axis-x.svg" alt="" />
-                            </div>
-                            
-                            <!-- Grid lines -->
-                            <div class="content02-section01__grid-x" data-node-id="25:474">
-                                <img src="assets/icons/grid-x.svg" alt="" />
-                            </div>
-                        </div>
-                        
-                        <!-- Area chart -->
-                        <div class="content02-section01__area-chart" data-node-id="25:480">
-                            <img src="assets/icons/area-chart.svg" alt="Area Chart" />
-                        </div>
-                        
-                        <!-- Current position line -->
-                        <div class="content02-section01__current-line" data-node-id="58:1933">
-                            <img src="assets/icons/line-56.svg" alt="" />
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Statistics Group -->
-                <div class="content02-section01__stats" data-node-id="25:481">
-                    <div class="content02-section01__stat-item content02-section01__stat-item--total" data-node-id="25:482">
-                        <div class="content02-section01__stat-label" data-node-id="25:483">총 인입</div>
-                        <div class="content02-section01__stat-value-wrapper content02-section01__stat-value-wrapper--default" data-node-id="25:484">
-                            <div class="content02-section01__stat-value" data-node-id="25:485">6,294,043</div>
-                            <div class="content02-section01__stat-unit" data-node-id="25:486">명</div>
-                        </div>
-                    </div>
-                    
-                    <div class="content02-section01__divider" data-node-id="25:487">
-                        <img src="assets/icons/divider.svg" alt="" />
-                    </div>
-                    
-                    <div class="content02-section01__stat-item content02-section01__stat-item--handled" data-node-id="25:488">
-                        <div class="content02-section01__stat-label" data-node-id="25:489">응대</div>
-                        <div class="content02-section01__stat-value-wrapper content02-section01__stat-value-wrapper--narrow" data-node-id="25:490">
-                            <div class="content02-section01__stat-value" data-node-id="25:491">26,200</div>
-                            <div class="content02-section01__stat-unit" data-node-id="25:492">명</div>
-                        </div>
-                    </div>
-                    
-                    <div class="content02-section01__divider" data-node-id="25:493">
-                        <img src="assets/icons/divider.svg" alt="" />
-                    </div>
-                    
-                    <div class="content02-section01__stat-item content02-section01__stat-item--rate" data-node-id="25:494">
-                        <div class="content02-section01__stat-label" data-node-id="25:495">응대율</div>
-                        <div class="content02-section01__stat-value-wrapper content02-section01__stat-value-wrapper--default" data-node-id="25:496">
-                            <div class="content02-section01__stat-value" data-node-id="25:497">98.6</div>
-                            <div class="content02-section01__stat-unit" data-node-id="25:498">%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Section02: 승인 현황 (25:499) -->
-            <div class="content02-section02" data-node-id="25:499">
-                <!-- Title -->
-                <div class="content02-section02__title" data-node-id="25:500">
-                    <img class="content02-section02__title-bullet" src="assets/icons/bullet-purple.svg" alt="" />
-                    <div class="content02-section02__title-text">승인 현황</div>
-                </div>
-                
-                <!-- Block Container -->
-                <div class="content02-section02__block" data-node-id="25:501">
-                    <!-- Group01: 승인 거래 건수 -->
-                    <div class="content02-section02__group" data-node-id="25:502">
-                        <!-- Group Title -->
-                        <div class="content02-section02__group-title" data-node-id="25:534">
-                            <img class="content02-section02__group-title-bullet" src="assets/icons/bullet-small-blue.svg" alt="" />
-                            <div class="content02-section02__group-title-text">승인 거래 건수</div>
-                        </div>
-                        
-                        <!-- Header -->
-                        <div class="content02-section02__header" data-node-id="25:528">
-                            <div class="content02-section02__header-label content02-section02__header-label--avg">평균</div>
-                            <div class="content02-section02__header-divider">
-                                <img src="assets/icons/divider-vertical-blue.svg" alt="" />
-                            </div>
-                            <div class="content02-section02__header-label content02-section02__header-label--current">현재</div>
-                            <div class="content02-section02__header-divider">
-                                <img src="assets/icons/divider-vertical-blue.svg" alt="" />
-                            </div>
-                            <div class="content02-section02__header-label content02-section02__header-label--rate">증감율(%)</div>
-                        </div>
-                        
-                        <!-- Grid -->
-                        <div class="content02-section02__grid" data-node-id="25:503">
-                            <!-- Row 1: 국내승인 -->
-                            <div class="content02-section02__row" data-node-id="25:504">
-                                <div class="content02-section02__row-label">국내승인</div>
-                                <div class="content02-section02__row-divider">
-                                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">9,346</div>
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">31,425</div>
-                                </div>
-                                <div class="content02-section02__cell content02-section02__cell--with-arrow">
-                                    <div class="content02-section02__cell-value">236.2</div>
-                                    <div class="content02-section02__arrow content02-section02__arrow--up">
-                                        <img src="assets/icons/arrow-up-red.svg" alt="증가" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Row 2: 해외승인 -->
-                            <div class="content02-section02__row" data-node-id="25:512">
-                                <div class="content02-section02__row-label">해외승인</div>
-                                <div class="content02-section02__row-divider">
-                                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">99</div>
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">359</div>
-                                </div>
-                                <div class="content02-section02__cell content02-section02__cell--with-arrow">
-                                    <div class="content02-section02__cell-value">262.6</div>
-                                    <div class="content02-section02__arrow content02-section02__arrow--up">
-                                        <img src="assets/icons/arrow-up-red.svg" alt="증가" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Row 3: 금융 SVC -->
-                            <div class="content02-section02__row" data-node-id="25:520">
-                                <div class="content02-section02__row-label">금융 SVC</div>
-                                <div class="content02-section02__row-divider">
-                                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">17</div>
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">44</div>
-                                </div>
-                                <div class="content02-section02__cell content02-section02__cell--with-arrow">
-                                    <div class="content02-section02__cell-value">158.8</div>
-                                    <div class="content02-section02__arrow content02-section02__arrow--up">
-                                        <img src="assets/icons/arrow-up-red.svg" alt="증가" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Group02: 거절 거래 건수 -->
-                    <div class="content02-section02__group" data-node-id="25:535">
-                        <!-- Group Title -->
-                        <div class="content02-section02__group-title" data-node-id="25:567">
-                            <img class="content02-section02__group-title-bullet" src="assets/icons/bullet-small-blue.svg" alt="" />
-                            <div class="content02-section02__group-title-text">거절 거래 건수</div>
-                        </div>
-                        
-                        <!-- Header -->
-                        <div class="content02-section02__header" data-node-id="25:561">
-                            <div class="content02-section02__header-label content02-section02__header-label--avg">평균</div>
-                            <div class="content02-section02__header-divider">
-                                <img src="assets/icons/divider-vertical-blue.svg" alt="" />
-                            </div>
-                            <div class="content02-section02__header-label content02-section02__header-label--current">현재</div>
-                            <div class="content02-section02__header-divider">
-                                <img src="assets/icons/divider-vertical-blue.svg" alt="" />
-                            </div>
-                            <div class="content02-section02__header-label content02-section02__header-label--rate">증감율(%)</div>
-                        </div>
-                        
-                        <!-- Grid -->
-                        <div class="content02-section02__grid" data-node-id="25:536">
-                            <!-- Row 1: 국내승인 -->
-                            <div class="content02-section02__row" data-node-id="25:537">
-                                <div class="content02-section02__row-label">국내승인</div>
-                                <div class="content02-section02__row-divider">
-                                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">9,346</div>
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">31,425</div>
-                                </div>
-                                <div class="content02-section02__cell content02-section02__cell--with-arrow">
-                                    <div class="content02-section02__cell-value">236.2</div>
-                                    <div class="content02-section02__arrow content02-section02__arrow--down">
-                                        <img src="assets/icons/arrow-down-green.svg" alt="감소" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Row 2: 해외승인 -->
-                            <div class="content02-section02__row" data-node-id="25:545">
-                                <div class="content02-section02__row-label">해외승인</div>
-                                <div class="content02-section02__row-divider">
-                                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">99</div>
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">359</div>
-                                </div>
-                                <div class="content02-section02__cell content02-section02__cell--with-arrow">
-                                    <div class="content02-section02__cell-value">262.6</div>
-                                    <div class="content02-section02__arrow content02-section02__arrow--up">
-                                        <img src="assets/icons/arrow-up-red.svg" alt="증가" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Row 3: 금융 SVC -->
-                            <div class="content02-section02__row" data-node-id="25:553">
-                                <div class="content02-section02__row-label">금융 SVC</div>
-                                <div class="content02-section02__row-divider">
-                                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">17</div>
-                                </div>
-                                <div class="content02-section02__cell">
-                                    <div class="content02-section02__cell-value">44</div>
-                                </div>
-                                <div class="content02-section02__cell content02-section02__cell--with-arrow">
-                                    <div class="content02-section02__cell-value">158.8</div>
-                                    <div class="content02-section02__arrow content02-section02__arrow--up">
-                                        <img src="assets/icons/arrow-up-red.svg" alt="증가" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Section03: 서비스 TOP5현황 (25:568) -->
-            <div class="content02-section03" data-node-id="25:568">
-                <!-- Title -->
-                <div class="content02-section03__title" data-node-id="25:569">
-                    <img class="content02-section03__title-bullet" src="assets/icons/bullet-purple.svg" alt="" />
-                    <div class="content02-section03__title-text">서비스 TOP5현황</div>
-                </div>
-                
-                <!-- Group List -->
-                <div class="content02-section03__group-list" data-node-id="25:570">
-                    <!-- Rank 1: 카드 서비스 01 -->
-                    <div class="content02-section03__list-item content02-section03__list-item--rank-1" data-node-id="25:571">
-                        <div class="content02-section03__bg-box"></div>
-                        <div class="content02-section03__progress-bar"></div>
-                        <div class="content02-section03__rank">1</div>
-                        <div class="content02-section03__service-name">카드 서비스 01</div>
-                        <div class="content02-section03__value">2362</div>
-                        <div class="content02-section03__unit">건</div>
-                    </div>
-                    
-                    <!-- Rank 2: 카드 서비스 02 -->
-                    <div class="content02-section03__list-item content02-section03__list-item--rank-2" data-node-id="25:578">
-                        <div class="content02-section03__bg-box"></div>
-                        <div class="content02-section03__progress-bar"></div>
-                        <div class="content02-section03__rank">2</div>
-                        <div class="content02-section03__service-name">카드 서비스 02</div>
-                        <div class="content02-section03__value">1626</div>
-                        <div class="content02-section03__unit">건</div>
-                    </div>
-                    
-                    <!-- Rank 3: 카드 서비스 03 -->
-                    <div class="content02-section03__list-item content02-section03__list-item--rank-3" data-node-id="25:585">
-                        <div class="content02-section03__bg-box"></div>
-                        <div class="content02-section03__progress-bar"></div>
-                        <div class="content02-section03__rank">3</div>
-                        <div class="content02-section03__service-name">카드 서비스 03</div>
-                        <div class="content02-section03__value">1588</div>
-                        <div class="content02-section03__unit">건</div>
-                    </div>
-                    
-                    <!-- Rank 4: 카드 서비스 04 -->
-                    <div class="content02-section03__list-item content02-section03__list-item--rank-4" data-node-id="25:592">
-                        <div class="content02-section03__bg-box"></div>
-                        <div class="content02-section03__progress-bar"></div>
-                        <div class="content02-section03__rank">4</div>
-                        <div class="content02-section03__service-name">카드 서비스 04</div>
-                        <div class="content02-section03__value">826</div>
-                        <div class="content02-section03__unit">건</div>
-                    </div>
-                    
-                    <!-- Rank 5: 카드 서비스 05 -->
-                    <div class="content02-section03__list-item content02-section03__list-item--rank-5" data-node-id="25:599">
-                        <div class="content02-section03__bg-box"></div>
-                        <div class="content02-section03__progress-bar"></div>
-                        <div class="content02-section03__rank">5</div>
-                        <div class="content02-section03__service-name">카드 서비스 05</div>
-                        <div class="content02-section03__value">588</div>
-                        <div class="content02-section03__unit">건</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Browser Event (x:29, y:770, width:1861, height:303) -->
-        <div class="browser-event" data-node-id="25:448">
-            <!-- Background Elements -->
-            <div class="browser-event__box-event">
-                <div class="browser-event__bg-box">
-                    <!-- Gradient Background -->
-                    <div class="browser-event__gradient-bg"></div>
-                    
-                    <!-- Light Background -->
-                    <div class="browser-event__light-bg"></div>
-                </div>
-                
-                <!-- Button Container -->
-                <div class="browser-event__btn-container">
-                    <!-- Vector Background -->
-                    <div class="browser-event__vector">
-                        <img src="assets/icons/browser-event-vector.svg" alt="Button Background">
-                    </div>
-                    
-                    <!-- Auto Button -->
-                    <button class="browser-event__btn-auto">
-                        <img src="assets/icons/btn-radio.svg" alt="Radio" class="browser-event__btn-auto-icon">
-                        <span class="browser-event__btn-auto-text">Auto</span>
-                    </button>
-                    
-                    <!-- Close Button -->
-                    <button class="browser-event__btn-close">
-                        <img src="assets/icons/btn-close.svg" alt="Close" class="browser-event__btn-close-icon">
-                    </button>
-                </div>
-            </div>
-            
+      </header>
+
+      <!-- Content01 (x:30, y:66, width:1860, height:430) -->
+      <div class="content01" data-node-id="25:606">
+        <!-- Container: section01 + section02 wrapper -->
+        <div class="container" data-name="container" data-node-id="25:607">
+          <!-- Section01: 거래 현황 (파이차트) -->
+          <div class="section01" data-name="section01" data-node-id="25:608">
             <!-- Title -->
-            <div class="browser-event__title">
-                <img src="assets/icons/bullet-title.svg" alt="Bullet" class="browser-event__title-bullet">
-                <span class="browser-event__title-text">이벤트현황</span>
+            <div class="title" data-name="title" data-node-id="25:609">
+              <div class="bullet" data-name="bullet">
+                <img src="assets/icons/bullet-title.svg" alt="" />
+              </div>
+              <span class="title-text">거래 현황</span>
             </div>
-            
-            <!-- Main Block -->
-            <div class="browser-event__block">
-                <!-- Left Group: Event Status Panel -->
-                <div class="browser-event__group-left">
-                    <!-- Event Status Buttons Column -->
-                    <div class="browser-event__event-status">
-                        <!-- ALL Button -->
-                        <button class="browser-event__status-btn browser-event__status-btn--all">
-                            <img src="assets/icons/severity-no.svg" alt="All" class="browser-event__status-icon">
-                            <div class="browser-event__status-text-container">
-                                <div class="browser-event__status-divider"></div>
-                                <span class="browser-event__status-text">ALL</span>
-                            </div>
-                        </button>
-                        
-                        <!-- CR (Critical) Button -->
-                        <button class="browser-event__status-btn">
-                            <img src="assets/icons/severity-cr.svg" alt="Critical" class="browser-event__status-icon">
-                            <div class="browser-event__status-text-container">
-                                <div class="browser-event__status-divider"></div>
-                                <span class="browser-event__status-text">CR</span>
-                            </div>
-                        </button>
-                        
-                        <!-- MA (Major) Button -->
-                        <button class="browser-event__status-btn">
-                            <img src="assets/icons/severity-ma.svg" alt="Major" class="browser-event__status-icon">
-                            <div class="browser-event__status-text-container">
-                                <div class="browser-event__status-divider"></div>
-                                <span class="browser-event__status-text">MA</span>
-                            </div>
-                        </button>
-                        
-                        <!-- MI (Minor) Button -->
-                        <button class="browser-event__status-btn">
-                            <img src="assets/icons/severity-mi.svg" alt="Minor" class="browser-event__status-icon">
-                            <div class="browser-event__status-text-container">
-                                <div class="browser-event__status-divider"></div>
-                                <span class="browser-event__status-text">MI</span>
-                            </div>
-                        </button>
-                        
-                        <!-- WA (Warning) Button -->
-                        <button class="browser-event__status-btn">
-                            <img src="assets/icons/severity-wa.svg" alt="Warning" class="browser-event__status-icon">
-                            <div class="browser-event__status-text-container">
-                                <div class="browser-event__status-divider"></div>
-                                <span class="browser-event__status-text">WA</span>
-                            </div>
-                        </button>
-                        
-                        <!-- NO (Normal) Button -->
-                        <button class="browser-event__status-btn">
-                            <img src="assets/icons/severity-no.svg" alt="Normal" class="browser-event__status-icon">
-                            <div class="browser-event__status-text-container">
-                                <div class="browser-event__status-divider"></div>
-                                <span class="browser-event__status-text">NO</span>
-                            </div>
-                        </button>
-                    </div>
-                    
-                    <!-- Event Counts Column -->
-                    <div class="browser-event__event-counts">
-                        <div class="browser-event__count-value">1,061</div>
-                        <div class="browser-event__count-value">1</div>
-                        <div class="browser-event__count-value">2</div>
-                        <div class="browser-event__count-value">4</div>
-                        <div class="browser-event__count-value">4</div>
-                        <div class="browser-event__count-value">1,050</div>
-                    </div>
-                    
-                    <!-- Event Chart -->
-                    <div class="browser-event__event-chart">
-                        <div class="browser-event__chart-bar browser-event__chart-bar--critical"></div>
-                        <div class="browser-event__chart-bar browser-event__chart-bar--major"></div>
-                        <div class="browser-event__chart-bar browser-event__chart-bar--minor"></div>
-                        <div class="browser-event__chart-bar browser-event__chart-bar--warning"></div>
-                    </div>
+
+            <!-- Block: Data + Chart -->
+            <div class="block" data-name="block" data-node-id="25:610">
+              <!-- Group List -->
+              <div
+                class="group-list"
+                data-name="group-list"
+                data-node-id="25:611"
+              >
+                <div class="list" data-name="list" data-node-id="25:612">
+                  <span class="label">금일 누적</span>
+                  <span class="value">7,927,900</span>
                 </div>
-                
-                <!-- Right Group: Event Table -->
-                <div class="browser-event__group-right">
-                    <!-- Table Header -->
-                    <div class="browser-event__header">
-                        <span class="browser-event__header-cell browser-event__header-cell--grade">등급</span>
-                        <span class="browser-event__header-cell browser-event__header-cell--task">업무명</span>
-                        <span class="browser-event__header-cell browser-event__header-cell--host">호스트명</span>
-                        <span class="browser-event__header-cell browser-event__header-cell--message-group">메시지그룹</span>
-                        <span class="browser-event__header-cell browser-event__header-cell--application">어플리켄이션</span>
-                        <span class="browser-event__header-cell browser-event__header-cell--object">오브젝트</span>
-                        <span class="browser-event__header-cell browser-event__header-cell--time">발생시간</span>
-                        <span class="browser-event__header-cell browser-event__header-cell--message">메시지</span>
-                        
-                        <!-- Header Dividers -->
-                        <div class="browser-event__header-divider browser-event__header-divider--1">
-                            <img src="assets/icons/table-divider.svg" alt="Divider">
-                        </div>
-                        <div class="browser-event__header-divider browser-event__header-divider--2">
-                            <img src="assets/icons/table-divider.svg" alt="Divider">
-                        </div>
-                        <div class="browser-event__header-divider browser-event__header-divider--3">
-                            <img src="assets/icons/table-divider.svg" alt="Divider">
-                        </div>
-                        <div class="browser-event__header-divider browser-event__header-divider--4">
-                            <img src="assets/icons/table-divider.svg" alt="Divider">
-                        </div>
-                        <div class="browser-event__header-divider browser-event__header-divider--5">
-                            <img src="assets/icons/table-divider.svg" alt="Divider">
-                        </div>
-                        <div class="browser-event__header-divider browser-event__header-divider--6">
-                            <img src="assets/icons/table-divider.svg" alt="Divider">
-                        </div>
-                        <div class="browser-event__header-divider browser-event__header-divider--7">
-                            <img src="assets/icons/table-divider.svg" alt="Divider">
-                        </div>
-                        <div class="browser-event__header-divider browser-event__header-divider--8">
-                            <img src="assets/icons/table-divider.svg" alt="Divider">
-                        </div>
-                    </div>
-                    
-                    <!-- Table Grid -->
-                    <div class="browser-event__grid">
-                        <!-- Row 1: Critical -->
-                        <div class="browser-event__row">
-                            <div class="browser-event__severity-badge browser-event__severity-badge--critical">
-                                <div class="browser-event__badge-bg"></div>
-                                <div class="browser-event__badge-inner">
-                                    <span class="browser-event__badge-text">Critical</span>
-                                </div>
-                            </div>
-                            <span class="browser-event__cell browser-event__cell--task">기간계운영 DB#1</span>
-                            <span class="browser-event__cell browser-event__cell--host">host01</span>
-                            <span class="browser-event__cell browser-event__cell--message-group">AP</span>
-                            <span class="browser-event__cell browser-event__cell--application">ControlM</span>
-                            <span class="browser-event__cell browser-event__cell--object">Windows</span>
-                            <span class="browser-event__cell browser-event__cell--time">2024-01-01 12:00</span>
-                            <span class="browser-event__cell browser-event__cell--message">p_chmat 프로세스 다운[계정 : root]</span>
-                        </div>
-                        
-                        <!-- Row 2: Warning -->
-                        <div class="browser-event__row">
-                            <div class="browser-event__severity-badge browser-event__severity-badge--warning">
-                                <div class="browser-event__badge-bg"></div>
-                                <div class="browser-event__badge-inner">
-                                    <span class="browser-event__badge-text">Warning</span>
-                                </div>
-                            </div>
-                            <span class="browser-event__cell browser-event__cell--task">기간계운영 WAS#2</span>
-                            <span class="browser-event__cell browser-event__cell--host">host02</span>
-                            <span class="browser-event__cell browser-event__cell--message-group">SVR</span>
-                            <span class="browser-event__cell browser-event__cell--application">ControlM</span>
-                            <span class="browser-event__cell browser-event__cell--object">Windows</span>
-                            <span class="browser-event__cell browser-event__cell--time">2024-10-21 15:00:00</span>
-                            <span class="browser-event__cell browser-event__cell--message">LOCK_WAIT_SESSION 임계치 초과(1/1)</span>
-                        </div>
-                        
-                        <!-- Row 3: Minor -->
-                        <div class="browser-event__row">
-                            <div class="browser-event__severity-badge browser-event__severity-badge--minor">
-                                <div class="browser-event__badge-bg"></div>
-                                <div class="browser-event__badge-inner">
-                                    <span class="browser-event__badge-text">Minor</span>
-                                </div>
-                            </div>
-                            <span class="browser-event__cell browser-event__cell--task">기간계운영 DB#2</span>
-                            <span class="browser-event__cell browser-event__cell--host">host03</span>
-                            <span class="browser-event__cell browser-event__cell--message-group">SVR</span>
-                            <span class="browser-event__cell browser-event__cell--application">ControlM</span>
-                            <span class="browser-event__cell browser-event__cell--object">Windows</span>
-                            <span class="browser-event__cell browser-event__cell--time">2024-10-21 15:00:00</span>
-                            <span class="browser-event__cell browser-event__cell--message">ACTIVE_SESSION 임계치 초과(235/150)</span>
-                        </div>
-                        
-                        <!-- Row 4: Major -->
-                        <div class="browser-event__row">
-                            <div class="browser-event__severity-badge browser-event__severity-badge--major">
-                                <div class="browser-event__badge-bg"></div>
-                                <div class="browser-event__badge-inner">
-                                    <span class="browser-event__badge-text">Major</span>
-                                </div>
-                            </div>
-                            <span class="browser-event__cell browser-event__cell--task">FEB운영 #4</span>
-                            <span class="browser-event__cell browser-event__cell--host">host04</span>
-                            <span class="browser-event__cell browser-event__cell--message-group">AP</span>
-                            <span class="browser-event__cell browser-event__cell--application">ControlM</span>
-                            <span class="browser-event__cell browser-event__cell--object">Windows</span>
-                            <span class="browser-event__cell browser-event__cell--time">2024-10-21 15:00:00</span>
-                            <span class="browser-event__cell browser-event__cell--message">Memory 84.03% 사용중</span>
-                        </div>
-                        
-                        <!-- Row 5: Normal -->
-                        <div class="browser-event__row">
-                            <div class="browser-event__severity-badge browser-event__severity-badge--normal">
-                                <div class="browser-event__badge-bg"></div>
-                                <div class="browser-event__badge-inner">
-                                    <span class="browser-event__badge-text">Normal</span>
-                                </div>
-                            </div>
-                            <span class="browser-event__cell browser-event__cell--task">기간계운영 DB#2</span>
-                            <span class="browser-event__cell browser-event__cell--host">host05</span>
-                            <span class="browser-event__cell browser-event__cell--message-group">AP</span>
-                            <span class="browser-event__cell browser-event__cell--application">ControlM</span>
-                            <span class="browser-event__cell browser-event__cell--object">Windows</span>
-                            <span class="browser-event__cell browser-event__cell--time">2024-10-21 15:00:00</span>
-                            <span class="browser-event__cell browser-event__cell--message">Memory 84.03% 사용중</span>
-                        </div>
-                    </div>
+                <div class="list" data-name="list" data-node-id="25:615">
+                  <span class="label">전일 누적</span>
+                  <span class="value">10,636,190</span>
                 </div>
+              </div>
+
+              <!-- Pie Chart -->
+              <div
+                class="chart-pie"
+                data-name="chart-pie"
+                data-node-id="25:618"
+              >
+                <img src="assets/icons/chart-pie.svg" alt="거래 현황 차트" />
+              </div>
             </div>
+
+            <!-- Divider -->
+            <div class="divider" data-name="divider" data-node-id="25:624">
+              <img src="assets/icons/divider.svg" alt="" />
+            </div>
+
+            <!-- Legend List -->
+            <div
+              class="legend-list"
+              data-name="legend-list"
+              data-node-id="25:625"
+            >
+              <div class="list-item" data-name="list01" data-node-id="25:626">
+                <div
+                  class="bu-legend"
+                  data-name="bu-legend"
+                  data-node-id="25:627"
+                >
+                  <img
+                    class="legend-icon"
+                    src="assets/icons/legend-yellow.svg"
+                    alt=""
+                  />
+                  <span class="legend-text">카드승인</span>
+                </div>
+                <span class="legend-value">6,294,043</span>
+              </div>
+
+              <div class="list-item" data-name="list02" data-node-id="25:629">
+                <div
+                  class="bu-legend"
+                  data-name="bu-legend"
+                  data-node-id="25:630"
+                >
+                  <img
+                    class="legend-icon"
+                    src="assets/icons/legend-green.svg"
+                    alt=""
+                  />
+                  <span class="legend-text">조회</span>
+                </div>
+                <span class="legend-value">1,141,785</span>
+              </div>
+
+              <div class="list-item" data-name="list03" data-node-id="25:632">
+                <div
+                  class="bu-legend"
+                  data-name="bu-legend"
+                  data-node-id="25:633"
+                >
+                  <img
+                    class="legend-icon"
+                    src="assets/icons/legend-blue.svg"
+                    alt=""
+                  />
+                  <span class="legend-text">현금서비스</span>
+                </div>
+                <span class="legend-value">9,185</span>
+              </div>
+
+              <div class="list-item" data-name="list04" data-node-id="25:635">
+                <div
+                  class="bu-legend"
+                  data-name="bu_legend"
+                  data-node-id="25:636"
+                >
+                  <img
+                    class="legend-icon"
+                    src="assets/icons/legend-orange.svg"
+                    alt=""
+                  />
+                  <span class="legend-text">기타</span>
+                </div>
+                <span class="legend-value">478,528</span>
+              </div>
+
+              <div class="list-item" data-name="list05" data-node-id="25:638">
+                <div
+                  class="bu-legend"
+                  data-name="bu_legend"
+                  data-node-id="25:639"
+                >
+                  <img
+                    class="legend-icon"
+                    src="assets/icons/legend-red.svg"
+                    alt=""
+                  />
+                  <span class="legend-text">카드신고</span>
+                </div>
+                <span class="legend-value">4,380</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section02: 트랜잭션 현황 (막대차트) -->
+          <div class="section02" data-name="section02" data-node-id="25:641">
+            <!-- Title -->
+            <div class="title-h1" data-name="title-h1" data-node-id="25:642">
+              <div class="bullet" data-name="bullet">
+                <img src="assets/icons/bullet-title.svg" alt="" />
+              </div>
+              <span class="title-text">트랜젝션 현황</span>
+            </div>
+
+            <!-- Group01: 계정 차트 -->
+            <div class="group01" data-name="group01" data-node-id="25:643">
+              <div
+                class="title-2epth"
+                data-name="title-2epth"
+                data-node-id="25:644"
+              >
+                <div class="bullet-2" data-name="bullet">
+                  <img src="assets/icons/bullet-2depth.svg" alt="" />
+                </div>
+                <span class="subtitle-text">계정</span>
+              </div>
+
+              <div
+                class="chart-bar"
+                data-name="chart-bar"
+                data-node-id="25:645"
+              >
+                <div class="chart" data-name="chart" data-node-id="25:646">
+                  <!-- Background bars (43개) -->
+                  <div class="bg-bars" data-name="bg" data-node-id="25:647">
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                  </div>
+                  <!-- Green bars with varying heights (43개) -->
+                  <div class="bars green" data-name="bar" data-node-id="25:691">
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 71px"></div>
+                    <div class="bar" style="height: 44px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 80px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 68px"></div>
+                    <div class="bar" style="height: 44px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 39px"></div>
+                    <div class="bar" style="height: 44px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 71px"></div>
+                    <div class="bar" style="height: 44px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 68px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 67px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 71px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 67px"></div>
+                  </div>
+                  <!-- Line graph overlay -->
+                  <div class="line" data-name="line" data-node-id="25:735">
+                    <img src="assets/icons/line-green.svg" alt="" />
+                  </div>
+                </div>
+
+                <div
+                  class="legend-list"
+                  data-name="legend-list"
+                  data-node-id="25:736"
+                >
+                  <div
+                    class="list-item"
+                    data-name="list01"
+                    data-node-id="25:737"
+                  >
+                    <div
+                      class="bu-legend"
+                      data-name="bu-legend"
+                      data-node-id="25:738"
+                    >
+                      <img
+                        class="legend-icon"
+                        src="assets/icons/legend-green-light.svg"
+                        alt=""
+                      />
+                      <span class="legend-text">금일</span>
+                    </div>
+                    <span class="legend-value">7,927,921</span>
+                  </div>
+                  <div
+                    class="list-item"
+                    data-name="list02"
+                    data-node-id="25:740"
+                  >
+                    <div
+                      class="bu-legend"
+                      data-name="bu-legend"
+                      data-node-id="25:741"
+                    >
+                      <img
+                        class="legend-icon"
+                        src="assets/icons/legend-green-dark.svg"
+                        alt=""
+                      />
+                      <span class="legend-text">전일</span>
+                    </div>
+                    <span class="legend-value">7,320,915</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group02: 승인 차트 -->
+            <div class="group02" data-name="group02" data-node-id="25:743">
+              <div
+                class="title-2epth"
+                data-name="title-2epth"
+                data-node-id="25:744"
+              >
+                <div class="bullet-2" data-name="bullet">
+                  <img src="assets/icons/bullet-2depth.svg" alt="" />
+                </div>
+                <span class="subtitle-text">승인</span>
+              </div>
+
+              <div
+                class="content-chart"
+                data-name="content-chart"
+                data-node-id="25:745"
+              >
+                <div class="chart" data-name="chart" data-node-id="25:746">
+                  <!-- Background bars (43개) -->
+                  <div
+                    class="bg-chart"
+                    data-name="bg-chart"
+                    data-node-id="25:747"
+                  >
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                    <div class="bar-bg"></div>
+                  </div>
+                  <!-- Orange bars with varying heights (43개) -->
+                  <div
+                    class="bars orange"
+                    data-name="bar"
+                    data-node-id="25:791"
+                  >
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 71px"></div>
+                    <div class="bar" style="height: 44px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 80px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 68px"></div>
+                    <div class="bar" style="height: 44px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 39px"></div>
+                    <div class="bar" style="height: 44px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 71px"></div>
+                    <div class="bar" style="height: 44px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 68px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 67px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 51px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 71px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 60px"></div>
+                    <div class="bar" style="height: 57px"></div>
+                    <div class="bar" style="height: 64px"></div>
+                    <div class="bar" style="height: 67px"></div>
+                  </div>
+                  <!-- Line graph overlay -->
+                  <div class="line" data-name="line" data-node-id="25:835">
+                    <img src="assets/icons/line-orange.svg" alt="" />
+                  </div>
+                </div>
+
+                <div
+                  class="group-list"
+                  data-name="group-list"
+                  data-node-id="25:836"
+                >
+                  <div
+                    class="list-item"
+                    data-name="list01"
+                    data-node-id="25:837"
+                  >
+                    <div
+                      class="bu_legend"
+                      data-name="bu_legend"
+                      data-node-id="25:838"
+                    >
+                      <img
+                        class="legend-icon"
+                        src="assets/icons/legend-orange-light.svg"
+                        alt=""
+                      />
+                      <span class="legend-text">금일</span>
+                    </div>
+                    <span class="legend-value">7,927,921</span>
+                  </div>
+                  <div
+                    class="list-item"
+                    data-name="list02"
+                    data-node-id="25:840"
+                  >
+                    <div
+                      class="bu_legend"
+                      data-name="bu_legend"
+                      data-node-id="25:841"
+                    >
+                      <img
+                        class="legend-icon"
+                        src="assets/icons/legend-orange-dark.svg"
+                        alt=""
+                      />
+                      <span class="legend-text">전일</span>
+                    </div>
+                    <span class="legend-value">7,320,915</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Main Component: 업무시스템현황 (3D 아이소메트릭) -->
+        <div
+          class="main-component"
+          data-name="main-component"
+          data-node-id="25:843"
+        >
+          <!-- Background Network Diagram -->
+          <div class="bg-network" data-name="bg" data-node-id="25:844">
+            <img src="assets/bg-network.svg" alt="" />
+          </div>
+
+          <!-- Title -->
+          <div class="title-h1" data-name="title-h1" data-node-id="25:863">
+            <div class="bullet" data-name="bullet">
+              <img src="assets/bullet-purple.svg" alt="" />
+            </div>
+            <div class="title-text">업무시스템 현황</div>
+          </div>
+
+          <!-- 콜센터 -->
+          <div
+            class="title-component callcenter"
+            data-name="title-component"
+            data-node-id="25:852"
+          >
+            <div class="component-label">콜센터</div>
+            <div class="component">
+              <img src="assets/cube-green.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- 카드발급 -->
+          <div
+            class="title-component card-issue"
+            data-name="title-component"
+            data-node-id="25:853"
+          >
+            <div class="component-label">카드발급</div>
+            <div class="component">
+              <img src="assets/cube-blue.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- 인터넷포탈 -->
+          <div
+            class="title-component internet-portal"
+            data-name="title-component"
+            data-node-id="25:854"
+          >
+            <div class="component-label">인터넷포탈</div>
+            <div class="component">
+              <img src="assets/cube-green.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- 계정계 -->
+          <div
+            class="title-component account-system"
+            data-name="title-component"
+            data-node-id="25:855"
+          >
+            <div class="component-label">계정계</div>
+            <div class="component">
+              <img src="assets/cube-red.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- 승인계 -->
+          <div
+            class="title-component approval-system"
+            data-name="title-component"
+            data-node-id="25:856"
+          >
+            <div class="component-label">승인계</div>
+            <div class="component">
+              <img src="assets/cube-green.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- 정보계 -->
+          <div
+            class="title-component info-system"
+            data-name="title-component"
+            data-node-id="25:857"
+          >
+            <div class="component-label">정보계</div>
+            <div class="component">
+              <img src="assets/cube-yellow.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- MCA Label Background -->
+          <div
+            class="label mca-label"
+            data-name="label"
+            data-node-id="25:858"
+          ></div>
+
+          <!-- MCA -->
+          <div
+            class="title-component mca"
+            data-name="title-component"
+            data-node-id="25:860"
+          >
+            <div class="component-label large">MCA</div>
+            <div class="component">
+              <img src="assets/cube-green.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- 은행 -->
+          <div
+            class="title-component bank"
+            data-name="title-component"
+            data-node-id="25:861"
+          >
+            <div class="component-label">은행</div>
+            <div class="component">
+              <img src="assets/cube-green.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- EAI Label Background -->
+          <div
+            class="label eai-label"
+            data-name="label"
+            data-node-id="25:859"
+          ></div>
+
+          <!-- EAI -->
+          <div
+            class="title-component eai"
+            data-name="title-component"
+            data-node-id="25:862"
+          >
+            <div class="component-label large">EAI</div>
+            <div class="component">
+              <img src="assets/cube-green.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content02 (x:29, y:475, width:1861, height:269) -->
+      <div class="content02" data-node-id="25:461">
+        <!-- Section01: 콜센터 ARS 현황 -->
+        <div class="content02-section01" data-node-id="25:462">
+          <!-- Title -->
+          <div class="content02-section01__title" data-node-id="25:463">
+            <img
+              class="content02-section01__title-bullet"
+              src="assets/icons/bullet-purple.svg"
+              alt=""
+            />
+            <div class="content02-section01__title-text">콜 센터 ARS 현황</div>
+          </div>
+
+          <!-- Chart Area -->
+          <div class="content02-section01__chart-area" data-node-id="25:464">
+            <div class="content02-section01__chart" data-node-id="25:465">
+              <!-- Background container with Y-axis, ticks, and grid -->
+              <div class="content02-section01__chart-bg" data-node-id="25:466">
+                <!-- Y-axis labels -->
+                <div
+                  class="content02-section01__y-labels"
+                  data-node-id="25:467"
+                >
+                  <div>2,000</div>
+                  <div>1,500</div>
+                  <div>1,000</div>
+                  <div>500</div>
+                  <div>0</div>
+                </div>
+
+                <!-- Axis ticks -->
+                <div class="content02-section01__axis-x" data-node-id="25:468">
+                  <img src="assets/icons/axis-x.svg" alt="" />
+                </div>
+
+                <!-- Grid lines -->
+                <div class="content02-section01__grid-x" data-node-id="25:474">
+                  <img src="assets/icons/grid-x.svg" alt="" />
+                </div>
+              </div>
+
+              <!-- Area chart -->
+              <div
+                class="content02-section01__area-chart"
+                data-node-id="25:480"
+              >
+                <img src="assets/icons/area-chart.svg" alt="Area Chart" />
+              </div>
+
+              <!-- Current position line -->
+              <div
+                class="content02-section01__current-line"
+                data-node-id="58:1933"
+              >
+                <img src="assets/icons/line-56.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Statistics Group -->
+          <div class="content02-section01__stats" data-node-id="25:481">
+            <div
+              class="content02-section01__stat-item content02-section01__stat-item--total"
+              data-node-id="25:482"
+            >
+              <div
+                class="content02-section01__stat-label"
+                data-node-id="25:483"
+              >
+                총 인입
+              </div>
+              <div
+                class="content02-section01__stat-value-wrapper content02-section01__stat-value-wrapper--default"
+                data-node-id="25:484"
+              >
+                <div
+                  class="content02-section01__stat-value"
+                  data-node-id="25:485"
+                >
+                  6,294,043
+                </div>
+                <div
+                  class="content02-section01__stat-unit"
+                  data-node-id="25:486"
+                >
+                  명
+                </div>
+              </div>
+            </div>
+
+            <div class="content02-section01__divider" data-node-id="25:487">
+              <img src="assets/icons/divider.svg" alt="" />
+            </div>
+
+            <div
+              class="content02-section01__stat-item content02-section01__stat-item--handled"
+              data-node-id="25:488"
+            >
+              <div
+                class="content02-section01__stat-label"
+                data-node-id="25:489"
+              >
+                응대
+              </div>
+              <div
+                class="content02-section01__stat-value-wrapper content02-section01__stat-value-wrapper--narrow"
+                data-node-id="25:490"
+              >
+                <div
+                  class="content02-section01__stat-value"
+                  data-node-id="25:491"
+                >
+                  26,200
+                </div>
+                <div
+                  class="content02-section01__stat-unit"
+                  data-node-id="25:492"
+                >
+                  명
+                </div>
+              </div>
+            </div>
+
+            <div class="content02-section01__divider" data-node-id="25:493">
+              <img src="assets/icons/divider.svg" alt="" />
+            </div>
+
+            <div
+              class="content02-section01__stat-item content02-section01__stat-item--rate"
+              data-node-id="25:494"
+            >
+              <div
+                class="content02-section01__stat-label"
+                data-node-id="25:495"
+              >
+                응대율
+              </div>
+              <div
+                class="content02-section01__stat-value-wrapper content02-section01__stat-value-wrapper--default"
+                data-node-id="25:496"
+              >
+                <div
+                  class="content02-section01__stat-value"
+                  data-node-id="25:497"
+                >
+                  98.6
+                </div>
+                <div
+                  class="content02-section01__stat-unit"
+                  data-node-id="25:498"
+                >
+                  %
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section02: 승인 현황 (25:499) -->
+        <div class="content02-section02" data-node-id="25:499">
+          <!-- Title -->
+          <div class="content02-section02__title" data-node-id="25:500">
+            <img
+              class="content02-section02__title-bullet"
+              src="assets/icons/bullet-purple.svg"
+              alt=""
+            />
+            <div class="content02-section02__title-text">승인 현황</div>
+          </div>
+
+          <!-- Block Container -->
+          <div class="content02-section02__block" data-node-id="25:501">
+            <!-- Group01: 승인 거래 건수 -->
+            <div class="content02-section02__group" data-node-id="25:502">
+              <!-- Group Title -->
+              <div
+                class="content02-section02__group-title"
+                data-node-id="25:534"
+              >
+                <img
+                  class="content02-section02__group-title-bullet"
+                  src="assets/icons/bullet-small-blue.svg"
+                  alt=""
+                />
+                <div class="content02-section02__group-title-text">
+                  승인 거래 건수
+                </div>
+              </div>
+
+              <!-- Header -->
+              <div class="content02-section02__header" data-node-id="25:528">
+                <div
+                  class="content02-section02__header-label content02-section02__header-label--avg"
+                >
+                  평균
+                </div>
+                <div class="content02-section02__header-divider">
+                  <img src="assets/icons/divider-vertical-blue.svg" alt="" />
+                </div>
+                <div
+                  class="content02-section02__header-label content02-section02__header-label--current"
+                >
+                  현재
+                </div>
+                <div class="content02-section02__header-divider">
+                  <img src="assets/icons/divider-vertical-blue.svg" alt="" />
+                </div>
+                <div
+                  class="content02-section02__header-label content02-section02__header-label--rate"
+                >
+                  증감율(%)
+                </div>
+              </div>
+
+              <!-- Grid -->
+              <div class="content02-section02__grid" data-node-id="25:503">
+                <!-- Row 1: 국내승인 -->
+                <div class="content02-section02__row" data-node-id="25:504">
+                  <div class="content02-section02__row-label">국내승인</div>
+                  <div class="content02-section02__row-divider">
+                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">9,346</div>
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">31,425</div>
+                  </div>
+                  <div
+                    class="content02-section02__cell content02-section02__cell--with-arrow"
+                  >
+                    <div class="content02-section02__cell-value">236.2</div>
+                    <div
+                      class="content02-section02__arrow content02-section02__arrow--up"
+                    >
+                      <img src="assets/icons/arrow-up-red.svg" alt="증가" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 2: 해외승인 -->
+                <div class="content02-section02__row" data-node-id="25:512">
+                  <div class="content02-section02__row-label">해외승인</div>
+                  <div class="content02-section02__row-divider">
+                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">99</div>
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">359</div>
+                  </div>
+                  <div
+                    class="content02-section02__cell content02-section02__cell--with-arrow"
+                  >
+                    <div class="content02-section02__cell-value">262.6</div>
+                    <div
+                      class="content02-section02__arrow content02-section02__arrow--up"
+                    >
+                      <img src="assets/icons/arrow-up-red.svg" alt="증가" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3: 금융 SVC -->
+                <div class="content02-section02__row" data-node-id="25:520">
+                  <div class="content02-section02__row-label">금융 SVC</div>
+                  <div class="content02-section02__row-divider">
+                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">17</div>
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">44</div>
+                  </div>
+                  <div
+                    class="content02-section02__cell content02-section02__cell--with-arrow"
+                  >
+                    <div class="content02-section02__cell-value">158.8</div>
+                    <div
+                      class="content02-section02__arrow content02-section02__arrow--up"
+                    >
+                      <img src="assets/icons/arrow-up-red.svg" alt="증가" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group02: 거절 거래 건수 -->
+            <div class="content02-section02__group" data-node-id="25:535">
+              <!-- Group Title -->
+              <div
+                class="content02-section02__group-title"
+                data-node-id="25:567"
+              >
+                <img
+                  class="content02-section02__group-title-bullet"
+                  src="assets/icons/bullet-small-blue.svg"
+                  alt=""
+                />
+                <div class="content02-section02__group-title-text">
+                  거절 거래 건수
+                </div>
+              </div>
+
+              <!-- Header -->
+              <div class="content02-section02__header" data-node-id="25:561">
+                <div
+                  class="content02-section02__header-label content02-section02__header-label--avg"
+                >
+                  평균
+                </div>
+                <div class="content02-section02__header-divider">
+                  <img src="assets/icons/divider-vertical-blue.svg" alt="" />
+                </div>
+                <div
+                  class="content02-section02__header-label content02-section02__header-label--current"
+                >
+                  현재
+                </div>
+                <div class="content02-section02__header-divider">
+                  <img src="assets/icons/divider-vertical-blue.svg" alt="" />
+                </div>
+                <div
+                  class="content02-section02__header-label content02-section02__header-label--rate"
+                >
+                  증감율(%)
+                </div>
+              </div>
+
+              <!-- Grid -->
+              <div class="content02-section02__grid" data-node-id="25:536">
+                <!-- Row 1: 국내승인 -->
+                <div class="content02-section02__row" data-node-id="25:537">
+                  <div class="content02-section02__row-label">국내승인</div>
+                  <div class="content02-section02__row-divider">
+                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">9,346</div>
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">31,425</div>
+                  </div>
+                  <div
+                    class="content02-section02__cell content02-section02__cell--with-arrow"
+                  >
+                    <div class="content02-section02__cell-value">236.2</div>
+                    <div
+                      class="content02-section02__arrow content02-section02__arrow--down"
+                    >
+                      <img src="assets/icons/arrow-down-green.svg" alt="감소" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 2: 해외승인 -->
+                <div class="content02-section02__row" data-node-id="25:545">
+                  <div class="content02-section02__row-label">해외승인</div>
+                  <div class="content02-section02__row-divider">
+                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">99</div>
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">359</div>
+                  </div>
+                  <div
+                    class="content02-section02__cell content02-section02__cell--with-arrow"
+                  >
+                    <div class="content02-section02__cell-value">262.6</div>
+                    <div
+                      class="content02-section02__arrow content02-section02__arrow--up"
+                    >
+                      <img src="assets/icons/arrow-up-red.svg" alt="증가" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3: 금융 SVC -->
+                <div class="content02-section02__row" data-node-id="25:553">
+                  <div class="content02-section02__row-label">금융 SVC</div>
+                  <div class="content02-section02__row-divider">
+                    <img src="assets/icons/divider-vertical-gray.svg" alt="" />
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">17</div>
+                  </div>
+                  <div class="content02-section02__cell">
+                    <div class="content02-section02__cell-value">44</div>
+                  </div>
+                  <div
+                    class="content02-section02__cell content02-section02__cell--with-arrow"
+                  >
+                    <div class="content02-section02__cell-value">158.8</div>
+                    <div
+                      class="content02-section02__arrow content02-section02__arrow--up"
+                    >
+                      <img src="assets/icons/arrow-up-red.svg" alt="증가" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section03: 서비스 TOP5현황 (25:568) -->
+        <div class="content02-section03" data-node-id="25:568">
+          <!-- Title -->
+          <div class="content02-section03__title" data-node-id="25:569">
+            <img
+              class="content02-section03__title-bullet"
+              src="assets/icons/bullet-purple.svg"
+              alt=""
+            />
+            <div class="content02-section03__title-text">서비스 TOP5현황</div>
+          </div>
+
+          <!-- Group List -->
+          <div class="content02-section03__group-list" data-node-id="25:570">
+            <!-- Rank 1: 카드 서비스 01 -->
+            <div
+              class="content02-section03__list-item content02-section03__list-item--rank-1"
+              data-node-id="25:571"
+            >
+              <div class="content02-section03__bg-box"></div>
+              <div class="content02-section03__progress-bar"></div>
+              <div class="content02-section03__rank">1</div>
+              <div class="content02-section03__service-name">
+                카드 서비스 01
+              </div>
+              <div class="content02-section03__value">2362</div>
+              <div class="content02-section03__unit">건</div>
+            </div>
+
+            <!-- Rank 2: 카드 서비스 02 -->
+            <div
+              class="content02-section03__list-item content02-section03__list-item--rank-2"
+              data-node-id="25:578"
+            >
+              <div class="content02-section03__bg-box"></div>
+              <div class="content02-section03__progress-bar"></div>
+              <div class="content02-section03__rank">2</div>
+              <div class="content02-section03__service-name">
+                카드 서비스 02
+              </div>
+              <div class="content02-section03__value">1626</div>
+              <div class="content02-section03__unit">건</div>
+            </div>
+
+            <!-- Rank 3: 카드 서비스 03 -->
+            <div
+              class="content02-section03__list-item content02-section03__list-item--rank-3"
+              data-node-id="25:585"
+            >
+              <div class="content02-section03__bg-box"></div>
+              <div class="content02-section03__progress-bar"></div>
+              <div class="content02-section03__rank">3</div>
+              <div class="content02-section03__service-name">
+                카드 서비스 03
+              </div>
+              <div class="content02-section03__value">1588</div>
+              <div class="content02-section03__unit">건</div>
+            </div>
+
+            <!-- Rank 4: 카드 서비스 04 -->
+            <div
+              class="content02-section03__list-item content02-section03__list-item--rank-4"
+              data-node-id="25:592"
+            >
+              <div class="content02-section03__bg-box"></div>
+              <div class="content02-section03__progress-bar"></div>
+              <div class="content02-section03__rank">4</div>
+              <div class="content02-section03__service-name">
+                카드 서비스 04
+              </div>
+              <div class="content02-section03__value">826</div>
+              <div class="content02-section03__unit">건</div>
+            </div>
+
+            <!-- Rank 5: 카드 서비스 05 -->
+            <div
+              class="content02-section03__list-item content02-section03__list-item--rank-5"
+              data-node-id="25:599"
+            >
+              <div class="content02-section03__bg-box"></div>
+              <div class="content02-section03__progress-bar"></div>
+              <div class="content02-section03__rank">5</div>
+              <div class="content02-section03__service-name">
+                카드 서비스 05
+              </div>
+              <div class="content02-section03__value">588</div>
+              <div class="content02-section03__unit">건</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Browser Event (x:29, y:770, width:1861, height:303) -->
+      <div class="browser-event" data-node-id="25:448">
+        <!-- Background Elements -->
+        <div class="browser-event__box-event">
+          <div class="browser-event__bg-box">
+            <!-- Gradient Background -->
+            <div class="browser-event__gradient-bg"></div>
+
+            <!-- Light Background -->
+            <div class="browser-event__light-bg"></div>
+          </div>
+
+          <!-- Button Container -->
+          <div class="browser-event__btn-container">
+            <!-- Vector Background -->
+            <div class="browser-event__vector">
+              <img
+                src="assets/icons/browser-event-vector.svg"
+                alt="Button Background"
+              />
+            </div>
+
+            <!-- Auto Button -->
+            <button class="browser-event__btn-auto">
+              <img
+                src="assets/icons/btn-radio.svg"
+                alt="Radio"
+                class="browser-event__btn-auto-icon"
+              />
+              <span class="browser-event__btn-auto-text">Auto</span>
+            </button>
+
+            <!-- Close Button -->
+            <button class="browser-event__btn-close">
+              <img
+                src="assets/icons/btn-close.svg"
+                alt="Close"
+                class="browser-event__btn-close-icon"
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- Title -->
+        <div class="browser-event__title">
+          <img
+            src="assets/icons/bullet-title.svg"
+            alt="Bullet"
+            class="browser-event__title-bullet"
+          />
+          <span class="browser-event__title-text">이벤트현황</span>
+        </div>
+
+        <!-- Main Block -->
+        <div class="browser-event__block">
+          <!-- Left Group: Event Status Panel -->
+          <div class="browser-event__group-left">
+            <!-- Event Status Buttons Column -->
+            <div class="browser-event__event-status">
+              <!-- ALL Button -->
+              <button
+                class="browser-event__status-btn browser-event__status-btn--all"
+              >
+                <img
+                  src="assets/icons/severity-no.svg"
+                  alt="All"
+                  class="browser-event__status-icon"
+                />
+                <div class="browser-event__status-text-container">
+                  <div class="browser-event__status-divider"></div>
+                  <span class="browser-event__status-text">ALL</span>
+                </div>
+              </button>
+
+              <!-- CR (Critical) Button -->
+              <button class="browser-event__status-btn">
+                <img
+                  src="assets/icons/severity-cr.svg"
+                  alt="Critical"
+                  class="browser-event__status-icon"
+                />
+                <div class="browser-event__status-text-container">
+                  <div class="browser-event__status-divider"></div>
+                  <span class="browser-event__status-text">CR</span>
+                </div>
+              </button>
+
+              <!-- MA (Major) Button -->
+              <button class="browser-event__status-btn">
+                <img
+                  src="assets/icons/severity-ma.svg"
+                  alt="Major"
+                  class="browser-event__status-icon"
+                />
+                <div class="browser-event__status-text-container">
+                  <div class="browser-event__status-divider"></div>
+                  <span class="browser-event__status-text">MA</span>
+                </div>
+              </button>
+
+              <!-- MI (Minor) Button -->
+              <button class="browser-event__status-btn">
+                <img
+                  src="assets/icons/severity-mi.svg"
+                  alt="Minor"
+                  class="browser-event__status-icon"
+                />
+                <div class="browser-event__status-text-container">
+                  <div class="browser-event__status-divider"></div>
+                  <span class="browser-event__status-text">MI</span>
+                </div>
+              </button>
+
+              <!-- WA (Warning) Button -->
+              <button class="browser-event__status-btn">
+                <img
+                  src="assets/icons/severity-wa.svg"
+                  alt="Warning"
+                  class="browser-event__status-icon"
+                />
+                <div class="browser-event__status-text-container">
+                  <div class="browser-event__status-divider"></div>
+                  <span class="browser-event__status-text">WA</span>
+                </div>
+              </button>
+
+              <!-- NO (Normal) Button -->
+              <button class="browser-event__status-btn">
+                <img
+                  src="assets/icons/severity-no.svg"
+                  alt="Normal"
+                  class="browser-event__status-icon"
+                />
+                <div class="browser-event__status-text-container">
+                  <div class="browser-event__status-divider"></div>
+                  <span class="browser-event__status-text">NO</span>
+                </div>
+              </button>
+            </div>
+
+            <!-- Event Counts Column -->
+            <div class="browser-event__event-counts">
+              <div class="browser-event__count-value">1,061</div>
+              <div class="browser-event__count-value">1</div>
+              <div class="browser-event__count-value">2</div>
+              <div class="browser-event__count-value">4</div>
+              <div class="browser-event__count-value">4</div>
+              <div class="browser-event__count-value">1,050</div>
+            </div>
+
+            <!-- Event Chart -->
+            <div class="browser-event__event-chart">
+              <div
+                class="browser-event__chart-bar browser-event__chart-bar--critical"
+              ></div>
+              <div
+                class="browser-event__chart-bar browser-event__chart-bar--major"
+              ></div>
+              <div
+                class="browser-event__chart-bar browser-event__chart-bar--minor"
+              ></div>
+              <div
+                class="browser-event__chart-bar browser-event__chart-bar--warning"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Right Group: Event Table -->
+          <div class="browser-event__group-right">
+            <!-- Table Header -->
+            <div class="browser-event__header">
+              <span
+                class="browser-event__header-cell browser-event__header-cell--grade"
+                >등급</span
+              >
+              <span
+                class="browser-event__header-cell browser-event__header-cell--task"
+                >업무명</span
+              >
+              <span
+                class="browser-event__header-cell browser-event__header-cell--host"
+                >호스트명</span
+              >
+              <span
+                class="browser-event__header-cell browser-event__header-cell--message-group"
+                >메시지그룹</span
+              >
+              <span
+                class="browser-event__header-cell browser-event__header-cell--application"
+                >어플리켄이션</span
+              >
+              <span
+                class="browser-event__header-cell browser-event__header-cell--object"
+                >오브젝트</span
+              >
+              <span
+                class="browser-event__header-cell browser-event__header-cell--time"
+                >발생시간</span
+              >
+              <span
+                class="browser-event__header-cell browser-event__header-cell--message"
+                >메시지</span
+              >
+
+              <!-- Header Dividers -->
+              <div
+                class="browser-event__header-divider browser-event__header-divider--1"
+              >
+                <img src="assets/icons/table-divider.svg" alt="Divider" />
+              </div>
+              <div
+                class="browser-event__header-divider browser-event__header-divider--2"
+              >
+                <img src="assets/icons/table-divider.svg" alt="Divider" />
+              </div>
+              <div
+                class="browser-event__header-divider browser-event__header-divider--3"
+              >
+                <img src="assets/icons/table-divider.svg" alt="Divider" />
+              </div>
+              <div
+                class="browser-event__header-divider browser-event__header-divider--4"
+              >
+                <img src="assets/icons/table-divider.svg" alt="Divider" />
+              </div>
+              <div
+                class="browser-event__header-divider browser-event__header-divider--5"
+              >
+                <img src="assets/icons/table-divider.svg" alt="Divider" />
+              </div>
+              <div
+                class="browser-event__header-divider browser-event__header-divider--6"
+              >
+                <img src="assets/icons/table-divider.svg" alt="Divider" />
+              </div>
+              <div
+                class="browser-event__header-divider browser-event__header-divider--7"
+              >
+                <img src="assets/icons/table-divider.svg" alt="Divider" />
+              </div>
+              <div
+                class="browser-event__header-divider browser-event__header-divider--8"
+              >
+                <img src="assets/icons/table-divider.svg" alt="Divider" />
+              </div>
+            </div>
+
+            <!-- Table Grid -->
+            <div class="browser-event__grid">
+              <!-- Row 1: Critical -->
+              <div class="browser-event__row">
+                <div
+                  class="browser-event__severity-badge browser-event__severity-badge--critical"
+                >
+                  <div class="browser-event__badge-bg"></div>
+                  <div class="browser-event__badge-inner">
+                    <span class="browser-event__badge-text">Critical</span>
+                  </div>
+                </div>
+                <span class="browser-event__cell browser-event__cell--task"
+                  >기간계운영 DB#1</span
+                >
+                <span class="browser-event__cell browser-event__cell--host"
+                  >host01</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--message-group"
+                  >AP</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--application"
+                  >ControlM</span
+                >
+                <span class="browser-event__cell browser-event__cell--object"
+                  >Windows</span
+                >
+                <span class="browser-event__cell browser-event__cell--time"
+                  >2024-01-01 12:00</span
+                >
+                <span class="browser-event__cell browser-event__cell--message"
+                  >p_chmat 프로세스 다운[계정 : root]</span
+                >
+              </div>
+
+              <!-- Row 2: Warning -->
+              <div class="browser-event__row">
+                <div
+                  class="browser-event__severity-badge browser-event__severity-badge--warning"
+                >
+                  <div class="browser-event__badge-bg"></div>
+                  <div class="browser-event__badge-inner">
+                    <span class="browser-event__badge-text">Warning</span>
+                  </div>
+                </div>
+                <span class="browser-event__cell browser-event__cell--task"
+                  >기간계운영 WAS#2</span
+                >
+                <span class="browser-event__cell browser-event__cell--host"
+                  >host02</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--message-group"
+                  >SVR</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--application"
+                  >ControlM</span
+                >
+                <span class="browser-event__cell browser-event__cell--object"
+                  >Windows</span
+                >
+                <span class="browser-event__cell browser-event__cell--time"
+                  >2024-10-21 15:00:00</span
+                >
+                <span class="browser-event__cell browser-event__cell--message"
+                  >LOCK_WAIT_SESSION 임계치 초과(1/1)</span
+                >
+              </div>
+
+              <!-- Row 3: Minor -->
+              <div class="browser-event__row">
+                <div
+                  class="browser-event__severity-badge browser-event__severity-badge--minor"
+                >
+                  <div class="browser-event__badge-bg"></div>
+                  <div class="browser-event__badge-inner">
+                    <span class="browser-event__badge-text">Minor</span>
+                  </div>
+                </div>
+                <span class="browser-event__cell browser-event__cell--task"
+                  >기간계운영 DB#2</span
+                >
+                <span class="browser-event__cell browser-event__cell--host"
+                  >host03</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--message-group"
+                  >SVR</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--application"
+                  >ControlM</span
+                >
+                <span class="browser-event__cell browser-event__cell--object"
+                  >Windows</span
+                >
+                <span class="browser-event__cell browser-event__cell--time"
+                  >2024-10-21 15:00:00</span
+                >
+                <span class="browser-event__cell browser-event__cell--message"
+                  >ACTIVE_SESSION 임계치 초과(235/150)</span
+                >
+              </div>
+
+              <!-- Row 4: Major -->
+              <div class="browser-event__row">
+                <div
+                  class="browser-event__severity-badge browser-event__severity-badge--major"
+                >
+                  <div class="browser-event__badge-bg"></div>
+                  <div class="browser-event__badge-inner">
+                    <span class="browser-event__badge-text">Major</span>
+                  </div>
+                </div>
+                <span class="browser-event__cell browser-event__cell--task"
+                  >FEB운영 #4</span
+                >
+                <span class="browser-event__cell browser-event__cell--host"
+                  >host04</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--message-group"
+                  >AP</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--application"
+                  >ControlM</span
+                >
+                <span class="browser-event__cell browser-event__cell--object"
+                  >Windows</span
+                >
+                <span class="browser-event__cell browser-event__cell--time"
+                  >2024-10-21 15:00:00</span
+                >
+                <span class="browser-event__cell browser-event__cell--message"
+                  >Memory 84.03% 사용중</span
+                >
+              </div>
+
+              <!-- Row 5: Normal -->
+              <div class="browser-event__row">
+                <div
+                  class="browser-event__severity-badge browser-event__severity-badge--normal"
+                >
+                  <div class="browser-event__badge-bg"></div>
+                  <div class="browser-event__badge-inner">
+                    <span class="browser-event__badge-text">Normal</span>
+                  </div>
+                </div>
+                <span class="browser-event__cell browser-event__cell--task"
+                  >기간계운영 DB#2</span
+                >
+                <span class="browser-event__cell browser-event__cell--host"
+                  >host05</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--message-group"
+                  >AP</span
+                >
+                <span
+                  class="browser-event__cell browser-event__cell--application"
+                  >ControlM</span
+                >
+                <span class="browser-event__cell browser-event__cell--object"
+                  >Windows</span
+                >
+                <span class="browser-event__cell browser-event__cell--time"
+                  >2024-10-21 15:00:00</span
+                >
+                <span class="browser-event__cell browser-event__cell--message"
+                  >Memory 84.03% 사용중</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
