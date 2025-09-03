@@ -1,54 +1,50 @@
 /* ===========================================
-   Layout Styles - Figma Exact Positioning
+   Layout Styles - Flexbox Based Layout
    =========================================== */
 
 /* Main Container - Figma: new-dark-sub (29:2450) */
 .dashboard-container {
-    position: relative;
     width: 1920px;
     height: 1080px;
     margin: 0 auto;
-    overflow: hidden;
+    position: relative;
+    background: #0E1130;
 }
 
-/* Background Layer - Figma: bg (29:2452) */
-.dashboard-bg {
-    position: absolute;
-    top: -10px;
-    left: -10px;
+/* Wrapper - Contains all content */
+.dashboard-wrap {
     width: 1940px;
     height: 1100px;
-    background: #0E1130;
-    z-index: 0;
+    margin: -10px;  /* Offset to center the 1940x1100 in 1920x1080 */
+    padding: 9px 39px 9px 39px; /* Adjusted padding: top 19px (9+10), left/right 49px (39+10), bottom 10px */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header - Figma: header (30:8524) */
 .header {
-    position: absolute;
-    left: 39px;
-    top: 9px;
-    width: 1860px;
+    width: 100%;
     height: 75px;
+    flex-shrink: 0;
+    position: relative;
     z-index: 100;
 }
 
 /* Container - Figma: container (29:2455) */
 .container {
-    position: absolute;
-    left: 39px;
-    top: 99px;
-    width: 1862px;
-    height: 984px;
-    z-index: 1;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px; /* gap between content sections */
 }
 
 /* Content01 - Figma: content01 (29:2456) */
 .content01 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1862px;
+    width: 100%;
     height: 345px;
+    flex-shrink: 0;
     display: flex;
     gap: 33px; /* 631 - 598 = 33px gap */
 }
@@ -67,11 +63,9 @@
 
 /* Content02 - Figma: content02 (29:2714) */
 .content02 {
-    position: absolute;
-    left: 0;
-    top: 373px; /* 345 + 28px gap */
-    width: 1862px;
+    width: 100%;
     height: 280px;
+    flex-shrink: 0;
     display: flex;
     gap: 31px; /* 630 - 599 = 31px gap */
 }
@@ -91,10 +85,8 @@
 
 /* Browser Event - Figma: browser-event (32:8576) */
 .browser-event {
-    position: absolute;
-    left: 0;
-    top: 681px; /* 373 + 280 + 28px gap */
-    width: 1861px;
+    width: 100%;
     height: 303px;
+    flex-shrink: 0;
     position: relative;
 }

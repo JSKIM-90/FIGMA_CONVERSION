@@ -5,10 +5,7 @@
    =========================================== */
 
 .content01 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1862px;
+    width: 100%;
     height: 345px;
     display: flex;
     gap: 33px;
