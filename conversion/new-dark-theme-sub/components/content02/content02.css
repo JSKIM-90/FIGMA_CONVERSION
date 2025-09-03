@@ -21,7 +21,7 @@
     width: 599px;
     height: 280px;
     flex-shrink: 0;
-    background: #232972;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #232972;
     border-radius: 30px;
     border: 2px solid rgba(75, 92, 148, 0.5);
     padding: 21px 25px;

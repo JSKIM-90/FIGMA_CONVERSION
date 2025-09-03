@@ -683,8 +683,172 @@
             </div>
             
             <!-- Browser Event -->
-            <div class="browser-event" data-node-id="32:8576">
-                <h2>이벤트현황</h2>
+            <div class="browser-event" data-node-id="30:8340">
+                <!-- Background Layers -->
+                <div class="browser-event__bg">
+                    <div class="browser-event__bg-gradient"></div>
+                    <div class="browser-event__bg-dark"></div>
+                </div>
+                
+                <!-- Top Controls -->
+                <div class="browser-event__controls">
+                    <!-- Background Vector -->
+                    <div class="browser-event__controls-bg">
+                        <img src="assets/browser-event/btn-vector.svg" alt="">
+                    </div>
+                    <button class="browser-event__btn-auto">
+                        <img src="assets/browser-event/btn-radio.svg" alt="" class="browser-event__btn-auto-icon">
+                        <span class="browser-event__btn-auto-text">Auto</span>
+                    </button>
+                    <button class="browser-event__btn-close">
+                        <img src="assets/browser-event/btn-close.svg" alt="">
+                    </button>
+                </div>
+                
+                <!-- Title Section -->
+                <div class="browser-event__title">
+                    <img src="assets/browser-event/bullet.svg" alt="" class="browser-event__title-bullet">
+                    <span class="browser-event__title-text">이벤트현황</span>
+                </div>
+                
+                <!-- Content Area -->
+                <div class="browser-event__content">
+                    <!-- Left Panel -->
+                    <div class="browser-event__panel-left">
+                        <!-- Status Buttons -->
+                        <div class="browser-event__status-list">
+                            <button class="browser-event__status-btn browser-event__status-btn--all">
+                                <span class="browser-event__status-text">ALL</span>
+                            </button>
+                            <button class="browser-event__status-btn">
+                                <img src="assets/browser-event/icon-cr.svg" alt="" class="browser-event__status-icon">
+                                <span class="browser-event__status-text">CR</span>
+                            </button>
+                            <button class="browser-event__status-btn">
+                                <img src="assets/browser-event/icon-ma.svg" alt="" class="browser-event__status-icon">
+                                <span class="browser-event__status-text">MA</span>
+                            </button>
+                            <button class="browser-event__status-btn">
+                                <img src="assets/browser-event/icon-mi.svg" alt="" class="browser-event__status-icon">
+                                <span class="browser-event__status-text">MI</span>
+                            </button>
+                            <button class="browser-event__status-btn">
+                                <img src="assets/browser-event/icon-wa.svg" alt="" class="browser-event__status-icon">
+                                <span class="browser-event__status-text">WA</span>
+                            </button>
+                            <button class="browser-event__status-btn">
+                                <img src="assets/browser-event/icon-no.svg" alt="" class="browser-event__status-icon">
+                                <span class="browser-event__status-text">NO</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Status Counts -->
+                        <div class="browser-event__counts">
+                            <span>1,061</span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>4</span>
+                            <span>4</span>
+                            <span>1,050</span>
+                        </div>
+                        
+                        <!-- Chart Bar -->
+                        <div class="browser-event__chart">
+                            <div class="browser-event__chart-bar browser-event__chart-bar--critical"></div>
+                            <div class="browser-event__chart-bar browser-event__chart-bar--major"></div>
+                            <div class="browser-event__chart-bar browser-event__chart-bar--minor"></div>
+                            <div class="browser-event__chart-bar browser-event__chart-bar--warning"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Panel - Table -->
+                    <div class="browser-event__panel-right">
+                        <!-- Table Header -->
+                        <div class="browser-event__table-header">
+                            <span class="browser-event__header-cell" style="left: 43.5px;">등급</span>
+                            <span class="browser-event__header-cell" style="left: 194px;">업무명</span>
+                            <span class="browser-event__header-cell" style="left: 373px;">호스트명</span>
+                            <span class="browser-event__header-cell" style="left: 513px;">메시지그룹</span>
+                            <span class="browser-event__header-cell" style="left: 645.5px;">어플리케이션</span>
+                            <span class="browser-event__header-cell" style="left: 776px;">오브젝트</span>
+                            <span class="browser-event__header-cell" style="left: 909px;">발생시간</span>
+                            <span class="browser-event__header-cell" style="left: 1272px;">메시지</span>
+                        </div>
+                        
+                        <!-- Table Body -->
+                        <div class="browser-event__table-body">
+                            <!-- Row 1: Critical -->
+                            <div class="browser-event__table-row">
+                                <div class="browser-event__badge browser-event__badge--critical">
+                                    <span class="browser-event__badge-text">Critical</span>
+                                </div>
+                                <span class="browser-event__cell" style="left: 152px;">기간계운영 DB#1</span>
+                                <span class="browser-event__cell" style="left: 370.5px;">host01</span>
+                                <span class="browser-event__cell" style="left: 513px;">AP</span>
+                                <span class="browser-event__cell" style="left: 645.5px;">ControlM</span>
+                                <span class="browser-event__cell" style="left: 775.5px;">Windows</span>
+                                <span class="browser-event__cell" style="left: 908.5px;">2024-10-21 15:00:00</span>
+                                <span class="browser-event__cell" style="left: 1023px;">p_chmat 프로세스 다운[계정 : root]</span>
+                            </div>
+                            
+                            <!-- Row 2: Warning -->
+                            <div class="browser-event__table-row">
+                                <div class="browser-event__badge browser-event__badge--warning">
+                                    <span class="browser-event__badge-text">Warning</span>
+                                </div>
+                                <span class="browser-event__cell" style="left: 152px;">기간계운영 WAS#2</span>
+                                <span class="browser-event__cell" style="left: 370.5px;">host02</span>
+                                <span class="browser-event__cell" style="left: 513.5px;">SVR</span>
+                                <span class="browser-event__cell" style="left: 645.5px;">ControlM</span>
+                                <span class="browser-event__cell" style="left: 775.5px;">Windows</span>
+                                <span class="browser-event__cell" style="left: 908.5px;">2024-10-21 15:00:00</span>
+                                <span class="browser-event__cell" style="left: 1023px;">LOCK_WAIT_SESSION 임계치 초과(1/1)</span>
+                            </div>
+                            
+                            <!-- Row 3: Minor -->
+                            <div class="browser-event__table-row">
+                                <div class="browser-event__badge browser-event__badge--minor">
+                                    <span class="browser-event__badge-text">Minor</span>
+                                </div>
+                                <span class="browser-event__cell" style="left: 152px;">기간계운영 DB#2</span>
+                                <span class="browser-event__cell" style="left: 370.5px;">host03</span>
+                                <span class="browser-event__cell" style="left: 513.5px;">SVR</span>
+                                <span class="browser-event__cell" style="left: 645.5px;">ControlM</span>
+                                <span class="browser-event__cell" style="left: 775.5px;">Windows</span>
+                                <span class="browser-event__cell" style="left: 908.5px;">2024-10-21 15:00:00</span>
+                                <span class="browser-event__cell" style="left: 1023px;">ACTIVE_SESSION 임계치 초과(235/150)</span>
+                            </div>
+                            
+                            <!-- Row 4: Major -->
+                            <div class="browser-event__table-row">
+                                <div class="browser-event__badge browser-event__badge--major">
+                                    <span class="browser-event__badge-text">Major</span>
+                                </div>
+                                <span class="browser-event__cell" style="left: 152px;">FEB운영 #4</span>
+                                <span class="browser-event__cell" style="left: 370px;">host04</span>
+                                <span class="browser-event__cell" style="left: 513px;">AP</span>
+                                <span class="browser-event__cell" style="left: 645.5px;">ControlM</span>
+                                <span class="browser-event__cell" style="left: 775.5px;">Windows</span>
+                                <span class="browser-event__cell" style="left: 908.5px;">2024-10-21 15:00:00</span>
+                                <span class="browser-event__cell" style="left: 1023px;">Memory 84.03% 사용중</span>
+                            </div>
+                            
+                            <!-- Row 5: Normal -->
+                            <div class="browser-event__table-row">
+                                <div class="browser-event__badge browser-event__badge--normal">
+                                    <span class="browser-event__badge-text">Normal</span>
+                                </div>
+                                <span class="browser-event__cell" style="left: 152px;">기간계운영 DB#2</span>
+                                <span class="browser-event__cell" style="left: 370.5px;">host05</span>
+                                <span class="browser-event__cell" style="left: 513px;">AP</span>
+                                <span class="browser-event__cell" style="left: 645.5px;">ControlM</span>
+                                <span class="browser-event__cell" style="left: 775.5px;">Windows</span>
+                                <span class="browser-event__cell" style="left: 908.5px;">2024-10-21 15:00:00</span>
+                                <span class="browser-event__cell" style="left: 1023px;">Memory 84.03% 사용중</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- End Container -->
         </div>

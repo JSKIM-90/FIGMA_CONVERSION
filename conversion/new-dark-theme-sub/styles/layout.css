@@ -20,6 +20,8 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    gap:15px;
+     background: #0E1130;
 }
 
 /* Header - Figma: header (30:8524) */

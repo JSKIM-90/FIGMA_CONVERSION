@@ -1,7 +1,7 @@
 /* ===========================================
-   Browser Event Component - Clean Restart
-   Node ID: 32:8576
-   Size: 1861x303px
+   Browser Event Component - Figma Dev Mode Implementation
+   Node ID: 30:8340
+   Size: 1860x303px (content area 1801x218px)
    =========================================== */
 
 /* Main Container */
@@ -10,11 +10,10 @@
     height: 303px;
     padding: 16px 30px;
     box-sizing: border-box;
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    background: linear-gradient(90deg, #39288E 41.398%, #7159D0 62.124%);
+    position: relative;
     border-radius: 30px 30px 0 0;
 }
 
@@ -23,17 +22,15 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 310px;
+    right: 0;
+    bottom: 0;
     pointer-events: none;
+    z-index: 0;
 }
 
 .browser-event__bg-gradient {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: linear-gradient(90deg, #39288E 41.398%, #7159D0 62.124%);
     border-radius: 30px 30px 0 0;
 }
@@ -41,24 +38,41 @@
 .browser-event__bg-dark {
     position: absolute;
     left: 0;
+    right: 0;
     top: 45px;
-    width: 100%;
-    height: 265px;
+    bottom: 0;
     background: #28293D;
     border-radius: 30px 30px 0 0;
 }
 
-/* Top Controls */
+/* Top Controls Container */
 .browser-event__controls {
     position: absolute;
-    right: 868px;
+    left: 822px; /* From Figma */
     top: 0;
-    display: flex;
-    gap: 15px;
-    align-items: center;
+    width: 211.22px;
+    height: 38px;
+    z-index: 2;
+}
+
+/* Controls Background Vector */
+.browser-event__controls-bg {
+    position: absolute;
+    left: 0;  /* Relative to controls container */
+    top: 0;
+    width: 211.22px;
+    height: 38px;
+}
+
+.browser-event__controls-bg img {
+    width: 100%;
+    height: 100%;
 }
 
 .browser-event__btn-auto {
+    position: absolute;
+    left: 47px;
+    top: 0;
     background: #502EE9;
     border-radius: 16px;
     padding: 7px 12px;
@@ -79,9 +93,13 @@
     font-weight: 500;
     font-size: 12px;
     color: #FFFFFF;
+    line-height: 1;
 }
 
 .browser-event__btn-close {
+    position: absolute;
+    left: 138px;
+    top: 0;
     width: 32px;
     height: 32px;
     background: #373D56;
@@ -91,6 +109,11 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.browser-event__btn-close img {
+    width: 10px;  /* 2.5 * 4 = 10px from Figma */
+    height: 6px;   /* 1.5 * 4 = 6px from Figma */
 }
 
 /* Title Section */
@@ -113,17 +136,20 @@
     font-weight: 500;
     font-size: 18px;
     color: #FFFFFF;
+    line-height: 1;
 }
 
 /* Content Area */
 .browser-event__content {
     display: flex;
     gap: 19px;
+    align-items: center;
     position: relative;
     z-index: 1;
+    flex: 1;
 }
 
-/* Left Panel */
+/* Left Panel - flex-wrap is critical! */
 .browser-event__panel-left {
     width: 202px;
     height: 218px;
@@ -132,12 +158,15 @@
     padding: 14px 20px;
     box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;  /* Important: allows horizontal layout */
     gap: 20px;
     align-items: center;
+    justify-content: start;
+    align-content: center;
     flex-shrink: 0;
 }
 
-/* Status Buttons */
+/* Status Buttons List */
 .browser-event__status-list {
     display: flex;
     flex-direction: column;
@@ -155,6 +184,7 @@
     justify-content: center;
     gap: 20px;
     cursor: pointer;
+    padding: 0;
 }
 
 .browser-event__status-icon {
@@ -167,6 +197,7 @@
     font-weight: 500;
     font-size: 12px;
     color: #A6B3DE;
+    line-height: 1;
 }
 
 .browser-event__status-btn--all .browser-event__status-text {
@@ -177,12 +208,13 @@
 .browser-event__counts {
     display: flex;
     flex-direction: column;
-    font-family: 'Tomorrow', sans-serif;
+    font-family: 'Pretendard', sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #D3DBF9;
     text-align: right;
     line-height: 1;
+    width: 50px;
 }
 
 .browser-event__counts span {
@@ -194,11 +226,12 @@
     margin-bottom: 13px;
 }
 
-/* Chart Bar */
+/* Chart Bars - Full width at bottom */
 .browser-event__chart {
     display: flex;
     gap: 2px;
     align-items: center;
+    width: 100%;  /* Take full width to position at bottom */
 }
 
 .browser-event__chart-bar {
@@ -233,32 +266,25 @@
     flex-direction: column;
     gap: 12px;
     min-width: 0;
+    width: 1580px;
 }
 
 /* Table Header */
 .browser-event__table-header {
     display: flex;
-    height: 20px;
-    position: relative;
+    align-items: center;
+    height: 10px;  /* Fixed height from Figma */
     font-family: 'Pretendard', sans-serif;
     font-weight: 500;
     font-size: 12px;
     color: #D3DBF9;
+    position: relative;
 }
 
 .browser-event__header-cell {
     position: absolute;
     transform: translateX(-50%);
 }
-
-.browser-event__header-cell:nth-child(1) { left: 43.5px; }
-.browser-event__header-cell:nth-child(2) { left: 194px; }
-.browser-event__header-cell:nth-child(3) { left: 373px; }
-.browser-event__header-cell:nth-child(4) { left: 513px; }
-.browser-event__header-cell:nth-child(5) { left: 645.5px; }
-.browser-event__header-cell:nth-child(6) { left: 776px; }
-.browser-event__header-cell:nth-child(7) { left: 909px; }
-.browser-event__header-cell:nth-child(8) { left: 1272px; }
 
 /* Table Body */
 .browser-event__table-body {
@@ -289,6 +315,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .browser-event__badge--critical {
@@ -331,16 +358,5 @@
     font-size: 12px;
     color: #A6B3DE;
     white-space: nowrap;
+    line-height: 1;
 }
-
-.browser-event__cell--center {
-    transform: translateX(-50%);
-}
-
-.browser-event__cell:nth-child(2) { left: 152px; }
-.browser-event__cell:nth-child(3) { left: 370.5px; }
-.browser-event__cell:nth-child(4) { left: 513px; }
-.browser-event__cell:nth-child(5) { left: 645.5px; }
-.browser-event__cell:nth-child(6) { left: 775.5px; }
-.browser-event__cell:nth-child(7) { left: 908.5px; }
-.browser-event__cell:nth-child(8) { left: 1023px; }
