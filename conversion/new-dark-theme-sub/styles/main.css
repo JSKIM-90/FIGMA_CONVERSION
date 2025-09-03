@@ -1,0 +1,60 @@
+/* ===========================================
+   Main Styles for Sub Dashboard
+   =========================================== */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #FFFFFF;
+    background: #000000;
+}
+
+/* Placeholder Styles (임시 - 개발 완료 후 제거) */
+[class$="-placeholder"] {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Debug hover effects (개발용 - 나중에 제거) */
+[data-node-id]:hover {
+    outline: 2px solid rgba(80, 46, 233, 0.3);
+    outline-offset: -2px;
+}
+
+[data-node-id]:hover::after {
+    content: attr(data-node-id);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    color: rgba(80, 46, 233, 0.9);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2px 6px;
+    border-radius: 3px;
+    z-index: 10000;
+    pointer-events: none;
+}

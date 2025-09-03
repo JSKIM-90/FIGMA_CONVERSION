@@ -1,0 +1,188 @@
+/* ===========================================
+   Header Component - Dark Theme Sub Dashboard
+   Node ID: 30:8524
+   Position: 39, 9, 1860x75
+   =========================================== */
+
+.header {
+    position: absolute;
+    left: 39px;
+    top: 9px;
+    width: 1860px;
+    height: 75px;
+    z-index: 100;
+}
+
+/* Background - Node: I30:8524-197:577 */
+.header__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header__bg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Logo - Node: I30:8524-197:588 */
+.header__logo {
+    position: absolute;
+    left: 4.03%; /* 75px / 1860px */
+    top: 35.1%; /* 26.325px / 75px */
+    width: 6.19%; /* 115.173px / 1860px */
+    height: 34.47%; /* 25.85px / 75px */
+}
+
+.header__logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* GNB Menu - Node: I30:8524-197:583 */
+.header__gnb {
+    position: absolute;
+    left: 28.98%; /* 539px / 1860px */
+    top: 12%; /* 9px / 75px */
+    right: 26.29%; /* 489px / 1860px */
+    bottom: 40%; /* 30px / 75px */
+    background: #373D56;
+    border-radius: 18px;
+    padding: 3px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* Menu Button - Generic */
+.header__menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 17px;
+    border-radius: 15px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* Menu Button Icon */
+.header__menu-icon {
+    width: 4px;
+    height: 4px;
+    flex-shrink: 0;
+}
+
+.header__menu-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Menu Button Text */
+.header__menu-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Inactive Menu */
+.header__menu-btn--inactive {
+    background: transparent;
+}
+
+.header__menu-btn--inactive .header__menu-text {
+    color: #A6B3DE;
+}
+
+/* Active Menu */
+.header__menu-btn--active {
+    background: #502EE9;
+}
+
+.header__menu-btn--active .header__menu-text {
+    color: #FFFFFF;
+}
+
+/* Top Buttons (Time & Logout) - Node: I30:8524-197:578 */
+.header__top-btn {
+    position: absolute;
+    left: 83.55%; /* 1554px / 1860px */
+    top: 13.33%; /* 10px / 75px */
+    right: 1.02%; /* 19px / 1860px */
+    bottom: 44%; /* 33px / 75px */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 73px;
+}
+
+/* Time Display - Node: I30:8524-197:579 */
+.header__time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.header__date {
+    width: 91px;
+    height: 25px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header__clock {
+    width: 91px;
+    height: 25px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600;
+    color: #CACACA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Logout Button - Node: I30:8524-197:582 */
+.header__logout {
+    width: 32px;
+    height: 32px;
+    background: #373D56;
+    border-radius: 16px;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.header__logout:hover {
+    background: #502EE9;
+    box-shadow: var(--shadow-glow);
+}
+
+.header__logout-icon {
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    width: 16.872px;
+    height: 12.69px;
+}
+
+.header__logout-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

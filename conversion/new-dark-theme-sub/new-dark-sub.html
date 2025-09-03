@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENOBIT v3.0 - Sub Dashboard (Dark Theme)</title>
+    
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin 
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/dark-theme.css">
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/content01/content01.css">
+    <link rel="stylesheet" href="components/content02/content02.css">
+    <link rel="stylesheet" href="components/browser-event/browser-event.css">
+</head>
+<body>
+    <!-- Main Dashboard Container -->
+    <div id="new-dark-sub" class="dashboard-container">
+        <!-- Background Layer -->
+        <div id="bg" class="dashboard-bg"></div>
+        
+        <!-- Header -->
+        <header class="header" data-node-id="30:8524">
+            <!-- Background -->
+            <div class="header__bg">
+                <img src="assets/icons/header-bg.svg" alt="">
+            </div>
+            
+            <!-- Logo -->
+            <div class="header__logo">
+                <img src="assets/icons/renobit-logo.svg" alt="RENOBIT">
+            </div>
+            
+            <!-- GNB Menu -->
+            <nav class="header__gnb">
+                <button class="header__menu-btn header__menu-btn--inactive">
+                    <div class="header__menu-icon">
+                        <img src="assets/icons/menu-icon-inactive.svg" alt="">
+                    </div>
+                    <span class="header__menu-text">종합현황</span>
+                </button>
+                
+                <button class="header__menu-btn header__menu-btn--active">
+                    <div class="header__menu-icon">
+                        <img src="assets/icons/menu-icon-active.svg" alt="">
+                    </div>
+                    <span class="header__menu-text">인프라현황</span>
+                </button>
+                
+                <button class="header__menu-btn header__menu-btn--inactive">
+                    <div class="header__menu-icon">
+                        <img src="assets/icons/menu-icon-inactive.svg" alt="">
+                    </div>
+                    <span class="header__menu-text">어플리케이션관리</span>
+                </button>
+                
+                <button class="header__menu-btn header__menu-btn--inactive">
+                    <div class="header__menu-icon">
+                        <img src="assets/icons/menu-icon-inactive.svg" alt="">
+                    </div>
+                    <span class="header__menu-text">인프라운영현황</span>
+                </button>
+            </nav>
+            
+            <!-- Top Buttons -->
+            <div class="header__top-btn">
+                <!-- Time Display -->
+                <div class="header__time">
+                    <div class="header__date">250826</div>
+                    <div class="header__clock">09:00:00</div>
+                </div>
+                
+                <!-- Logout Button -->
+                <button class="header__logout">
+                    <div class="header__logout-icon">
+                        <img src="assets/icons/logout-icon.svg" alt="Logout">
+                    </div>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Content Container -->
+        <div class="container" data-node-id="29:2455">
+            
+            <!-- Content01: Server Details & Cards -->
+            <div class="content01" data-node-id="29:2456">
+                <!-- Section01: Server Visual & Details -->
+                <section class="content01__section01" data-node-id="29:2457">
+                    <!-- Background Box -->
+                    <div class="content01__section01-box">
+                        <!-- Decorative Shapes -->
+                        <div class="content01__section01-shape content01__section01-shape--yellow">
+                            <img src="assets/server-components/yellow-shape.svg" alt="">
+                        </div>
+                        <div class="content01__section01-shape content01__section01-shape--blue">
+                            <img src="assets/server-components/blue-shape.svg" alt="">
+                        </div>
+                        <div class="content01__section01-shape content01__section01-shape--violet">
+                            <img src="assets/server-components/violet-shape.svg" alt="">
+                        </div>
+                    </div>
+                    
+                    <!-- Server Visual -->
+                    <div class="content01__section01-visual">
+                        <!-- Base Images -->
+                        <img class="content01__section01-visual-base1" src="assets/images/server-img2.png" alt="">
+                        <img class="content01__section01-visual-base2" src="assets/images/server-img1.png" alt="">
+                        
+                        <!-- 3D Server Component -->
+                        <div class="content01__section01-server3d">
+                            <!-- Bottom layers first (reverse order from Figma) -->
+                            <img src="assets/server-components/server-shape-1.svg" style="left: 15px; top: 51.15px; width: 64.3px; height: 37.14px;" alt="">
+                            <img src="assets/server-components/server-shape-2.svg" style="left: 47.22px; top: 68.63px; width: 32.22px; height: 25.3px;" alt="">
+                            <img src="assets/server-components/server-shape-3.svg" style="left: 15px; top: 68.76px; width: 32.22px; height: 25.3px;" alt="">
+                            <img src="assets/server-components/server-shape-4.svg" style="left: 16.22px; top: 44.12px; width: 63.72px; height: 36.88px;" alt="">
+                            <img src="assets/server-components/server-shape-5.svg" style="left: 46.75px; top: 50.24px; width: 31.98px; height: 25.54px;" alt="">
+                            <img src="assets/server-components/server-shape-6.svg" style="left: 15px; top: 50.01px; width: 31.98px; height: 25.54px;" alt="">
+                            <img src="assets/server-components/server-shape-7.svg" style="left: 15.01px; top: 32.03px; width: 63.72px; height: 36.88px;" alt="">
+                            <img src="assets/server-components/server-shape-8.svg" style="left: 16.22px; top: 25.69px; width: 63.72px; height: 36.88px;" alt="">
+                            <img src="assets/server-components/server-shape-9.svg" style="left: 46.75px; top: 31.81px; width: 31.98px; height: 27.54px;" alt="">
+                            <img src="assets/server-components/server-shape-10.svg" style="left: 15px; top: 31.58px; width: 31.98px; height: 27.54px;" alt="">
+                            <img src="assets/server-components/server-shape-11.svg" style="left: 15.01px; top: 13.6px; width: 63.72px; height: 36.88px;" alt="">
+                            <img src="assets/server-components/server-shape-12.svg" style="left: 46.53px; top: 26.68px; width: 46.87px; height: 77.69px;" alt="">
+                            <img src="assets/images/server-highlight.png" style="left: 28.67px; top: 41.19px; width: 36px; height: 20px;" alt="">
+                            <img src="assets/server-components/server-shape-13.svg" style="left: 0; top: 26.34px; width: 46.87px; height: 77.69px;" alt="">
+                            <img src="assets/server-components/server-shape-14.svg" style="left: 0; top: 26.34px; width: 26.67px; height: 50.78px;" alt="">
+                            <img src="assets/server-components/server-shape-15.svg" style="left: 0.01px; top: 0; width: 93.4px; height: 54.05px;" alt="">
+                            <img src="assets/server-components/server-shape-16.svg" style="left: 0.01px; top: 0; width: 72.4px; height: 42.05px;" alt="">
+                        </div>
+                        
+                        <!-- Hostname -->
+                        <div class="content01__section01-hostname-label">호스트명</div>
+                        <div class="content01__section01-hostname">LPMAWS02</div>
+                    </div>
+                    
+                    <!-- Server Details Table -->
+                    <div class="content01__section01-details">
+                        <!-- Labels -->
+                        <div class="content01__section01-labels">
+                            <p>업무명</p>
+                            <p>IP</p>
+                            <p>모델명</p>
+                            <p>시리얼번호</p>
+                            <p>OS명</p>
+                            <p>OS패치버전</p>
+                            <p>CPU</p>
+                            <p>메모리(MB)</p>
+                            <p>스왑(MB)</p>
+                            <p>외장디스크 수</p>
+                        </div>
+                        
+                        <!-- Grid -->
+                        <div class="content01__section01-grid">
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">기간계 운영 WAS#02</span>
+                            </div>
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">10.20.50.11</span>
+                            </div>
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">IBM, 3221-FHB</span>
+                            </div>
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">2012801</span>
+                            </div>
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">AIX 6.0</span>
+                            </div>
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">6100_08</span>
+                            </div>
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">12</span>
+                            </div>
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">180050MB</span>
+                            </div>
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">20480MB</span>
+                            </div>
+                            <div class="content01__section01-row">
+                                <span class="content01__section01-row-text">629</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Section02: Server Cards Grid -->
+                <section class="content01__section02" data-node-id="29:2505">
+                    <!-- Title -->
+                    <div class="content01__section02-title">
+                        <img class="content01__section02-title-bullet" src="assets/icons/bullet-purple.svg" alt="">
+                        <span class="content01__section02-title-text">시스템 현황</span>
+                    </div>
+                    
+                    <!-- Cards Container -->
+                    <!-- Cards Container -->
+                    <div class="content01__section02-cards">
+                        <!-- Card 1: LPMAWS01 (Orange) -->
+                        <div class="content01__section02-card">
+                            <div class="content01__section02-card-top"></div>
+                            <div class="content01__section02-card-bottom"></div>
+                            <div class="content01__section02-card-name">LPMAWS01</div>
+                            
+                            <!-- Server Visual (Orange) -->
+                            <div class="content01__section02-server-visual">
+                                <img src="assets/server-components/server-orange-complete.svg" alt="Orange Server">
+                            </div>
+                            
+                            <!-- CPU/Memory Indicators -->
+                            <div class="content01__section02-indicators">
+                                <div class="content01__section02-indicator-cpu"></div>
+                                <div class="content01__section02-indicator-memory"></div>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--cpu">C</span>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--memory">M</span>
+                            </div>
+                            
+                            <!-- Values -->
+                            <span class="content01__section02-cpu-value">50.1</span>
+                            <span class="content01__section02-memory-value">70.2</span>
+                            
+                            <!-- Charts -->
+                            <div class="content01__section02-chart content01__section02-chart--cpu">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                            <div class="content01__section02-chart content01__section02-chart--memory">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2: LPMAWS02 (Blue) -->
+                        <div class="content01__section02-card">
+                            <div class="content01__section02-card-top"></div>
+                            <div class="content01__section02-card-bottom"></div>
+                            <div class="content01__section02-card-name">LPMAWS02</div>
+                            
+                            <!-- Server Visual (Blue) -->
+                            <div class="content01__section02-server-visual">
+                                <img src="assets/server-components/server-blue-complete.svg" alt="Blue Server">
+                            </div>
+                            
+                            <!-- CPU/Memory Indicators -->
+                            <div class="content01__section02-indicators">
+                                <div class="content01__section02-indicator-cpu"></div>
+                                <div class="content01__section02-indicator-memory"></div>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--cpu">C</span>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--memory">M</span>
+                            </div>
+                            
+                            <!-- Values -->
+                            <span class="content01__section02-cpu-value">50.1</span>
+                            <span class="content01__section02-memory-value">70.2</span>
+                            
+                            <!-- Charts -->
+                            <div class="content01__section02-chart content01__section02-chart--cpu">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                            <div class="content01__section02-chart content01__section02-chart--memory">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3: LPMAWS03 (Gray) -->
+                        <div class="content01__section02-card">
+                            <div class="content01__section02-card-top"></div>
+                            <div class="content01__section02-card-bottom"></div>
+                            <div class="content01__section02-card-name">LPMAWS03</div>
+                            
+                            <!-- Server Visual (Gray) -->
+                            <div class="content01__section02-server-visual">
+                                <img src="assets/server-components/server-gray-complete.svg" alt="Gray Server">
+                            </div>
+                            
+                            <!-- CPU/Memory Indicators -->
+                            <div class="content01__section02-indicators">
+                                <div class="content01__section02-indicator-cpu"></div>
+                                <div class="content01__section02-indicator-memory"></div>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--cpu">C</span>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--memory">M</span>
+                            </div>
+                            
+                            <!-- Values -->
+                            <span class="content01__section02-cpu-value">50.1</span>
+                            <span class="content01__section02-memory-value">70.2</span>
+                            
+                            <!-- Charts -->
+                            <div class="content01__section02-chart content01__section02-chart--cpu">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                            <div class="content01__section02-chart content01__section02-chart--memory">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 4: LPMAWS04 (Gray) -->
+                        <div class="content01__section02-card">
+                            <div class="content01__section02-card-top"></div>
+                            <div class="content01__section02-card-bottom"></div>
+                            <div class="content01__section02-card-name">LPMAWS04</div>
+                            
+                            <!-- Server Visual (Gray) -->
+                            <div class="content01__section02-server-visual">
+                                <img src="assets/server-components/server-gray-complete.svg" alt="Gray Server">
+                            </div>
+                            
+                            <!-- CPU/Memory Indicators -->
+                            <div class="content01__section02-indicators">
+                                <div class="content01__section02-indicator-cpu"></div>
+                                <div class="content01__section02-indicator-memory"></div>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--cpu">C</span>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--memory">M</span>
+                            </div>
+                            
+                            <!-- Values -->
+                            <span class="content01__section02-cpu-value">50.1</span>
+                            <span class="content01__section02-memory-value">70.2</span>
+                            
+                            <!-- Charts -->
+                            <div class="content01__section02-chart content01__section02-chart--cpu">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                            <div class="content01__section02-chart content01__section02-chart--memory">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 5: LPMAWS05 (Gray) -->
+                        <div class="content01__section02-card">
+                            <div class="content01__section02-card-top"></div>
+                            <div class="content01__section02-card-bottom"></div>
+                            <div class="content01__section02-card-name">LPMAWS05</div>
+                            
+                            <!-- Server Visual (Gray) -->
+                            <div class="content01__section02-server-visual">
+                                <img src="assets/server-components/server-gray-complete.svg" alt="Gray Server">
+                            </div>
+                            
+                            <!-- CPU/Memory Indicators -->
+                            <div class="content01__section02-indicators">
+                                <div class="content01__section02-indicator-cpu"></div>
+                                <div class="content01__section02-indicator-memory"></div>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--cpu">C</span>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--memory">M</span>
+                            </div>
+                            
+                            <!-- Values -->
+                            <span class="content01__section02-cpu-value">50.1</span>
+                            <span class="content01__section02-memory-value">70.2</span>
+                            
+                            <!-- Charts -->
+                            <div class="content01__section02-chart content01__section02-chart--cpu">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                            <div class="content01__section02-chart content01__section02-chart--memory">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 6: LPMAWS06 (Gray) -->
+                        <div class="content01__section02-card">
+                            <div class="content01__section02-card-top"></div>
+                            <div class="content01__section02-card-bottom"></div>
+                            <div class="content01__section02-card-name">LPMAWS06</div>
+                            
+                            <!-- Server Visual (Gray) -->
+                            <div class="content01__section02-server-visual">
+                                <img src="assets/server-components/server-gray-complete.svg" alt="Gray Server">
+                            </div>
+                            
+                            <!-- CPU/Memory Indicators -->
+                            <div class="content01__section02-indicators">
+                                <div class="content01__section02-indicator-cpu"></div>
+                                <div class="content01__section02-indicator-memory"></div>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--cpu">C</span>
+                                <span class="content01__section02-indicator-text content01__section02-indicator-text--memory">M</span>
+                            </div>
+                            
+                            <!-- Values -->
+                            <span class="content01__section02-cpu-value">50.1</span>
+                            <span class="content01__section02-memory-value">70.2</span>
+                            
+                            <!-- Charts -->
+                            <div class="content01__section02-chart content01__section02-chart--cpu">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                            <div class="content01__section02-chart content01__section02-chart--memory">
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                                <div class="content01__section02-chart-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Content02: Charts Section -->
+            <div class="content02" data-node-id="29:2714">
+                <!-- Section01: CPU Usage Chart -->
+                <section class="section01" data-node-id="29:2715">
+                    <div class="section01-placeholder">
+                        <span>CPU 사용률 차트 (29:2715) - 599x280</span>
+                    </div>
+                </section>
+                
+                <!-- Section02: Memory Usage Chart -->
+                <section class="section02" data-node-id="29:2749">
+                    <div class="section02-placeholder">
+                        <span>메모리 사용률 차트 (29:2749) - 599x280</span>
+                    </div>
+                </section>
+                
+                <!-- Section03: Disk Usage Chart -->
+                <section class="section03" data-node-id="29:2783">
+                    <div class="section03-placeholder">
+                        <span>디스크 사용량 차트 (29:2783) - 599x280</span>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Browser Event -->
+            <div class="browser-event" data-node-id="32:8576">
+                <div class="browser-event-placeholder">
+                    <span>이벤트 현황 (32:8576) - 1861x303</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>

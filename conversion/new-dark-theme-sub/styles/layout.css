@@ -1,0 +1,100 @@
+/* ===========================================
+   Layout Styles - Figma Exact Positioning
+   =========================================== */
+
+/* Main Container - Figma: new-dark-sub (29:2450) */
+.dashboard-container {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Background Layer - Figma: bg (29:2452) */
+.dashboard-bg {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 1940px;
+    height: 1100px;
+    background: #0E1130;
+    z-index: 0;
+}
+
+/* Header - Figma: header (30:8524) */
+.header {
+    position: absolute;
+    left: 39px;
+    top: 9px;
+    width: 1860px;
+    height: 75px;
+    z-index: 100;
+}
+
+/* Container - Figma: container (29:2455) */
+.container {
+    position: absolute;
+    left: 39px;
+    top: 99px;
+    width: 1862px;
+    height: 984px;
+    z-index: 1;
+}
+
+/* Content01 - Figma: content01 (29:2456) */
+.content01 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1862px;
+    height: 345px;
+    display: flex;
+    gap: 33px; /* 631 - 598 = 33px gap */
+}
+
+.content01 .section01 {
+    width: 598px;
+    height: 345px;
+    position: relative;
+}
+
+.content01 .section02 {
+    width: 1231px;
+    height: 345px;
+    position: relative;
+}
+
+/* Content02 - Figma: content02 (29:2714) */
+.content02 {
+    position: absolute;
+    left: 0;
+    top: 373px; /* 345 + 28px gap */
+    width: 1862px;
+    height: 280px;
+    display: flex;
+    gap: 31px; /* 630 - 599 = 31px gap */
+}
+
+.content02 .section01,
+.content02 .section02 {
+    width: 599px;
+    height: 280px;
+    position: relative;
+}
+
+.content02 .section03 {
+    width: 599px; /* 실제로는 602px이지만 일관성을 위해 599px */
+    height: 280px;
+    position: relative;
+}
+
+/* Browser Event - Figma: browser-event (32:8576) */
+.browser-event {
+    position: absolute;
+    left: 0;
+    top: 681px; /* 373 + 280 + 28px gap */
+    width: 1861px;
+    height: 303px;
+    position: relative;
+}

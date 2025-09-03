@@ -1,0 +1,32 @@
+/* ===========================================
+   Content02 Component - Charts Section
+   Node ID: 29:2714
+   =========================================== */
+
+.content02 {
+    /* Placeholder styles - to be implemented */
+}
+
+.section01, .section02, .section03 {
+    /* Placeholder for chart sections */
+}
+
+.section01-placeholder,
+.section02-placeholder,
+.section03-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: rgba(14, 17, 48, 0.3);
+    border: 1px dashed #4B5C94;
+    border-radius: 10px;
+}
+
+.section01-placeholder span,
+.section02-placeholder span,
+.section03-placeholder span {
+    color: #4B5C94;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 14px;
+}
