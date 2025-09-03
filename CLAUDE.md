@@ -31,6 +31,59 @@
 claude mcp add --transport sse figma-dev-mode-mcp-server http://127.0.0.1:3845/sse
 ```
 
+## 🚨 MCP 도구 활용 개선 전략 (습관화 필수)
+
+### 🔴 AS-IS: 수동 작업 (비효율적)
+```
+1. 브라우저로 Figma 접속
+2. 수치 눈으로 확인
+3. 하나씩 CSS 값 입력
+4. 브라우저 개발자 도구로 디버깅
+5. Figma와 육안 비교
+```
+**문제점**: 시간 소모 ↑, 정확도 ↓, 휴먼 에러 ↑
+
+### ✅ TO-BE: MCP 자동화 (효율적)
+```javascript
+// 모든 컴포넌트 작업 시작 시 필수 4-tool Set
+1. mcp__figma-dev-mode-mcp-server__get_metadata(nodeId)
+2. mcp__figma-dev-mode-mcp-server__get_code(nodeId)
+3. mcp__figma-dev-mode-mcp-server__get_image(nodeId)
+4. mcp__figma-dev-mode-mcp-server__get_variable_defs(nodeId)
+```
+**장점**: 정확한 수치 자동 추출, 실시간 동기화, 디자인 토큰 일관성
+
+### 📌 습관화 체크리스트 (매 작업마다)
+```
+□ 작업 시작 = 4-tool Set 호출
+□ get_metadata로 px 단위 정확히 확인
+□ get_variable_defs로 색상/간격 토큰 추출
+□ 수동 입력 대신 MCP 데이터 활용
+□ Figma 수정 시 즉시 MCP로 재동기화
+```
+
+### 💡 실제 작업 예시
+```javascript
+// ❌ 나쁜 습관 (수동)
+.header {
+  width: 1860px;  // "아마 이 정도?"
+  height: 75px;   // "대충 측정"
+}
+
+// ✅ 좋은 습관 (MCP 활용)
+// 1. MCP 호출
+const metadata = await get_metadata("25:864")
+// 결과: { width: 1860, height: 75, x: 29, y: -1 }
+
+// 2. 정확한 값 적용
+.header {
+  width: ${metadata.width}px;   // 1860px (정확)
+  height: ${metadata.height}px;  // 75px (정확)
+  left: ${metadata.x}px;         // 29px (정확)
+  top: ${metadata.y}px;          // -1px (정확)
+}
+```
+
 ## 🔌 MCP 도구들의 작동 방식
 
 ### MCP Server가 Figma 데이터를 가져오는 원리
@@ -179,15 +232,37 @@ clientLanguages: "html,css,javascript"
 - Flexbox/Grid 우선, absolute 최소화
 ```
 
-## 📝 작업 플로우
+## 📝 작업 플로우 (MCP 도구 우선)
 
-1. **Figma에서 컴포넌트 선택**
-2. **이미지 확인**: `get_image`로 디자인 확인
-3. **토큰 추출**: `get_variable_defs`로 디자인 토큰 확인
-4. **코드 생성**: `get_code`로 기본 구조 생성
-5. **커스터마이징**: HTML/CSS로 변환 및 최적화
-6. **에셋 다운로드**: SVG/이미지 로컬 저장
-7. **검증**: Figma 디자인과 픽셀 단위 비교
+### 🎯 필수: 4-Tool Set으로 시작
+```javascript
+// 모든 작업의 시작 - 반드시 이 4개를 먼저!
+const nodeId = "25:448";  // Figma에서 선택한 요소
+
+// 동시 호출로 효율성 극대화
+const [metadata, code, image, tokens] = await Promise.all([
+  mcp__figma-dev-mode-mcp-server__get_metadata(nodeId),
+  mcp__figma-dev-mode-mcp-server__get_code(nodeId),
+  mcp__figma-dev-mode-mcp-server__get_image(nodeId),
+  mcp__figma-dev-mode-mcp-server__get_variable_defs(nodeId)
+]);
+```
+
+### 단계별 작업 플로우
+1. **MCP 데이터 수집** (4-Tool Set)
+   - `get_metadata`: 정확한 크기와 좌표
+   - `get_code`: 구조와 스타일
+   - `get_image`: 시각적 확인
+   - `get_variable_defs`: 디자인 토큰
+
+2. **데이터 기반 구현**
+   - metadata의 정확한 수치 사용
+   - tokens의 색상/간격 변수 활용
+   - code의 구조 참고
+
+3. **커스터마이징**: HTML/CSS로 변환 및 최적화
+4. **에셋 다운로드**: SVG/이미지 로컬 저장
+5. **검증**: Figma 디자인과 픽셀 단위 비교
 
 ## 🚨 주의사항
 
@@ -890,6 +965,10 @@ class FigmaConverter {
 
 ## 💡 핵심 원칙 재확인
 
+> **"MCP First, Manual Never"** - 수동 측정 금지. MCP 도구로 자동 추출하라.
+
+> **"4-Tool Set is Mandatory"** - get_metadata, get_code, get_image, get_variable_defs는 항상 함께.
+
 > **"Figma First, Code Second"** - Figma가 정답이다. 코드는 Figma를 따라간다.
 
 > **"Measure Twice, Code Once"** - 측정하고, 구현하고, 검증하라.
@@ -909,11 +988,13 @@ class FigmaConverter {
 - [ ] Dev Mode 활성화됨
 - [ ] 작업할 node-id 확인됨
 
-### 도구 호출 순서
-1. [ ] `get_metadata` - 정확한 크기와 좌표
-2. [ ] `get_code` - 구조와 스타일
-3. [ ] `get_image` - 시각적 확인 (필수!)
-4. [ ] `get_variable_defs` - 디자인 토큰 (필요시)
+### 도구 호출 순서 (4-Tool Set 필수!)
+1. [ ] `get_metadata` - 정확한 크기와 좌표 ⭐
+2. [ ] `get_code` - 구조와 스타일 ⭐
+3. [ ] `get_image` - 시각적 확인 ⭐
+4. [ ] `get_variable_defs` - 디자인 토큰 ⭐
+
+**⚠️ 중요**: 위 4개는 선택이 아닌 필수! 한 세트로 항상 함께 호출
 
 ### 구현 원칙
 - [ ] 큰 레이아웃부터 시작
