@@ -1,0 +1,363 @@
+/* ===========================================
+   Browser Event Component - Figma Dev Mode Implementation
+   Node ID: 30:8340
+   Size: 1860x303px (content area 1801x218px)
+   =========================================== */
+
+/* Main Container */
+.browser-event {
+    width: 100%;
+    height: 303px;
+    padding: 16px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    border-radius: 30px 30px 0 0;
+}
+
+/* Background Layers */
+.browser-event__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.browser-event__bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #39288E 41.398%, #7159D0 62.124%);
+    border-radius: 30px 30px 0 0;
+}
+
+.browser-event__bg-dark {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 45px;
+    bottom: 0;
+    background: #D3DBF9;
+    border-radius: 30px 30px 0 0;
+}
+
+/* Top Controls Container */
+.browser-event__controls {
+    position: absolute;
+    left: 822px; /* From Figma */
+    top: 0;
+    width: 211.22px;
+    height: 38px;
+    z-index: 2;
+}
+
+/* Controls Background Vector */
+.browser-event__controls-bg {
+    position: absolute;
+    left: 0;  /* Relative to controls container */
+    top: 0;
+    width: 211.22px;
+    height: 38px;
+}
+
+.browser-event__controls-bg img {
+    width: 100%;
+    height: 100%;
+}
+
+.browser-event__btn-auto {
+    position: absolute;
+    left: 47px;
+    top: 0;
+    background: #502EE9;
+    border-radius: 16px;
+    padding: 7px 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.browser-event__btn-auto-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.browser-event__btn-auto-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+.browser-event__btn-close {
+    position: absolute;
+    left: 138px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: #383838;
+    border-radius: 16px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.browser-event__btn-close img {
+    width: 10px;  /* 2.5 * 4 = 10px from Figma */
+    height: 6px;   /* 1.5 * 4 = 6px from Figma */
+}
+
+/* Title Section */
+.browser-event__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.browser-event__title-bullet {
+    width: 10px;
+    height: 11px;
+    flex-shrink: 0;
+}
+
+.browser-event__title-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+/* Content Area */
+.browser-event__content {
+    display: flex;
+    gap: 19px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+/* Left Panel - flex-wrap is critical! */
+.browser-event__panel-left {
+    width: 202px;
+    height: 218px;
+    background: #A6B3DE;
+    border-radius: 18px;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;  /* Important: allows horizontal layout */
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+    align-content: center;
+    flex-shrink: 0;
+}
+
+/* Status Buttons List */
+.browser-event__status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.browser-event__status-btn {
+    width: 86px;
+    height: 24px;
+    background: #E3E5EC;
+    border-radius: 12px;
+    border: 1px solid #A0A0A0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.browser-event__status-icon {
+    width: 9px;
+    height: 9px;
+}
+
+.browser-event__status-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+    line-height: 1;
+}
+
+.browser-event__status-btn--all .browser-event__status-text {
+    color: #000000;
+}
+
+/* Status Counts */
+.browser-event__counts {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Tomorrow', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    text-align: right;
+    line-height: 1;
+    width: 50px;
+}
+
+.browser-event__counts span {
+    display: block;
+    height: 16px;
+}
+
+.browser-event__counts span:not(:last-child) {
+    margin-bottom: 13px;
+}
+
+/* Chart Bars - Full width at bottom */
+.browser-event__chart {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    width: 100%;  /* Take full width to position at bottom */
+}
+
+.browser-event__chart-bar {
+    height: 6px;
+    border-radius: 3px;
+}
+
+.browser-event__chart-bar--critical {
+    width: 24px;
+    background: #F32F50;
+}
+
+.browser-event__chart-bar--major {
+    width: 32px;
+    background: #FC7F01;
+}
+
+.browser-event__chart-bar--minor {
+    width: 57px;
+    background: #FDD01F;
+}
+
+.browser-event__chart-bar--warning {
+    width: 43px;
+    background: #2BBDFF;
+}
+
+/* Right Panel - Table */
+.browser-event__panel-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+    width: 1580px;
+}
+
+/* Table Header */
+.browser-event__table-header {
+    display: flex;
+    align-items: center;
+    height: 10px;  /* Fixed height from Figma */
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+    position: relative;
+}
+
+.browser-event__header-cell {
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+/* Table Body */
+.browser-event__table-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Table Row */
+.browser-event__table-row {
+    height: 36px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 3px 4px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Status Badge */
+.browser-event__badge {
+    position: absolute;
+    left: 4px;
+    width: 81px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.browser-event__badge--critical {
+    background: rgba(243, 47, 80, 0.6);
+    border: 1px solid #F43050;
+}
+
+.browser-event__badge--major {
+    background: rgba(252, 127, 1, 0.6);
+    border: 1px solid #FC7F01;
+}
+
+.browser-event__badge--minor {
+    background: rgba(253, 208, 31, 0.6);
+    border: 1px solid #F5C300;
+}
+
+.browser-event__badge--warning {
+    background: rgba(43, 189, 255, 0.6);
+    border: 1px solid #00B0FF;
+}
+
+.browser-event__badge--normal {
+    background: rgba(50, 210, 140, 0.6);
+    border: 1px solid #32D28C;
+}
+
+.browser-event__badge-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+}
+
+/* Table Cells */
+.browser-event__cell {
+    position: absolute;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+    white-space: nowrap;
+    line-height: 1;
+}

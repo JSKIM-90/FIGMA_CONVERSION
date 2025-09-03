@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 74 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Shape 910 copy 21-4" opacity="0.4">
+<path d="M33.167 41.9477L2.47699 24.1877C0.286992 22.9277 0.566992 20.7177 3.08699 19.2577L32.557 2.20767C35.077 0.747669 38.887 0.587669 41.067 1.85767L71.747 19.6177C73.927 20.8777 73.657 23.0877 71.137 24.5477L41.677 41.5977C39.157 43.0577 35.347 43.2177 33.167 41.9477Z" fill="url(#paint0_linear_287_2072)" style="mix-blend-mode:plus-darker"/>
+<path d="M33.167 41.9477L2.47699 24.1877C0.286992 22.9277 0.566992 20.7177 3.08699 19.2577L32.557 2.20767C35.077 0.747669 38.887 0.587669 41.067 1.85767L71.747 19.6177C73.927 20.8777 73.657 23.0877 71.137 24.5477L41.677 41.5977C39.157 43.0577 35.347 43.2177 33.167 41.9477Z" stroke="var(--stroke-0, #D0395F)" stroke-width="0.07"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_287_2072" x1="37.11" y1="1" x2="37.11" y2="42.8053" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F1C200"/>
+<stop offset="0.780647" stop-color="#EEBE00"/>
+<stop offset="1" stop-color="#EDBD00"/>
+</linearGradient>
+</defs>
+</svg>

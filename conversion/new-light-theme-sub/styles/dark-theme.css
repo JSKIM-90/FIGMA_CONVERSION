@@ -1,0 +1,112 @@
+/* ===========================================
+   Dark Theme Color Variables & Theme Styles
+   =========================================== */
+
+:root {
+    /* Primary Colors */
+    --primary: #502EE9;
+    --primary-light: #7B4BFF;
+    --primary-dark: #39288E;
+    
+    /* Background Colors */
+    --bg-main: #0E1130;
+    --bg-surface: #1A1B3A;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --bg-card-hover: rgba(255, 255, 255, 0.08);
+    
+    /* Gradient Backgrounds */
+    --gradient-primary: linear-gradient(90deg, #39288E 0%, #7159D0 100%);
+    --gradient-card: linear-gradient(135deg, rgba(80, 46, 233, 0.1) 0%, rgba(123, 75, 255, 0.05) 100%);
+    
+    /* Text Colors */
+    --text-primary: #FFFFFF;
+    --text-secondary: #A6B3DE;
+    --text-tertiary: #707EB4;
+    --text-muted: rgba(255, 255, 255, 0.5);
+    
+    /* Border Colors */
+    --border-primary: rgba(255, 255, 255, 0.1);
+    --border-secondary: rgba(255, 255, 255, 0.05);
+    --border-active: #502EE9;
+    
+    /* Status Colors */
+    --status-success: #50D06A;
+    --status-warning: #F9B650;
+    --status-error: #F32F50;
+    --status-info: #2BBDFF;
+    
+    /* Chart Colors */
+    --chart-blue: #2BBDFF;
+    --chart-green: #50D06A;
+    --chart-orange: #F9B650;
+    --chart-purple: #7B4BFF;
+    --chart-red: #F32F50;
+    
+    /* Shadow Effects */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 20px rgba(80, 46, 233, 0.3);
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+}
+
+/* Dark Theme Specific Styles */
+.dashboard-container {
+    background: var(--bg-main);
+    color: var(--text-primary);
+}
+
+/* Card Styles */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.card:hover {
+    background: var(--bg-card-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* Button Styles */
+.btn {
+    background: var(--primary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn:hover {
+    background: var(--primary-light);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Text Styles */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-muted { color: var(--text-muted); }

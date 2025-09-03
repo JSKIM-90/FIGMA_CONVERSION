@@ -1,0 +1,229 @@
+/* ===========================================
+   Content02 Component - Charts Section
+   Node ID: 29:2714
+   Position: 0, 373, 1862x280
+   =========================================== */
+
+.content02 {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    gap: 31px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* ===========================================
+   Chart Section Common Styles
+   =========================================== */
+
+.content02__section {
+    width: 599px;
+    height: 280px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    border: 2px solid #D3DBF9;
+    padding: 21px 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    align-content: flex-start;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Title */
+.content02__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.content02__title-bullet {
+    width: 10px;
+    height: 11px;
+    flex-shrink: 0;
+}
+
+.content02__title-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #18152D;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* Legend Group */
+.content02__legend-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.content02__legend {
+    width: 38px;
+    height: 24px;
+    border-radius: 12px;
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.content02__legend span {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Legend Color Variants */
+.content02__legend--dark {
+    border-color: #122023;
+}
+
+.content02__legend--purple {
+    border-color: #A285FF;
+}
+
+.content02__legend--blue {
+    border-color: #39A4FF;
+}
+
+.content02__legend--green {
+    border-color: #1CB75E;
+}
+
+/* Wider legends for Section03 (Disk) */
+.content02__section--disk .content02__legend {
+    width: 48px;
+}
+
+/* Chart Container (chart-line in Figma) */
+.content02__chart-container {
+    width: 549px;
+    height: 199px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    padding: 24px 17px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* Chart wrapper - using absolute positioning for internal elements */
+.content02__chart {
+    position: relative;
+    width: 513px;
+    height: 151px;
+    flex-shrink: 0;
+}
+
+/* Y-axis Labels - Absolute positioning */
+.content02__y-labels {
+    position: absolute;
+    left: 21px;
+    top: 0;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    color: #999999;
+    text-align: right;
+    transform: translateX(-100%);
+}
+
+.content02__y-labels span {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.content02__y-labels span:last-child {
+    margin-bottom: 0;
+}
+
+/* X-axis Labels - Absolute positioning */
+.content02__x-labels {
+    position: absolute;
+    left: 55px;
+    top: 140px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #999999;
+    line-height: 1;
+    white-space: pre;
+}
+
+/* Axis Lines - Absolute positioning */
+.content02__axis-x {
+    position: absolute;
+    left: 27px;
+    top: 4px;
+    width: 4px;
+    height: 120px;
+}
+
+.content02__axis-x img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Grid Lines - Absolute positioning */
+.content02__grid-x {
+    position: absolute;
+    left: 46px;
+    top: 4px;
+    width: 467px;
+    height: 120px;
+}
+
+.content02__grid-x img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Line Chart - Absolute positioning */
+.content02__line-chart {
+    position: absolute;
+    left: 47px;
+    top: 39px;
+    width: 466px;
+    height: 69px;
+}
+
+/* Section02 (Memory) line chart position adjustment */
+.content02__section--memory .content02__line-chart {
+    left: 46px;
+    top: 50px;
+    width: 468px;
+    height: 47px;
+}
+
+/* Section03 (Disk) same as Section02 */
+.content02__section--disk .content02__line-chart {
+    left: 46px;
+    top: 50px;
+    width: 468px;
+    height: 47px;
+}
+
+.content02__line-chart img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

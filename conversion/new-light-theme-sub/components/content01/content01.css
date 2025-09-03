@@ -1,0 +1,457 @@
+/* ===========================================
+   Content01 Component - Server Details & Cards
+   Node ID: 29:2456
+   Position: 0, 0, 1862x345
+   =========================================== */
+
+.content01 {
+    width: 100%;
+    height: 345px;
+    display: flex;
+    gap: 33px;
+}
+
+/* ===========================================
+   Section01 - Server Visual & Details
+   Node ID: 29:2457
+   Size: 598x345
+   =========================================== */
+
+.content01__section01 {
+    width: 598px;
+    height: 345px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+    padding: 19px 50px;
+    box-sizing: border-box;
+}
+
+/* Background Box */
+.content01__section01-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 598px;
+    height: 345px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    border: 2px solid #D3DBF9;
+    overflow: hidden;
+}
+
+/* Decorative Shapes */
+.content01__section01-shape {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content01__section01-shape--yellow {
+    left: 11px;
+    top: 79px;
+    transform: rotate(19.307deg);
+    --fill-0: #F4EF60;
+}
+
+.content01__section01-shape--yellow img {
+    width: 73.719px;
+    height: 89.255px;
+}
+
+.content01__section01-shape--blue {
+    left: 104px;
+    top: 60px;
+    transform: rotate(44.62deg);
+    --fill-0: #3498DB;
+}
+
+.content01__section01-shape--blue img {
+    width: 61.536px;
+    height: 97.024px;
+}
+
+.content01__section01-shape--violet {
+    left: 104px;
+    top: 163px;
+    transform: rotate(19.307deg);
+    --fill-0: #9B59B6;
+}
+
+.content01__section01-shape--violet img {
+    width: 58.778px;
+    height: 89.538px;
+}
+
+/* Server Visual */
+.content01__section01-visual {
+    width: 142px;
+    height: 210px;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+/* Server 3D Component Container */
+.content01__section01-server3d {
+    position: absolute;
+    left: 24.5px;
+    top: 0;
+    width: 93.41px;
+    height: 104.37px;
+}
+
+/* Individual Server Parts - Using absolute positioning */
+.content01__section01-server3d img {
+    position: absolute;
+}
+
+/* Server Base Images */
+.content01__section01-visual-base1 {
+    position: absolute;
+    left: 0;
+    top: 42px;
+    width: 142px;
+    height: 86px;
+}
+
+.content01__section01-visual-base2 {
+    position: absolute;
+    left: 3px;
+    top: 65px;
+    width: 133px;
+    height: 145px;
+}
+
+/* Server Hostname */
+.content01__section01-hostname-label {
+    position: absolute;
+    left: 48px;
+    top: 147px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #4E4E4E;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.content01__section01-hostname {
+    position: absolute;
+    left: 28px;
+    top: 168px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #18152D;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Server Details Table */
+.content01__section01-details {
+    width: 316px;
+    height: 306px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 13px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+/* Table Labels */
+.content01__section01-labels {
+    width: 70px;
+    height: 266px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #18152D;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.content01__section01-labels p {
+    margin-bottom: 16px;
+}
+
+.content01__section01-labels p:last-child {
+    margin-bottom: 0;
+}
+
+/* Table Grid */
+.content01__section01-grid {
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+/* Table Rows */
+.content01__section01-row {
+    width: 100%;
+    height: 26px;
+    background: #D3DBF9;
+    padding: 8px 26px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.content01__section01-row:first-child {
+    border-radius: 13px 13px 0 0;
+}
+
+.content01__section01-row:last-child {
+    border-radius: 0 0 13px 13px;
+}
+
+.content01__section01-row-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #4E4E4E;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* ===========================================
+   Section02 - Server Cards Grid
+   Node ID: 29:2505
+   Position: 631, 0, 1231x345
+   =========================================== */
+
+.content01__section02 {
+    width: 1231px;
+    height: 345px;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid #D3DBF9;
+    background: rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+}
+
+/* Title */
+.content01__section02-title {
+    position: absolute;
+    left: 25px;
+    top: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.content01__section02-title-bullet {
+    width: 10px;
+    height: 11px;
+    flex-shrink: 0;
+}
+
+.content01__section02-title-text {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #18152D;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* Cards Container */
+.content01__section02-cards {
+    position: absolute;
+    left: 25px;
+    top: 57px;
+    width: 1180px;
+    height: 247px;
+    display: flex;
+    gap: 16px;
+}
+
+/* Individual Card */
+.content01__section02-card {
+    width: 180px;
+    height: 247px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Card Top Section (Server Visual) */
+.content01__section02-card-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 190px;
+    background: rgba(211, 219, 249, 0.4);
+    border-radius: 10px 10px 0 0;
+    mix-blend-mode: normal;
+}
+
+/* Card Bottom Section (Memory) */
+.content01__section02-card-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 180px;
+    height: 55px;
+    background: rgba(211, 219, 249, 0.6);
+    border-radius: 0 0 10px 10px;
+    mix-blend-mode: normal;
+}
+
+/* Server Name */
+.content01__section02-card-name {
+    position: absolute;
+    left: 90px;
+    top: 27px;
+    transform: translate(-50%, -50%);
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #4B5C94;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Server 3D Visual Container */
+.content01__section02-server-visual {
+    position: absolute;
+    left: 53.24px;
+    top: 57px;
+    width: 73.13px;
+    height: 77.07px;
+}
+
+.content01__section02-server-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* CPU/Memory Indicators */
+.content01__section02-indicators {
+    position: absolute;
+    left: 15px;
+    top: 164px;
+    width: 22px;
+    height: 52px;
+}
+
+.content01__section02-indicator-cpu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 26px;
+    border: 1px solid #CABEFF;
+    border-bottom: none;
+    border-radius: 13px 13px 0 0;
+    box-sizing: border-box;
+}
+
+.content01__section02-indicator-memory {
+    position: absolute;
+    left: 0;
+    top: 26px;
+    width: 22px;
+    height: 26px;
+    background: #CABEFF;
+    border-radius: 0 0 13px 13px;
+}
+
+.content01__section02-indicator-text {
+    position: absolute;
+    left: 11px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+.content01__section02-indicator-text--cpu {
+    top: 9px;
+    color: #CABEFF;
+}
+
+.content01__section02-indicator-text--memory {
+    top: 35px;
+    color: #502EE9;
+}
+
+/* CPU Value */
+.content01__section02-cpu-value {
+    position: absolute;
+    left: 73px;
+    top: 165px;
+    transform: translate(-100%, -50%);
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    color: #4B5C94;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Memory Value */
+.content01__section02-memory-value {
+    position: absolute;
+    left: 73px;
+    top: 213px;
+    transform: translate(-100%, -50%);
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    color: #4B5C94;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Chart Bars */
+.content01__section02-chart {
+    position: absolute;
+    width: 77px;
+    height: 22px;
+}
+
+.content01__section02-chart--cpu {
+    left: 91px;
+    top: 153px;
+}
+
+.content01__section02-chart--memory {
+    left: 91px;
+    top: 206px;
+}
+
+.content01__section02-chart-bar {
+    position: absolute;
+    background: #7E7F81;
+    border-radius: 3px;
+    bottom: 0;
+    top: 0;
+    width: 5px;
+}
+
+.content01__section02-chart-bar:nth-child(1) { left: 0; }
+.content01__section02-chart-bar:nth-child(2) { left: 8px; }
+.content01__section02-chart-bar:nth-child(3) { left: 16px; }
+.content01__section02-chart-bar:nth-child(4) { left: 24px; }
+.content01__section02-chart-bar:nth-child(5) { left: 32px; }
+.content01__section02-chart-bar:nth-child(6) { left: 40px; }
+.content01__section02-chart-bar:nth-child(7) { left: 48px; }
+.content01__section02-chart-bar:nth-child(8) { left: 56px; }
+.content01__section02-chart-bar:nth-child(9) { left: 64px; }
+.content01__section02-chart-bar:nth-child(10) { left: 72px; }

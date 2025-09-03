@@ -1,0 +1,94 @@
+/* ===========================================
+   Layout Styles - Flexbox Based Layout
+   =========================================== */
+
+/* Main Container - Figma: new-light-sub (26:1311) */
+.dashboard-container {
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    position: relative;
+    background: #E8EDFF;
+}
+
+/* Wrapper - Contains all content */
+.dashboard-wrap {
+    width: 1940px;
+    height: 1100px;
+    margin: -10px;  /* Offset to center the 1940x1100 in 1920x1080 */
+    padding: 9px 39px 9px 39px; /* Adjusted padding: top 19px (9+10), left/right 49px (39+10), bottom 10px */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+     background: #E8EDFF;
+}
+
+/* Header - Figma: header (30:8524) */
+.header {
+    width: 100%;
+    height: 75px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 100;
+}
+
+/* Container - Figma: container (29:2455) */
+.container {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px; /* gap between content sections */
+}
+
+/* Content01 - Figma: content01 (29:2456) */
+.content01 {
+    width: 100%;
+    height: 345px;
+    flex-shrink: 0;
+    display: flex;
+    gap: 33px; /* 631 - 598 = 33px gap */
+}
+
+.content01 .section01 {
+    width: 598px;
+    height: 345px;
+    position: relative;
+}
+
+.content01 .section02 {
+    width: 1231px;
+    height: 345px;
+    position: relative;
+}
+
+/* Content02 - Figma: content02 (29:2714) */
+.content02 {
+    width: 100%;
+    height: 280px;
+    flex-shrink: 0;
+    display: flex;
+    gap: 31px; /* 630 - 599 = 31px gap */
+}
+
+.content02 .section01,
+.content02 .section02 {
+    width: 599px;
+    height: 280px;
+    position: relative;
+}
+
+.content02 .section03 {
+    width: 599px; /* 실제로는 602px이지만 일관성을 위해 599px */
+    height: 280px;
+    position: relative;
+}
+
+/* Browser Event - Figma: browser-event (32:8576) */
+.browser-event {
+    width: 100%;
+    height: 303px;
+    flex-shrink: 0;
+    position: relative;
+}
