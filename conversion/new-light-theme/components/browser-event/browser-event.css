@@ -10,11 +10,7 @@
     width: 1861px;
     height: 303px;
     position: relative;
-    padding: 16px 30px;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
 }
 
 /* 디버깅용 hover 효과 */
@@ -45,11 +41,6 @@
     left: 0;
     width: 1860px;
     height: 310px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 822px;
-    box-sizing: border-box;
 }
 
 /* Background Box */
@@ -83,11 +74,11 @@
 
 /* Button Container */
 .browser-event__btn-container {
-    position: relative;
+    position: absolute;
+    left: 822px;
+    top: 0;
     width: 211.22px;
     height: 38px;
-    display: flex;
-    align-items: center;
 }
 
 /* Vector Background */
@@ -158,11 +149,12 @@
 
 /* Title */
 .browser-event__title {
+    position: absolute;
+    left: 30px;
+    top: 16px;
     display: flex;
     align-items: center;
     gap: 12px;
-    flex-shrink: 0;
-    position: relative;
     z-index: 1;
 }
 
@@ -185,12 +177,13 @@
 
 /* Main Block */
 .browser-event__block {
+    position: absolute;
+    left: 30px;
+    top: 69px;
     width: 1801px;
-    height: auto;
+    height: 218px;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    position: relative;
+    gap: 19px;
     z-index: 1;
 }
 
