@@ -21,9 +21,11 @@ body {
     width: 1920px;
     min-height: 1080px;
     background-color: #E8EDFF; /* Light blue-purple background from Figma */
+    margin: 0 auto; /* Center the dashboard horizontally */
     padding: 0 29px;
     padding-top: 1px; /* To handle header's negative margin */
     box-sizing: border-box;
+    position: relative; /* For absolute positioned children if needed */
 }
 
 /* ===========================================
