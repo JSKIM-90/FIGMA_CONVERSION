@@ -6,6 +6,19 @@ Figma의 테이블 디자인을 Tabulator.js 옵션으로 변환하는 방법을
 ## 📚 Tabulator 소개
 Tabulator는 강력한 인터랙티브 테이블 라이브러리로, 정렬, 필터링, 페이지네이션, 편집 등 다양한 기능을 제공합니다.
 
+### 설치 방법
+```html
+<!-- CDN (v5.5) -->
+<link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+
+<!-- NPM -->
+npm install tabulator-tables
+
+<!-- Import -->
+import {Tabulator} from 'tabulator-tables';
+```
+
 ## 🔄 변환 가능한 요소들
 
 ### 1. 테이블 스타일 매핑

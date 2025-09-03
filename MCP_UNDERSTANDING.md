@@ -136,6 +136,55 @@ Figma MCP는 특히 **디자인의 시각적 맥락**을 코드로 변환하는�
 > 서로 다른 세계(앱)가 같은 언어(프로토콜)로 대화하며,
 > AI가 그 대화를 이해하고 새로운 가치를 창출합니다.
 
+## 🔧 실제 설정 및 트러블슈팅
+
+### MCP Server 설정 체크리스트
+1. **Figma Desktop 앱 실행 확인**
+   - 웹 버전이 아닌 Desktop 앱인지 확인
+   - Dev Mode 권한이 있는 계정으로 로그인
+
+2. **서버 상태 확인**
+   ```bash
+   # 서버 실행 여부 확인
+   curl http://127.0.0.1:3845/sse
+   
+   # 응답이 없으면 Figma 앱에서 MCP 서버 활성화 필요
+   ```
+
+3. **Claude Code 연결 확인**
+   ```bash
+   # MCP 서버 리스트 확인
+   claude mcp list
+   
+   # figma-dev-mode-mcp-server가 보여야 함
+   ```
+
+### 자주 발생하는 문제와 해결
+
+| 문제 | 원인 | 해결 방법 |
+|------|------|----------|
+| 서버 연결 실패 | Figma Desktop 앱 미실행 | Figma Desktop 앱 실행 후 재시도 |
+| 권한 오류 | Dev Mode 권한 없음 | Figma 플랜 업그레이드 또는 권한 요청 |
+| 노드 접근 불가 | 잘못된 node-id | Figma에서 올바른 node-id 확인 |
+| 데이터 미동기화 | 캐시 문제 | Figma 앱 재시작 및 파일 새로고침 |
+
+### MCP 도구 활용 순서도
+```
+시작
+  ↓
+Figma 요소 선택
+  ↓
+get_metadata() → 크기/위치 확인
+  ↓
+get_code() → 구조 파악
+  ↓
+get_image() → 시각적 검증
+  ↓
+get_variable_defs() → 토큰 추출
+  ↓
+코드 생성 완료
+```
+
 ---
 
 *"Context is King in the age of AI collaboration"*

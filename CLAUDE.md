@@ -1,4 +1,16 @@
-# Figma Dev Mode MCP Server Guide
+# Figma Dev Mode MCP Server Guide - 통합 문서
+
+## 📚 문서 구조
+이 문서는 Figma to Code 변환 프로젝트의 모든 가이드와 학습 내용을 통합한 메인 문서입니다.
+
+### 관련 문서들
+- **MCP_UNDERSTANDING.md**: MCP 프로토콜의 본질과 작동 원리
+- **FIGMA_CONVERSION_GUIDE.md**: 프로젝트 전체 가이드 및 완성된 컴포넌트
+- **FIGMA_TO_ECHARTS.md**: Figma 차트 → ECharts 변환 가이드
+- **FIGMA_TO_TABULATOR.md**: Figma 테이블 → Tabulator.js 변환 가이드
+- **FIGMA_TABULATOR_IMPLEMENTATION.md**: Tabulator 실제 구현 사례
+- **FIGMA_USE_TIP.md**: Figma 활용 팁과 개발자를 위한 사용법
+- **FIGMA_PROMPT_GUIDE.md**: 효과적인 프롬프트 작성 가이드
 
 ## 🚀 빠른 시작 가이드
 
@@ -44,7 +56,29 @@ MCP 서버의 도구들(`get_code`, `get_variable_defs`, `get_code_connect_map`,
 
 ## 📋 주요 도구 및 사용법
 
-### 1. get_code - 코드 생성
+### MCP 도구 실제 호출 방법
+```javascript
+// Claude에서 실제로 호출하는 방법
+mcp__figma-dev-mode-mcp-server__get_metadata(nodeId="25:448")
+mcp__figma-dev-mode-mcp-server__get_code(nodeId="25:448")
+mcp__figma-dev-mode-mcp-server__get_image(nodeId="25:448")
+mcp__figma-dev-mode-mcp-server__get_variable_defs(nodeId="25:448")
+```
+
+### 1. get_metadata - 크기와 위치 정보
+**가장 중요한 도구** - 정확한 px 단위 크기와 좌표를 제공합니다.
+```javascript
+// 반환 예시
+{
+  "width": 1860,
+  "height": 430,
+  "x": 30,
+  "y": 66,
+  "children": [...] // 자식 요소들의 메타데이터
+}
+```
+
+### 2. get_code - 코드 생성
 Figma 선택 영역의 코드를 생성합니다.
 
 **⚠️ 중요: get_code 호출 후 반드시 get_image를 호출하여 시각적 컨텍스트 확인 필수**
@@ -60,12 +94,12 @@ Figma 선택 영역의 코드를 생성합니다.
 "React + Tailwind로 생성해줘" (기본값)
 ```
 
-### 2. get_variable_defs - 디자인 토큰 추출
+### 3. get_variable_defs - 디자인 토큰 추출
 선택 항목의 변수와 스타일을 추출합니다.
 - 색상, 간격, 타이포그래피 등
 - 디자인 시스템 토큰 활용
 
-### 3. get_code_connect_map - 컴포넌트 매핑
+### 4. get_code_connect_map - 컴포넌트 매핑
 Figma 노드를 코드베이스 컴포넌트와 연결합니다.
 ```javascript
 {
@@ -76,7 +110,7 @@ Figma 노드를 코드베이스 컴포넌트와 연결합니다.
 }
 ```
 
-### 4. get_image - 스크린샷 생성
+### 5. get_image - 스크린샷 생성
 선택 항목의 정확한 레이아웃 스크린샷을 제공합니다.
 - 환경설정에서 활성화 필요
 - 토큰 사용량 증가 주의
@@ -167,10 +201,29 @@ clientLanguages: "html,css,javascript"
 - [Figma 프로젝트 파일](https://www.figma.com/design/v6RuBuhzhpX4LrHSAG86sV/NewStyle_Light)
 - [Figma Dev Mode 공식 문서](https://help.figma.com/hc/en-us/articles/32132100833559)
 - [MCP 프로토콜 문서](https://modelcontextprotocol.io)
+- [Pretendard 폰트](https://github.com/orioncactus/pretendard)
+- [ECharts 공식 문서](https://echarts.apache.org)
+- [Tabulator 공식 문서](https://tabulator.info)
 
-## 📌 프로젝트 진행 컨텍스트
+## 🎯 현재 작업 중인 프로젝트
 
-### 현재 상황 (2025-08-28 작업 완료, 내일 계속)
+### Figma 파일 정보
+- **메인 Figma 파일**: https://www.figma.com/design/v6RuBuhzhpX4LrHSAG86sV/NewStyle_Light
+- **작업 중인 테마들**:
+  - `new-dark-theme-main` (node-id: 29:2449 등)
+  - `new-dark-theme-sub` (node-id: 구체적 ID 필요)
+  - `new-light-theme-main` (node-id: 25:445)
+  - `new-light-theme-sub` (node-id: 구체적 ID 필요)
+
+### 현재 구현 상태
+| 테마 | 페이지 | 구현률 | 남은 작업 |
+|-----|-------|--------|----------|
+| new-dark-theme | main | 90% | Browser Event 섹션 |
+| new-dark-theme | sub | 80% | 차트 섹션 미세조정 |
+| new-light-theme | main | 85% | Browser Event 구현 |
+| new-light-theme | sub | 70% | Content02, Browser Event |
+
+## 📌 프로젝트 진행 히스토리
 1. **문서 정리 완료**:
    - `FIGMA_CONVERSION_GUIDE.md`: 프로젝트 전체 가이드 및 완성된 컴포넌트 정리
    - `CLAUDE.md`: Figma MCP Server 설정 및 사용법 가이드
@@ -269,7 +322,7 @@ clientLanguages: "html,css,javascript"
    - **위치 전략**: 절대 위치 지정으로 Figma 좌표 정확히 재현
    - **시각적 구분**: 색상별 경계선으로 디자이너 검증 용이
 
-### 이전 작업 내용 (2025-08-28)
+### 초기 작업 내역
 1. **Figma to ECharts 변환 실습** (node-id: 200-513):
    - "계정" 차트 컴포넌트를 ECharts 옵션으로 변환
    - 44개 막대 그래프 데이터 매핑
@@ -713,4 +766,231 @@ Figma에서 종종 나타나는 'bg' 프레임은 **디자인 도구 전용**입
 **핵심 교훈**:
 - Flexbox는 레이아웃 구조에, Absolute는 정밀한 위치 지정에 사용
 - `white-space: pre`는 연속된 공백을 유지하는 핵심 속성
-- Figma 코드를 맹신하지 말고 실제 렌더링 결과를 보며 조정
+
+---
+
+## 🎯 통합 워크플로우 가이드
+
+### Figma to Code 변환 베스트 프랙티스
+
+#### 1. 분석 단계 (Analysis Phase)
+```javascript
+// 필수 호출 순서
+1. get_metadata(nodeId)    // 정확한 크기와 좌표
+2. get_code(nodeId)        // 구조와 스타일
+3. get_image(nodeId)       // 시각적 확인 (필수!)
+4. get_variable_defs()     // 디자인 토큰
+```
+
+#### 2. 구현 우선순위
+1. **Layout First**: 큰 레이아웃 블록 → 섹션 → 컴포넌트 → 디테일
+2. **Position Strategy**: Flexbox/Grid > margin/padding > absolute
+3. **Style Accuracy**: Figma 수치 100% 준수, 임의 해석 금지
+
+#### 3. 검증 체크리스트
+- [ ] Figma 수치와 정확히 일치하는가?
+- [ ] 모든 SVG/이미지 다운로드되었는가?
+- [ ] BEM 네이밍 컨벤션 준수하는가?
+- [ ] 불필요한 absolute positioning 없는가?
+- [ ] hover 효과와 node-id 라벨링 있는가?
+
+### 효과적인 프롬프트 전략
+
+#### ✅ 좋은 프롬프트 예시
+```
+"Figma node-id 25:448의 정확한 수치 확인해서
+- width: 1861px, height: 303px
+- gap: 19px, padding: 20px
+로 수정해줘"
+```
+
+#### ❌ 피해야 할 프롬프트
+```
+"대충 비슷하게 만들어줘"
+"아마 padding이 20px일 것 같은데"
+```
+
+### 프로젝트별 도구 선택 가이드
+
+| 컴포넌트 타입 | 권장 도구 | 대안 |
+|------------|---------|------|
+| 정적 레이아웃 | HTML/CSS | - |
+| 테이블 | Tabulator.js | HTML table |
+| 차트 | 정적 SVG → ECharts | Chart.js |
+| 대시보드 | Grid + Flexbox | CSS Framework |
+
+### 디버깅 전략
+
+#### 레이아웃 문제
+1. hover 효과로 경계 확인
+2. 브라우저 개발자 도구로 계산된 스타일 확인
+3. Figma 좌표와 CSS 위치 비교
+
+#### 스타일 충돌
+1. CSS 우선순위 확인 (!important 최후 수단)
+2. 라이브러리 기본 스타일 오버라이드
+3. 스코프 제한 (ID 선택자 활용)
+
+### 협업 워크플로우
+
+#### Figma 네이밍 컨벤션
+- Components: `Component/[Type]/[Variant]`
+- Colors: `color/[category]/[name]`
+- Typography: `font/[size]/[weight]`
+
+#### Git 커밋 메시지
+```
+feat: [컴포넌트명] 구현 완료
+- Figma node-id: [ID]
+- 정확한 수치 반영
+- BEM 네이밍 적용
+```
+
+### 자동화 스크립트 템플릿
+
+```javascript
+// Figma to Code 자동 변환 스크립트
+class FigmaConverter {
+  async convert(nodeId) {
+    // 1. Figma 데이터 추출
+    const metadata = await mcp.get_metadata(nodeId);
+    const code = await mcp.get_code(nodeId);
+    const image = await mcp.get_image(nodeId);
+    const tokens = await mcp.get_variable_defs(nodeId);
+    
+    // 2. 컴포넌트 타입 판별
+    const type = this.detectComponentType(code);
+    
+    // 3. 적절한 변환기 선택
+    switch(type) {
+      case 'table': return this.convertToTabulator(metadata, tokens);
+      case 'chart': return this.convertToECharts(metadata, tokens);
+      default: return this.convertToHTML(metadata, code, tokens);
+    }
+  }
+}
+```
+
+## 🚀 다음 단계 로드맵
+
+### Phase 1: 컴포넌트 라이브러리 구축
+- [ ] 재사용 가능한 컴포넌트 추출
+- [ ] Storybook 통합
+- [ ] 디자인 토큰 시스템 구축
+
+### Phase 2: 자동화 파이프라인
+- [ ] Figma 변경 감지 시스템
+- [ ] 자동 코드 생성 스크립트
+- [ ] CI/CD 통합
+
+### Phase 3: 팀 확산
+- [ ] 팀 가이드라인 문서화
+- [ ] 워크샵 진행
+- [ ] 피드백 시스템 구축
+
+## 💡 핵심 원칙 재확인
+
+> **"Figma First, Code Second"** - Figma가 정답이다. 코드는 Figma를 따라간다.
+
+> **"Measure Twice, Code Once"** - 측정하고, 구현하고, 검증하라.
+
+> **"Pixel Perfect is Not Optional"** - 픽셀 단위 정확도는 선택이 아닌 필수.
+
+> **"Context is King"** - MCP를 통해 디자인 의도와 맥락을 보존하라.
+
+---
+
+## ✅ Figma to Code 작업 컨텍스트 체크리스트
+
+### 작업 시작 전 확인
+- [ ] Figma Desktop 앱 실행됨
+- [ ] MCP 서버 연결 확인 (http://127.0.0.1:3845/sse)
+- [ ] 작업할 Figma 파일 열림
+- [ ] Dev Mode 활성화됨
+- [ ] 작업할 node-id 확인됨
+
+### 도구 호출 순서
+1. [ ] `get_metadata` - 정확한 크기와 좌표
+2. [ ] `get_code` - 구조와 스타일
+3. [ ] `get_image` - 시각적 확인 (필수!)
+4. [ ] `get_variable_defs` - 디자인 토큰 (필요시)
+
+### 구현 원칙
+- [ ] 큰 레이아웃부터 시작
+- [ ] Figma 수치 100% 준수
+- [ ] 임의 스타일 추가 금지
+- [ ] BEM 네이밍 컨벤션 사용
+- [ ] Flexbox/Grid 우선, absolute 최소화
+
+### 검증
+- [ ] Figma 이미지와 픽셀 비교
+- [ ] hover 효과로 경계 확인
+- [ ] node-id 라벨 표시
+- [ ] 브라우저 크로스 체크
+
+이 체크리스트를 따르면 정확한 Figma to Code 변환이 가능합니다.
+
+---
+
+## 🤝 효과적인 협업 방식
+
+### 핵심 원칙: "완벽한 한 방"이 아닌 "빠른 반복"
+
+#### 사용자가 Dev Mode에서 확인할 것
+1. **정확한 수치 확인**
+   ```
+   요소 선택 → 우측 패널에서 px 값 확인
+   예: "여기 width가 1860px인데 지금 1861px로 되어있어"
+   ```
+
+2. **색상 코드 복사**
+   ```
+   색상 클릭 → HEX 값 복사
+   예: "버튼 색상은 #502EE9야"
+   ```
+
+3. **간격 측정**
+   ```
+   Alt 누르고 마우스 이동으로 간격 확인
+   예: "섹션 간 gap이 19px이야"
+   ```
+
+#### Claude가 도울 수 있는 부분
+```
+사용자: "node-id 25:448 선택했어. 이게 Browser Event 섹션이야"
+Claude: get_metadata로 정확한 크기 확인하고 구현 시작
+
+사용자: "높이가 303px인데 지금 305px로 보여"
+Claude: CSS에서 즉시 수정
+
+사용자: "이 부분 3D로 보이는데 레이어가 여러 개야"
+Claude: get_image로 확인하고 레이어 순서 파악
+```
+
+#### 점진적 작업 방식
+```
+1단계: "일단 큰 박스 4개만 만들어줘"
+2단계: "첫 번째 박스 내부 구현해보자"
+3단계: "폰트 크기가 좀 작은 것 같아, 18px로 보이는데?"
+4단계: "좋아, 다음 섹션으로 넘어가자"
+```
+
+#### 실시간 피드백 루프
+```
+Claude: [코드 구현]
+사용자: "Figma랑 비교해보니 버튼 위치가 좀 다른데"
+Claude: "get_metadata로 정확한 좌표 확인할게요"
+사용자: "Dev Mode에서 보니 x: 847px이야"
+Claude: [즉시 수정]
+```
+
+### 작업 분담 가이드
+| 사용자 역할 | Claude 역할 |
+|------------|------------|
+| Figma에서 요소 선택 | MCP 도구로 데이터 추출 |
+| 정확한 수치 확인 | HTML/CSS 코드 생성 |
+| 시각적 비교 검증 | 즉시 수정 반영 |
+| 색상/폰트 확인 | 디자인 토큰 적용 |
+| 레이어 순서 파악 | 구조적 구현 |
+
+**Remember**: 한 번에 하나씩, 정확하게, 함께!

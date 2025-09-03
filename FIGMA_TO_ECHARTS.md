@@ -349,6 +349,98 @@ animationDelay: function(idx) {
 - 인터랙션과 애니메이션은 추가 구현 필요
 - 반응형 디자인 고려 필요
 
+## 🔧 트러블슈팅
+
+### 일반적인 문제와 해결
+
+| 문제 | 원인 | 해결 방법 |
+|------|------|----------|
+| 차트가 렌더링되지 않음 | 컨테이너 크기 미지정 | width, height 명시적 설정 |
+| 색상이 Figma와 다름 | 투명도 미적용 | rgba() 형식으로 변환 |
+| 폰트가 다르게 보임 | 웹폰트 미로드 | @font-face 또는 CDN 추가 |
+| 반응형 동작 안함 | resize 이벤트 미처리 | window.addEventListener('resize', chart.resize) |
+| 데이터 업데이트 안됨 | setOption 미호출 | chart.setOption(newOption, true) |
+
+### 성능 최적화 팁
+
+```javascript
+// 1. 대량 데이터 처리
+const option = {
+  dataset: {
+    source: largeData  // 데이터셋 사용으로 성능 향상
+  },
+  dataZoom: [{
+    type: 'inside',  // 대량 데이터 줌 기능
+    start: 0,
+    end: 10
+  }]
+};
+
+// 2. 애니메이션 최적화
+const option = {
+  animation: true,
+  animationDuration: 500,  // 짧은 애니메이션
+  animationEasing: 'linear',  // 간단한 easing
+  progressive: 1000,  // 점진적 렌더링
+  progressiveThreshold: 2000
+};
+
+// 3. 메모리 관리
+// 차트 삭제 시 반드시 dispose
+chart.dispose();
+chart = null;
+```
+
+## 🌟 실제 프로젝트 적용 사례
+
+### 대시보드 실시간 차트
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+  <div id="dashboard-chart" style="width: 100%; height: 400px;"></div>
+  
+  <script>
+  // Figma 디자인 토큰
+  const figmaTokens = {
+    colors: {
+      primary: '#502EE9',
+      success: '#9ECF50',
+      warning: '#F9B650'
+    }
+  };
+  
+  // 차트 초기화
+  const chart = echarts.init(document.getElementById('dashboard-chart'));
+  
+  // Figma 스타일 적용
+  const option = {
+    color: Object.values(figmaTokens.colors),
+    // ... 옵션 설정
+  };
+  
+  chart.setOption(option);
+  
+  // 실시간 업데이트
+  setInterval(() => {
+    // 새 데이터 생성
+    const newData = generateRealtimeData();
+    
+    // 차트 업데이트
+    chart.setOption({
+      series: [{
+        data: newData
+      }]
+    });
+  }, 1000);
+  </script>
+</body>
+</html>
+```
+
 ## 🚀 자동화 스크립트 예시
 
 ```javascript

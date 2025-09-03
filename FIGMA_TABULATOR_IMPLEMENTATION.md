@@ -308,6 +308,53 @@ Tabulator.js가 제공하는 강력한 기능과 Figma의 정교한 디자인을
 
 앞으로도 이러한 도전적인 구현을 통해 더 나은 사용자 경험을 제공할 수 있기를 기대합니다.
 
+## 📋 Quick Reference
+
+### Figma → Tabulator 매핑 체크리스트
+
+| Figma 속성 | Tabulator 옵션 | CSS Override |
+|-----------|---------------|--------------|
+| Row Height | `rowHeight: 48` | `.tabulator-row { height: 48px }` |
+| Header Background | - | `.tabulator-header { background: #color }` |
+| Cell Padding | - | `.tabulator-cell { padding: 12px 16px }` |
+| Border | - | `.tabulator-table { border: 1px solid #color }` |
+| Hover Effect | `rowFormatter` | `.tabulator-row:hover { background: #color }` |
+| Badge/Tag | Custom Formatter | 이중 레이어 ::before 활용 |
+| Striped Rows | `rowFormatter` with index % 2 | nth-child(even) |
+
+### 자주 사용하는 CSS Override
+
+```css
+/* Tabulator 기본 스타일 제거 */
+.tabulator {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* 헤더 커스터마이징 */
+.tabulator-header {
+  border-bottom: 2px solid #d9f460 !important;
+  background: #1a2b3c !important;
+}
+
+/* 셀 정렬 */
+.tabulator-cell {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 스크롤바 스타일 */
+.tabulator-tableholder::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.tabulator-tableholder::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+```
+
 ---
 
 *"픽셀 하나의 차이가 만드는 완성도의 차이를 경험했습니다."*

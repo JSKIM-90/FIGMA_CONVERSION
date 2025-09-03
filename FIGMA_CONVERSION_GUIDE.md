@@ -56,20 +56,20 @@ curl -o figma/assets/icon.svg "http://localhost:3845/assets/[hash].svg"
 
 ## 📁 프로젝트 구조
 ```
-figma/
-├── assets/
-│   ├── bullet.svg
-│   ├── browser-controls.svg
-│   ├── radio-btn.svg
-│   ├── close-icon.svg
-│   └── ...
-├── mca-component.html
-├── mca-component.css
-├── business-system.html
-├── business-system.css
-├── event-dashboard.html
-├── event-dashboard.css
-└── event-dashboard.js
+conversion/
+├── new-dark-theme-main/        # 다크 테마 메인
+│   ├── new-dark-main.html
+│   ├── new-dark-main.css
+│   └── components/
+├── new-dark-theme-sub/         # 다크 테마 서브
+│   ├── new-dark-sub.html
+│   └── new-dark-sub.css
+├── new-light-theme-main/       # 라이트 테마 메인
+│   ├── new-light-main.html
+│   └── new-light-main.css
+└── new-light-theme-sub/        # 라이트 테마 서브
+    ├── new-light-sub.html
+    └── new-light-sub.css
 ```
 
 ## 🎨 완성된 컴포넌트
@@ -378,6 +378,63 @@ figma.connect(Button, 'node-id-197:584', {
 # VS Code Live Server 또는
 python -m http.server 8000
 ```
+
+## ⚡ 성능 최적화 가이드
+
+### 1. 이미지 최적화
+```html
+<!-- SVG 인라인 사용 (작은 아이콘) -->
+<svg class="icon">...</svg>
+
+<!-- 큰 이미지는 lazy loading -->
+<img src="hero.jpg" loading="lazy" alt="Hero Image">
+
+<!-- 적절한 포맷 선택 -->
+- SVG: 아이콘, 로고
+- WebP: 사진, 복잡한 이미지
+- PNG: 투명 배경 필요시
+```
+
+### 2. CSS 최적화
+```css
+/* CSS 변수로 반복 값 줄이기 */
+:root {
+  --primary: #502EE9;
+  --spacing: 20px;
+}
+
+/* will-change 신중하게 사용 */
+.animated {
+  will-change: transform; /* 애니메이션 직전에만 */
+}
+
+/* 복잡한 선택자 피하기 */
+/* 나쁨: .container > .wrapper > .content > .item */
+/* 좋음: .item */
+```
+
+### 3. JavaScript 최적화
+```javascript
+// 이벤트 위임 사용
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.button')) {
+    // 처리
+  }
+});
+
+// requestAnimationFrame 활용
+function animate() {
+  requestAnimationFrame(() => {
+    // DOM 조작
+  });
+}
+```
+
+### 4. 렌더링 최적화
+- **Layout Thrashing 방지**: DOM 읽기와 쓰기 분리
+- **CSS containment**: `contain: layout style paint`
+- **Virtual Scrolling**: 큰 테이블에 적용
+- **Web Workers**: 무거운 계산 분리
 
 ## 📝 메모
 - Figma의 Auto Layout → CSS Flexbox
