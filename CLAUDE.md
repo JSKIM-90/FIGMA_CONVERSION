@@ -643,3 +643,54 @@ Figma에서 종종 나타나는 'bg' 프레임은 **디자인 도구 전용**입
    - 가정이나 추측 기반 구현 금지
    - "아마도 이럴 것이다" → Figma 확인
    - 시각적 확인 없는 구현 진행 금지
+
+### 중요한 구현 이슈 및 해결 (2025-09-03)
+
+#### 1. Figma 레이어 순서와 HTML 렌더링 순서의 차이
+**문제**: new-dark-theme-sub의 Section01 3D 서버 비주얼 구현 시, Figma에서 가져온 레이어 순서대로 HTML에 배치했더니 3D 효과가 제대로 나타나지 않음. 가장 어두운 앞면이 뒤로 가고 뒷면이 앞으로 나오는 문제 발생.
+
+**원인 분석**:
+- Figma의 레이어 패널: 위에서 아래로 표시 (Shape 16 → Shape 15 → ... → Shape 1)
+- Figma의 실제 렌더링: 아래 레이어가 먼저, 위 레이어가 나중에 그려짐
+- HTML/CSS 렌더링: DOM 순서대로 렌더링 (먼저 나온 요소가 뒤에, 나중 요소가 앞에)
+
+**해결 방법**:
+```html
+<!-- 잘못된 구현 (Figma 순서 그대로) -->
+<div class="server3d">
+  <img src="server-shape-16.svg">
+  <img src="server-shape-15.svg">
+  ...
+  <img src="server-shape-1.svg">
+</div>
+
+<!-- 올바른 구현 (역순으로 배치) -->
+<div class="server3d">
+  <img src="server-shape-1.svg">  <!-- 가장 뒤 -->
+  <img src="server-shape-2.svg">
+  ...
+  <img src="server-shape-16.svg"> <!-- 가장 앞 -->
+</div>
+```
+
+**핵심 교훈**:
+- Figma 레이어 리스트는 "스택 순서"를 나타냄 (위 = 앞, 아래 = 뒤)
+- HTML 구현 시 반드시 **역순으로 배치**해야 동일한 시각적 결과
+- `get_metadata`로 레이어 순서 확인 후 역순 적용 필수
+- 3D 또는 레이어드 디자인 구현 시 특히 주의
+
+#### 2. SVG 블렌드 모드와 색상 재현 문제
+**문제**: Section02의 서버 카드에서 Figma와 웹 구현의 색상 차이 발생. Figma에서는 진한 색상인데 웹에서는 밝고 투명하게 보임.
+
+**원인**:
+- SVG 내부의 `mix-blend-mode` 스타일이 브라우저에서 제대로 적용되지 않음
+- opacity와 blend mode가 복합적으로 작용하는 Figma 효과 재현 어려움
+- CSS 변수(`--fill-0`) 미정의로 인한 색상 누락
+
+**시도한 해결책들**:
+1. CSS filter 적용: `brightness(0.7) contrast(1.4) saturate(1.3)`
+2. 배경 그라데이션 추가
+3. mix-blend-mode 강제 적용
+4. opacity 조정
+
+**미해결 이슈**: 완벽한 색상 매칭은 여전히 어려움. Figma의 복잡한 블렌딩 효과를 웹에서 100% 재현하기는 한계가 있음.
