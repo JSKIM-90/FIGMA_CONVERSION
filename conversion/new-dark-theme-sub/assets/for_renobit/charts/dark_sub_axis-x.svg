@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 4 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="axis-x">
+<line id="Line 8" y1="0.5" x2="4" y2="0.5" stroke="var(--stroke-0, #CDCDCA)"/>
+<line id="Line 9" y1="24.5" x2="4" y2="24.5" stroke="var(--stroke-0, #CDCDCA)"/>
+<line id="Line 10" y1="48.5" x2="4" y2="48.5" stroke="var(--stroke-0, #CDCDCA)"/>
+<line id="Line 11" y1="72.5" x2="4" y2="72.5" stroke="var(--stroke-0, #CDCDCA)"/>
+<line id="Line 12" y1="96.5" x2="4" y2="96.5" stroke="var(--stroke-0, #CDCDCA)"/>
+<line id="Line 13" y1="120.5" x2="4" y2="120.5" stroke="var(--stroke-0, #CDCDCA)"/>
+</g>
+</svg>
