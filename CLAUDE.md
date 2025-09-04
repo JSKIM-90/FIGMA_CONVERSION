@@ -31,84 +31,32 @@
 claude mcp add --transport sse figma-dev-mode-mcp-server http://127.0.0.1:3845/sse
 ```
 
-## 🚨 MCP 도구 활용 개선 전략 (습관화 필수)
+## 🎯 필수: MCP 4-Tool Set
 
-### 🔴 AS-IS: 수동 작업 (비효율적)
-```
-1. 브라우저로 Figma 접속
-2. 수치 눈으로 확인
-3. 하나씩 CSS 값 입력
-4. 브라우저 개발자 도구로 디버깅
-5. Figma와 육안 비교
-```
-**문제점**: 시간 소모 ↑, 정확도 ↓, 휴먼 에러 ↑
-
-### ✅ TO-BE: MCP 자동화 (효율적)
 ```javascript
-// 모든 컴포넌트 작업 시작 시 필수 4-Tool Set
-1. mcp__figma-dev-mode-mcp-server__get_metadata(nodeId)
-2. mcp__figma-dev-mode-mcp-server__get_code(nodeId)
-3. mcp__figma-dev-mode-mcp-server__get_image(nodeId)
-4. mcp__figma-dev-mode-mcp-server__get_variable_defs(nodeId)
-```
-**장점**: 정확한 수치 자동 추출, 실시간 동기화, 디자인 토큰 일관성
-
-### 📌 습관화 체크리스트 (매 작업마다)
-```
-□ 작업 시작 = 4-Tool Set 호출
-□ get_metadata로 px 단위 정확히 확인
-□ get_variable_defs로 색상/간격 토큰 추출
-□ 수동 입력 대신 MCP 데이터 활용
-□ Figma 수정 시 즉시 MCP로 재동기화
+// 모든 작업 시작 시 반드시 4개 모두 호출!
+const [metadata, code, image, tokens] = await Promise.all([
+  mcp__figma-dev-mode-mcp-server__get_metadata(nodeId),    // 크기, 좌표
+  mcp__figma-dev-mode-mcp-server__get_code(nodeId),        // 구조, 스타일  
+  mcp__figma-dev-mode-mcp-server__get_image(nodeId),       // 시각적 확인
+  mcp__figma-dev-mode-mcp-server__get_variable_defs(nodeId) // 디자인 토큰
+]);
 ```
 
-### 💡 실제 작업 예시
-```javascript
-// ❌ 나쁜 습관 (수동)
-.header {
-  width: 1860px;  // "아마 이 정도?"
-  height: 75px;   // "대충 측정"
-}
+**효과**: 수동 측정 제거, 정확도 100%, 시간 단축 80%
 
-// ✅ 좋은 습관 (MCP 활용)
-// 1. MCP 호출
-const metadata = await get_metadata("25:864")
-// 결과: { width: 1860, height: 75, x: 29, y: -1 }
+## 🔌 MCP 작동 원리
 
-// 2. 정확한 값 적용
-.header {
-  width: ${metadata.width}px;   // 1860px (정확)
-  height: ${metadata.height}px;  // 75px (정확)
-  left: ${metadata.x}px;         // 29px (정확)
-  top: ${metadata.y}px;          // -1px (정확)
-}
+```
+Figma 선택 → MCP 4-Tool Set 호출 → 데이터 추출 → 코드 생성
 ```
 
-## 🔌 MCP 도구들의 작동 방식
-
-### MCP Server가 Figma 데이터를 가져오는 원리
-MCP 서버의 주요 도구들(`get_metadata`, `get_code`, `get_image`, `get_variable_defs`)은 Figma 링크나 선택된 요소로부터 데이터를 추출하는 **브릿지 역할**을 합니다.
-
-**작동 플로우:**
-```
-1. 사용자: "이 Figma URL의 버튼 구현해줘" 또는 Figma에서 요소 선택
-2. Claude: URL에서 node-id 추출 (예: "1:2") 또는 선택된 요소 감지
-3. MCP 도구 호출: mcp__figma-dev-mode-mcp-server__get_code(nodeId="1:2")
-4. Figma Desktop → MCP Server: 해당 노드의 디자인 데이터 전송
-5. MCP Server → Claude: 표준화된 JSON 포맷으로 변환된 데이터 반환
-6. Claude: 받은 데이터를 HTML/CSS/JS로 변환
-```
-
-**핵심 4-Tool Set이 가져오는 데이터:**
-- **get_metadata**: 정확한 크기(width, height)와 좌표(x, y) 정보
-- **get_code**: 디자인 구조와 스타일을 코드 형태로
-- **get_image**: 선택한 디자인의 시각적 스크린샷
-- **get_variable_defs**: 디자인 시스템의 변수들(색상, 간격 등)
-
-**추가 도구:**
-- **get_code_connect_map**: Figma 컴포넌트와 실제 코드 컴포넌트의 연결 정보 (선택적)
-
-이 도구들은 Figma의 **실시간 디자인 정보**를 가져와서 코드로 변환할 수 있게 해주는 핵심 기능입니다.
+| 도구 | 역할 | 반환 데이터 |
+|------|------|------------|
+| get_metadata | 크기/위치 | `{width, height, x, y}` |
+| get_code | 구조/스타일 | HTML/CSS 코드 |
+| get_image | 시각 확인 | 스크린샷 |
+| get_variable_defs | 디자인 토큰 | 색상, 간격 변수 |
 
 ## 📋 주요 도구 및 사용법
 
@@ -235,37 +183,11 @@ clientLanguages: "html,css,javascript"
 - Flexbox/Grid 우선, absolute 최소화
 ```
 
-## 📝 작업 플로우 (MCP 도구 우선)
+## 📝 작업 플로우
 
-### 🎯 필수: 4-Tool Set으로 시작
-```javascript
-// 모든 작업의 시작 - 반드시 이 4개를 먼저!
-const nodeId = "25:448";  // Figma에서 선택한 요소
-
-// 동시 호출로 효율성 극대화
-const [metadata, code, image, tokens] = await Promise.all([
-  mcp__figma-dev-mode-mcp-server__get_metadata(nodeId),
-  mcp__figma-dev-mode-mcp-server__get_code(nodeId),
-  mcp__figma-dev-mode-mcp-server__get_image(nodeId),
-  mcp__figma-dev-mode-mcp-server__get_variable_defs(nodeId)
-]);
-```
-
-### 단계별 작업 플로우
-1. **MCP 데이터 수집** (4-Tool Set)
-   - `get_metadata`: 정확한 크기와 좌표
-   - `get_code`: 구조와 스타일
-   - `get_image`: 시각적 확인
-   - `get_variable_defs`: 디자인 토큰
-
-2. **데이터 기반 구현**
-   - metadata의 정확한 수치 사용
-   - tokens의 색상/간격 변수 활용
-   - code의 구조 참고
-
-3. **커스터마이징**: HTML/CSS로 변환 및 최적화
-4. **에셋 다운로드**: SVG/이미지 로컬 저장
-5. **검증**: Figma 디자인과 픽셀 단위 비교
+1. **4-Tool Set 호출** (위 코드 참조)
+2. **구현**: 큰 레이아웃 → 섹션 → 컴포넌트 → 디테일
+3. **검증**: Figma와 픽셀 단위 비교
 
 ## 🚨 주의사항
 
@@ -293,168 +215,17 @@ const [metadata, code, image, tokens] = await Promise.all([
   - `new-light-theme-main` (node-id: 25:445)
   - `new-light-theme-sub` (node-id: 구체적 ID 필요)
 
-### 현재 구현 상태
-| 테마 | 페이지 | 구현률 | 남은 작업 |
-|-----|-------|--------|----------|
-| new-dark-theme | main | 90% | Browser Event 섹션 |
-| new-dark-theme | sub | 80% | 차트 섹션 미세조정 |
-| new-light-theme | main | 85% | Browser Event 구현 |
-| new-light-theme | sub | 70% | Content02, Browser Event |
+### 구현 현황
+| 테마 | main | sub |
+|------|------|-----|
+| dark-theme | 90% | 80% |
+| light-theme | 85% | 70% |
 
-## 📌 프로젝트 진행 히스토리
-1. **문서 정리 완료**:
-   - `FIGMA_CONVERSION_GUIDE.md`: 프로젝트 전체 가이드 및 완성된 컴포넌트 정리
-   - `CLAUDE.md`: Figma MCP Server 설정 및 사용법 가이드
-   - `MCP_UNDERSTANDING.md`: MCP 프로토콜의 본질과 작동 원리 이해
-   - `FIGMA_TO_ECHARTS.md`: Figma 차트 디자인을 ECharts로 변환하는 가이드
-   - `FIGMA_TO_TABULATOR.md`: Figma 테이블 디자인을 Tabulator.js로 변환하는 가이드
-   - `FIGMA_TABULATOR_IMPLEMENTATION.md`: Tabulator 실제 구현 사례 및 학습 내용
-   - `FIGMA_USE_TIP.md`: Figma 활용 팁과 개발자를 위한 사용법
 
-2. **MCP 이해도 확립**:
-   - MCP는 서로 다른 앱 간의 **맥락(Context)을 전달하는 표준 프로토콜**
-   - Figma의 디자인 데이터를 표준화된 JSON으로 변환하여 Claude가 이해하고 코드 생성
-   - 단순 데이터 전송이 아닌 **의미와 의도를 보존**하는 통신
 
-3. **작업 준비 완료**:
-   - Figma MCP Server 연결 방법 숙지
-   - HTML/CSS 변환 워크플로우 확립
-   - 디자인 토큰 활용 전략 수립
-   - **ECharts 변환 기능 확인**: Figma 차트 디자인을 ECharts 옵션으로 성공적으로 변환
 
-### 최근 작업 내용 (2025-09-02)
-1. **Content01 완전 구현 완료**:
-   - **Section01 (거래현황)** (node-id: 25:608):
-     - Flexbox 기반 legend-list (column-gap: 36px, row-gap: 26px)
-     - 브라우저 폰트 렌더링 차이 수용 (88px Figma vs 99.981px 실제)
-     - 정적 SVG 파이차트 구현 (121x113px)
-     - hover 효과 및 node-id 라벨링 추가
-   
-   - **Section02 (트랜젝션 현황)** (node-id: 25:641):
-     - 계정/승인 각 43개 막대 차트 정적 구현
-     - 초록색(#9ECF50) 계정, 주황색(#F9B650) 승인
-     - SVG 라인 그래프 오버레이
-     - **line-height 정밀 조정**: title 13px, subtitle 11px (Figma HUG 높이 일치)
-     - 모든 아이콘 Figma SVG 직접 사용
-   
-   - **Main Component (업무시스템현황)** (node-id: 25:843):
-     - 3D 아이소메트릭 비즈니스 시스템 다이어그램
-     - 9개 컴포넌트 정확한 위치 구현 (상대 좌표 계산)
-     - 콜센터, 카드발급, 인터넷포탈, 계정계, 승인계, 정보계, 은행, MCA, EAI
-     - 배경 네트워크 다이어그램 포함
-     - **위치 버그 수정**: 내부 요소들 y좌표에서 66px 빼기 (부모 오프셋 반영)
 
-2. **레이아웃 아키텍처 개선**:
-   - **Absolute 최소화 원칙 확립**: "웬만하면 absolute 쓰지말자 나중에 감당이 안돼"
-   - Normal flow 기반으로 전환 (margin 활용)
-   - Container는 absolute 유지 (형제 관계 main-component와 오버랩)
-   - 유지보수성과 확장성 향상
 
-3. **디버깅 도구 추가**:
-   - 모든 섹션에 hover 효과 (색상별 구분)
-   - Node-id 라벨 자동 표시
-   - Section01: 보라색 (#502EE9)
-   - Section02: 주황색 (#F9B650)
-   - Main Component: 보라색 (#800080)
-
-### 이전 작업 내용 (2025-09-01 오후)
-1. **Figma bg 프레임과 배경색 이슈 해결**:
-   - **문제**: Figma의 bg 프레임(25:446)과 new-light-main(25:445)의 관계 혼동
-   - **해결**: bg는 Figma 디자인 도구용 컨테이너로, 퍼블리싱 시 무시
-   - **배경색**: new-light-main에 #E8EDFF 직접 적용
-   - **핵심 교훈**: Figma의 hidden="true" 속성이나 오버사이즈 프레임은 디자인 도구용이며, 실제 구현에서는 제외
-
-2. **Header 컴포넌트 구현 완료** (node-id: 25:864):
-   - **구조**: new-dark-theme과 동일한 방식 적용
-     - HTML 마크업은 new-light-main.html에 직접 작성
-     - CSS는 components/header/header.css로 분리
-     - SVG 에셋은 assets/icons/ 폴더에 저장
-   - **디자인 토큰**:
-     - Primary: #502EE9 (활성 메뉴)
-     - Grayscale1: #373D56 (GNB 배경)
-     - Grayscale4: #A6B3DE (비활성 메뉴 텍스트)
-   - **구현 방식**: 
-     - Figma inset 값을 percentage로 정확히 변환
-     - JavaScript 없이 정적 HTML/CSS만 사용
-   - **학습 포인트**: 
-     - 컨텍스트 유지의 중요성
-     - 기존 프로젝트 구조 준수 필요성
-
-### 이전 작업 내용 (2025-09-01 오전)
-1. **헤더 컴포넌트 구현 완료** (node-id: 29:2449):
-   - **구조**: top-bg(배경), bi(로고), gnb(메뉴), top-btn(시간/로그아웃)
-   - **위치**: left: 29px, top: -1px, width: 1860px, height: 75px
-   - **특징**: 
-     - SVG 배경 이미지 사용 (header-bg.svg)
-     - Flexbox 기반 GNB 메뉴 레이아웃
-     - 실시간 시계 표시 영역
-     - 로그아웃 버튼 호버 효과
-   - **에셋**: 5개 SVG 파일 (header-bg, renobit-logo, menu-icons, logout-icon)
-   - **CSS 전략**: Figma inset 값을 percentage로 직접 변환하여 정확한 위치 구현
-   - **통합 방식**: object 태그 대신 직접 HTML 포함 (body margin 이슈 해결)
-
-2. **Content01 레이아웃 구조 분석** (node-id: 29:2191):
-   - **구조 발견**: container와 main-component는 형제 관계 (부모-자식 아님)
-   - **container**: 거래현황 + 계정 섹션 (1860 x 374px)
-   - **main-component**: 업무시스템현황 오버레이 (727.46 x 429.76px)
-   - **위치 전략**: 절대 위치 지정으로 Figma 좌표 정확히 재현
-   - **시각적 구분**: 색상별 경계선으로 디자이너 검증 용이
-
-### 초기 작업 내역
-1. **Figma to ECharts 변환 실습** (node-id: 200-513):
-   - "계정" 차트 컴포넌트를 ECharts 옵션으로 변환
-   - 44개 막대 그래프 데이터 매핑
-   - 색상, 스타일, 레이아웃 정확히 반영
-   - 범례와 데이터 값(금일: 7,927,921 / 전일: 7,320,915) 포함
-
-2. **Figma to Tabulator 구현 완료** (node-id: 203-1595):
-   - 이벤트 모니터링 테이블 90% 이상 재현
-   - 복잡한 이벤트 뱃지 이중 레이어 구조 완벽 구현
-   - 5가지 severity 상태별 색상 정확히 매칭
-   - CSS 우선순위 충돌 해결 (라이브러리 스타일 오버라이드)
-   - fit-content 컨테이너 이슈 해결 (flex → inline-block)
-   - 파일 위치: `conversion/tabulator/event-monitoring-table.html`
-
-3. **헤더 컴포넌트 구현** (node-id: 197-599):
-   - TENOBIT 로고, GNB 메뉴, 실시간 시계, 로그아웃 버튼
-   - 메뉴: 종합현황, 인프라현황, 어플리케이션관리, 인프라운영관리
-   - 키보드 단축키 지원 (Alt+1~4, Ctrl+L)
-   - Pretendard 폰트 적용
-   - 파일 위치: `conversion/components/header.html`
-
-4. **대시보드 레이아웃 구현** (node-id: 214-2286):
-   - 전체 대시보드 배경 및 레이아웃 구조 (1920x1080)
-   - 컴포넌트 배치 위치 정의 (플레이스홀더)
-   - iframe을 통한 기존 컴포넌트 통합
-   - 파일 위치: `conversion/components/dashboard-layout.html`
-
-### 프로젝트 구조
-```
-Figma_Conversion/
-├── conversion/                          # 변환 결과물
-│   ├── index.html                      # 프로젝트 인덱스 페이지
-│   ├── components/                     # 컴포넌트들
-│   │   ├── header.html                 # 헤더 컴포넌트
-│   │   ├── dashboard-layout.html       # 대시보드 전체 레이아웃
-│   │   └── assets/                     # 에셋 파일들
-│   │       ├── dashboard-bg.png        # 대시보드 배경
-│   │       ├── header-bg.svg           # 헤더 배경
-│   │       ├── tenobit-logo.svg        # 로고
-│   │       ├── logout-icon.svg         # 로그아웃 아이콘
-│   │       └── menu-icon.svg           # 메뉴 아이콘
-│   └── tabulator/                      # Tabulator 구현물
-│       └── event-monitoring-table.html # 이벤트 모니터링 테이블
-├── 문서/
-│   ├── FIGMA_CONVERSION_GUIDE.md
-│   ├── FIGMA_TO_ECHARTS.md
-│   ├── FIGMA_TO_TABULATOR.md
-│   ├── FIGMA_TABULATOR_IMPLEMENTATION.md
-│   ├── FIGMA_USE_TIP.md
-│   ├── MCP_UNDERSTANDING.md
-│   └── CLAUDE.md (현재 파일)
-└── .claude/
-    └── settings.local.json              # Claude Code MCP 설정
-```
 
 ### 핵심 학습 사항
 1. **포지셔닝 전략**:
