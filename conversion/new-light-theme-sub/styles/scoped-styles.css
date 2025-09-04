@@ -1,0 +1,152 @@
+/* Scoped Styles for Light Theme Sub - Page Container */
+#pageID {
+    /* ===== Base Styles (pageID itself) ===== */
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #323232;
+    background: #E8EDFF;  /* Light blue-purple background */
+    position: relative;
+
+    /* ===== Reset Styles ===== */
+    & * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* ===========================================
+       Main Layout Structure
+       =========================================== */
+
+    /* Wrapper - Contains all content */
+    .dashboard-wrap {
+        width: 1940px;
+        height: 1100px;
+        margin: -10px;  /* Offset to center the 1940x1100 in 1920x1080 */
+        padding: 9px 39px 9px 39px; /* Adjusted padding */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background: #E8EDFF;
+    }
+
+    /* Header - Figma: header (30:8524) */
+    .header {
+        width: 100%;
+        height: 75px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 100;
+    }
+
+    /* Container - Figma: container (29:2455) */
+    .container {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 28px; /* gap between content sections */
+    }
+
+    /* Content01 - Figma: content01 (29:2456) */
+    .content01 {
+        width: 100%;
+        height: 345px;
+        flex-shrink: 0;
+        display: flex;
+        gap: 25px;
+    }
+
+    /* Content02 - Figma: content02 (29:2457) */
+    .content02 {
+        width: 100%;
+        height: 287px;
+        flex-shrink: 0;
+        display: flex;
+        gap: 27px;
+    }
+
+    /* Browser Event - Figma: browser-event (29:2454) */
+    .browser-event {
+        width: 100%;
+        height: 336px;
+        flex-shrink: 0;
+    }
+
+    /* ===========================================
+       Content Sections
+       =========================================== */
+
+    /* Section01 in Content01 - 3D Server Visual */
+    .content01-section01 {
+        width: 350px;
+        flex-shrink: 0;
+        height: 100%;
+        position: relative;
+    }
+
+    /* Section02 in Content01 - Server Cards */
+    .content01-section02 {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        gap: 25px;
+    }
+
+    /* Content02 Charts Container */
+    .content02-charts {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 27px;
+    }
+
+    /* Chart Items */
+    .content02-chart {
+        flex: 1;
+        height: 100%;
+        position: relative;
+    }
+
+    /* ===========================================
+       Placeholder Styles (임시 - 개발 완료 후 제거)
+       =========================================== */
+    [class$="-placeholder"] {
+        background: rgba(80, 46, 233, 0.05);
+        border: 1px dashed rgba(80, 46, 233, 0.2);
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(80, 46, 233, 0.5);
+        font-size: 14px;
+        font-weight: 500;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ===========================================
+       Debug hover effects (개발용 - 나중에 제거)
+       =========================================== */
+    [data-node-id]:hover {
+        outline: 2px solid rgba(80, 46, 233, 0.3);
+        outline-offset: -2px;
+    }
+
+    [data-node-id]:hover::after {
+        content: attr(data-node-id);
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        font-size: 11px;
+        font-weight: bold;
+        color: rgba(80, 46, 233, 0.9);
+        background: rgba(255, 255, 255, 0.95);
+        padding: 3px 8px;
+        border-radius: 3px;
+        z-index: 1000;
+        pointer-events: none;
+    }
+}
